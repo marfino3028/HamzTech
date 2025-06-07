@@ -1,0 +1,38 @@
+stages:
+  - deploy
+
+deploy_laravel:
+  stage: deploy
+  only:
+    - main # ganti jika pakai branch lain
+  script:
+    # Setup SSH Agent
+    - 'which ssh-agent || (apt-get update -y && apt-get install openssh-client -y)'
+    - eval $(ssh-agent -s)
+    - echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add -
+    - mkdir -p ~/.ssh
+    - chmod 700 ~/.ssh
+    - ssh-keyscan -H your-vps-ip >> ~/.ssh/known_hosts
+
+    # Jalankan script di VPS
+    - ssh user@your-vps-ip << 'EOF'
+        cd /home/youruser/yourproject
+        git pull origin main
+
+        # Laravel backend
+        composer install --no-interaction --prefer-dist --optimize-autoloader
+        php artisan migrate --force
+        php artisan config:clear
+        php artisan route:clear
+        php artisan view:clear
+        php artisan cache:clear
+        php artisan config:cache
+
+        # Frontend
+        npm install
+        npm run build
+
+        # (opsional) restart php/nginx jika perlu
+        # sudo systemctl restart php8.2-fpm
+        # sudo systemctl restart nginx
+      EOF
