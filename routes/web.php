@@ -124,20 +124,25 @@ Route::get('/services', function () {
     return view('services', compact('services'));
 });
 Route::view('/contact', 'contact');
+Route::get('/about', function () {
+    $projects = [
+        ['slug' => 'exim-ci3', 'title' => 'Exim', 'image' => 'exim1.png', 'desc' => 'Aplikasi yang disingkat Ekspor Impor adalah sistem yang membantu dalam menentukan negara tujuan ekspor berdasarkan skema Free Trade Agreement (FTA) / Preferential Trade Agreement (PTA) / Comprehensive Economic.Apa itu aplikasi EXIM? Aplikasi yang disingkat Ekspor Impor adalah sistem yang membantu dalam menentukan negara tujuan ekspor berdasarkan skema Free Trade Agreement (FTA) / Preferential Trade Agreement (PTA) / Comprehensive Economic.'],
+        ['slug' => 'ritgrow-flutter', 'title' => 'Ritgrow', 'image' => 'ritgrow1.png', 'desc' => 'Ritgrow adalah perusahaan Solusi dan Pengembang Aplikasi yang dibangun atas dedikasi, berisi tim yang berpengalaman di masing - masing bidangnya. Perjalanan panjang telah melahirkan Ritgrow yang akan Fokus pada solusi retail, bukan hanya aplikasi POS tapi keseluruhan solusi yang dapat mendukung perkembangan bisnis ritel di Indonesia. Inovasi adalah sasaran utama kami, menghubungkan semua kebutuhan menjadikan solusi untuk Partner dan Klien.'],
+        ['slug' => 'e-kemendag-flutter', 'title' => 'E Kemendag', 'image' => 'ekemendag1.png', 'desc' => 'E-Kemendag merupakan Integrated Internal Services yang memberikan akses layanan internal dengan memperhatikan kemudahan penggunaan, mobilitas tinggi, akses kapan saja, aman, dan terintegrasi melalui 1 (satu) pintu yang hanya dapat digunakan oleh pegawai di lingkungan Kementerian Perdagangan..'],
+        ['slug' => 'catatan-akuntabilitas-ci4', 'title' => 'Catatan Akuntabilitas', 'image' => 'catatan akuntabilitas1.png', 'desc' => 'CMS untuk pencatatan akuntabilitas di kementrian perdagangan pada biro advokasi perdagangan'],
+        ['slug' => 'hambatan-perdangangan-ci4', 'title' => 'Hambatan Perdagangan', 'image' => 'dpp1.png', 'desc' => 'CMS Hambatan Perdagangan dari ditjen daglu.'],
+['slug' => 'e-sppd-laravel', 'title' => 'E Sppd', 'image' => 'esppd1.png', 'desc' => 'Aplikasi eSPPD adalah program aplikasi berbasis web yang diinstal pada server web. Untuk membuat laporan perjalanan dinas.'],
+['slug' => 'gdi-laravel', 'title' => 'Good Design Indonesia', 'image' => 'gdi1.png', 'desc' => 'Web untuk program penghargaan nasional untuk karya desain terbaik di Indonesia sejak 2017. Pemenang menerima sertifikat pengakuan. GDI memberikan penghargaan kepada desainer Indonesia dengan trofi dan sertifikat, serta kesempatan untuk berpartisipasi dalam Good Design Award di Tokyo, Jepang.'],
+['slug' => 'hero-flutter', 'title' => 'Hero Mobile', 'image' => 'hero1.png', 'desc' => 'Aplikasi HERO Mobile. Nikmati kemudahan mengakses layanan langsung dari smartphone Anda dengan Aplikasi HERO Mobile. Tersedia untuk perangkat iOS dan Android, dan dapat digunakan oleh semua pengguna.'],
+['slug' => 'invesnow-laravel-vue', 'title' => 'Invesnow', 'image' => 'invesnow1.png', 'desc' => 'Invesnow adalah agen reksa dana, berlisensi dan berwenang oleh Otoritas Jasa Keuangan (OJK) dari Indonesia. Dilengkapi dengan pasar modal dan informasi keuangan, Invesnow menyediakan banyak pilihan produk reksa dana dari manajer investasi terkemuka di Indonesia.'],
+['slug' => 'sengguh-phalcon', 'title' => 'Sengguh', 'image' => 'sengguh1.png', 'desc' => 'Sistem Evaluasi Pertanggungjawaban Pembangunan Daerah (Sengguh) dibangun oleh Badan Perencanaan Pembangunan Daerah Daerah Istimewa Yogyakarta (BAPPEDA DIY) sebagai pembaruan dari aplikasi monev Jogja Kendali. Sengguh telah diakses lebih dari 4 juta hits (2022) dan dimanfaatkan lebih dari 81 pengguna anggaran/kuasa pengguna anggaran, 5 kabupaten/kota, dapat diakses lebih dari 9896 ASN, 55 anggota legislatif DRPD DIY, serta masyarakat luas. Sengguh dapat diakses melalui http://sengguh.jogjaprov.go.id dan terbuka bagi masyarakat.'],
+['slug' => 'simbajanesa-laravel', 'title' => 'Simbajanesa', 'image' => 'simbajanesa1.png', 'desc' => 'Pelaksanaan proses pengadaan barang dan jasa dengan metode quotation dan tender dilaksanakan secara elektronik mengunakan aplikasi SIMBAJANESA.'],
+['slug' => 'sisp-flutter', 'title' => 'SISP', 'image' => 'sisp1.png', 'desc' => 'Tercipta dari upaya kolaboratif Kementerian Perdagangan Republik Indonesia, Platform Sistem Informasi Perdagangan (SISP) menonjol sebagai tonggak penting dalam memfasilitasi transisi pasar konvensional ke ranah digital di seluruh Indonesia.'],
 
-Route::get('/blog', function () {
-    $posts = [
-        ['slug' => 'rekomendasi-laptop-umkm', 'title' => 'Rekomendasi Laptop Terbaik untuk UMKM'],
-        ['slug' => 'cara-pasang-google-my-business', 'title' => 'Cara Pasang Google Maps untuk Toko Lokal'],
     ];
-    return view('blog.index', compact('posts'));
+    return view('about', compact('projects'));
 });
 
-Route::get('/blog/{slug}', function ($slug) {
-    $path = resource_path("views/blog/{$slug}.blade.php");
-    abort_unless(File::exists($path), 404);
-    return view("blog.$slug");
-});
 Route::view('/jasa-it-solo', 'lokasi.solo');
 Route::view('/jasa-it-klaten', 'lokasi.klaten');
 Route::view('/jasa-it-cikarang', 'lokasi.cikarang');

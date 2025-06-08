@@ -39,8 +39,7 @@
                 <a href="/jasa-it-jakarta" class="block px-4 py-2 hover:bg-indigo-50 hover:text-indigo-500">Jasa IT Jakarta</a>
             </div>
         </div>
-      <a href="/portofolio" class="hover:text-indigo-400 transition">Portofolio</a>
-      <a href="/blog" class="hover:text-indigo-400 transition">Blog</a>
+      <a href="/about" class="hover:text-indigo-400 transition">Tentang</a>
       <a href="/contact" class="hover:text-indigo-400 transition">Kontak</a>
     </div>
 
@@ -56,7 +55,6 @@
     <a href="/" class="block hover:text-indigo-400">Beranda</a>
     <a href="/jasa" class="block hover:text-indigo-400">Jasa</a>
     <a href="/portofolio" class="block hover:text-indigo-400">Portofolio</a>
-    <a href="/blog" class="block hover:text-indigo-400">Blog</a>
     <a href="/kontak" class="block hover:text-indigo-400">Kontak</a>
   </div>
 </nav>
