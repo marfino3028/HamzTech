@@ -26,14 +26,13 @@ jobs:
 
       - name: Copy files to deploy branch
         run: |
-          mkdir ../deploy
-          cp -r public/build/* ../deploy/
+          cp -r dist ../deploy
           cd ../deploy
-          echo 'hamztech.my.id' > CNAME
+          echo 'hamztech.my.id' > dist/CNAME
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ../deploy
+          publish_dir: ../deploy/dist
           publish_branch: gh-pages
