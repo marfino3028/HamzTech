@@ -35,7 +35,6 @@ RUN apt-get update \
     && apt-get install -y --no-install-recommends gnupg2 ca-certificates git-core curl zip unzip \
                                                   git curl libpng-dev libonig-dev libxml2-dev zip unzip rsync vim-tiny htop sqlite3 nginx supervisor cron \
     && ln -sf /usr/bin/vim.tiny /etc/alternatives/vim \
-    && docker-php-ext-install pdo_mysql mbstring exif pcntl bcmath gd \
     && curl -fsSL https://deb.nodesource.com/setup_18.x | bash - \
     && apt-get install -y nodejs \
     && ln -sf /etc/alternatives/vim /usr/bin/vim \
