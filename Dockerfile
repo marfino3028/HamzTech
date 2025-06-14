@@ -23,7 +23,7 @@ RUN composer install --no-dev --optimize-autoloader
 COPY . .
 
 # Install npm dependencies and build Vite assets
-RUN npm install && npm run build
+RUN npm install && npm run build && npm run dev
 
 # Copy Supervisor configuration
 COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
