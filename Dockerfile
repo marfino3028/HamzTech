@@ -103,8 +103,6 @@ RUN rsync -ar /var/www/html/public-npm/ /var/www/html/public/ \
 # Set permissions
 RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache
 
-# Copy supervisor configuration
-COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
 # 5. Setup Entrypoint
 EXPOSE 8080
