@@ -1,0 +1,33 @@
+# fly.toml app configuration file generated for portofolio-it on 2025-06-14T11:40:07+07:00
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = 'portofolio-it'
+primary_region = 'sin'
+console_command = 'php /var/www/html/artisan tinker'
+
+[build]
+  [build.args]
+    NODE_VERSION = '18'
+    PHP_VERSION = '8.2'
+
+[env]
+  APP_NAME = "portofolio-it"
+  APP_ENV = "production"
+  APP_KEY = "base64:dAkK1iCoZbMEgILrx1NYmMGxvbq7/9O+Wzvq7K8YAgE="
+  APP_DEBUG = "true"
+  APP_URL = "https://portofolio-it.fly.dev"
+
+[http_service]
+  internal_port = 8080
+  force_https = true
+  auto_stop_machines = 'stop'
+  auto_start_machines = true
+  min_machines_running = 0
+  processes = ['app']
+
+[[vm]]
+  memory = '1gb'
+  cpu_kind = 'shared'
+  cpus = 1
