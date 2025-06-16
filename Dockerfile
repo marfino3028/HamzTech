@@ -1,17 +1,22 @@
-# Gunakan image PHP dengan Apache sebagai basis
+# Stage 1: Build dengan Node.js untuk asset
+FROM node:18 AS builder
+WORKDIR /app
+COPY package.json package-lock.json ./
+RUN npm install
+COPY resources/ ./resources/
+COPY vite.config.js .
+RUN npm run build
+
+# Stage 2: Gunakan image PHP untuk runtime
 FROM php:8.1-apache
 
-# Instal dependensi sistem
+# Instal dependensi PHP
 RUN apt-get update && apt-get install -y \
     libzip-dev \
     unzip \
     && docker-php-ext-install \
     zip \
     pdo_mysql
-
-# Instal Node.js dan npm
-RUN curl -sL https://deb.nodesource.com/setup_18.x | bash - \
-    && apt-get install -y nodejs
 
 # Set working directory
 WORKDIR /var/www/html
@@ -23,11 +28,10 @@ COPY . .
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 RUN composer install --no-dev --optimize-autoloader
 
-# Instal dependensi npm dan build asset
-RUN npm install
-RUN npm run build
+# Salin asset yang dibuild dari stage 1
+COPY --from=builder /app/public/build ./public/build
 
-# Atur izin untuk storage dan cache
+# Atur izin
 RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache
 
 # Expose port 80
