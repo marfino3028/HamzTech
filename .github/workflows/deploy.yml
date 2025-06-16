@@ -13,28 +13,13 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v3
 
-    - name: Set up PHP
-      uses: shivammathur/setup-php@v2
-      with:
-        php-version: '8.1'
-
-    - name: Install Composer Dependencies
-      run: composer install --no-dev --optimize-autoloader
-
-    - name: Install Node.js
-      uses: actions/setup-node@v3
-      with:
-        node-version: '18'
-
-    - name: Install npm Dependencies
-      run: npm install
-
-    - name: Build Frontend Assets
-      run: npm run build
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v2
 
     - name: Deploy to Koyeb
       uses: koyeb/gha-koyeb@v1
       with:
         koyeb_token: ${{ secrets.KOYEB_TOKEN }}
         app_name: my-laravel-app
-        service_name: my-laravel-service
+        service_name: lonely-etty-hamztech
+        dockerfile_path: Dockerfile
