@@ -1,4 +1,4 @@
-# Gunakan image PHP dengan Apache
+# Gunakan image PHP dengan Apache sebagai basis
 FROM php:8.1-apache
 
 # Instal dependensi sistem
@@ -27,10 +27,10 @@ RUN composer install --no-dev --optimize-autoloader
 RUN npm install
 RUN npm run build
 
-# Atur izin
+# Atur izin untuk storage dan cache
 RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache
 
-# Expose port
+# Expose port 80
 EXPOSE 80
 
 # Jalankan Apache
