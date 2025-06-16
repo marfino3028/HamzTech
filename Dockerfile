@@ -10,14 +10,6 @@ RUN npm run build
 # Stage 2: Gunakan image PHP untuk runtime
 FROM php:8.1-apache
 
-# Instal dependensi PHP
-RUN apt-get update && apt-get install -y \
-    libzip-dev \
-    unzip \
-    && docker-php-ext-install \
-    zip \
-    pdo_mysql
-
 # Set working directory
 WORKDIR /var/www/html
 
