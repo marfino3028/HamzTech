@@ -1,13 +1,4 @@
-# Stage 1: Build dengan Node.js untuk asset
-FROM node:18 AS builder
-WORKDIR /app
-COPY package.json package-lock.json ./
-RUN npm install
-COPY resources/ ./resources/
-COPY vite.config.js .
-RUN npm run build
-
-# Stage 2: Gunakan image PHP untuk runtime
+# Gunakan image PHP dengan Apache sebagai basis
 FROM php:8.1-apache
 
 # Set working directory
@@ -16,14 +7,18 @@ WORKDIR /var/www/html
 # Salin kode aplikasi
 COPY . .
 
+# Unduh dan instal Node.js sebagai binary (tanpa apt-get)
+RUN curl -fsSL https://nodejs.org/dist/v18.16.0/node-v18.16.0-linux-x64.tar.xz | tar -xJ --strip-components=1 -C /usr/local
+
 # Instal dependensi Composer
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 RUN composer install --no-dev --optimize-autoloader
 
-# Salin asset yang dibuild dari stage 1
-COPY --from=builder /app/public/build ./public/build
+# Instal dependensi npm dan build asset
+RUN npm install
+RUN npm run build
 
-# Atur izin
+# Atur izin untuk storage dan cache
 RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache
 
 # Expose port 80
