@@ -113,24 +113,22 @@
                 }
             });
             function promoPopup() {
-                return {
-                    show: false,
-                    init() {
-                        if (!localStorage.getItem('promo_shown')) {
-                            this.show = true;
-
-                            // Tutup otomatis setelah 5 detik
-                            setTimeout(() => {
-                                this.close();
-                            }, 5000);
-                        }
-                    },
-                    close() {
-                        this.show = false;
-                        localStorage.setItem('promo_shown', 'yes');
-                    }
-                }
+    return {
+        show: false,
+        init() {
+            if (!localStorage.getItem('promo_shown')) {
+                this.show = true;
+                setTimeout(() => {
+                    this.close();
+                }, 5000);
             }
+        },
+        close() {
+            this.show = false;
+            localStorage.setItem('promo_shown', 'yes');
+        }
+    }
+}
         </script>
 </body>
 </html>
