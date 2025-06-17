@@ -70,7 +70,7 @@
         </a>
 
         {{-- 🔵 Affiliate Pop-up --}}
-        <div x-data="promoPopup()" x-show="show"
+        <div x-data="promoPopup()" x-show="show" id="promoPopup"
             x-transition:enter="transition ease-out duration-500"
             x-transition:enter-start="opacity-0 scale-90"
             x-transition:enter-end="opacity-100 scale-100"
