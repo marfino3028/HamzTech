@@ -1,52 +1,68 @@
+# === Step 1: Build Vite assets ===
 FROM node:18 AS node
 
-# Step 1: Build Vite assets
 WORKDIR /app
+
+# Salin & install dependencies frontend
 COPY package*.json ./
 RUN npm install
+
+# Salin semua file JS/TS frontend
 COPY resources/ resources/
 COPY vite.config.js .
+
+# Build asset Vite
 RUN npm run build
 
 
-# Step 2: Build Laravel + Apache + PHP
+# === Step 2: Build Laravel app ===
 FROM php:8.1-apache
 
-# Install dependencies
+# Install PHP dependencies
 RUN apt-get update && apt-get install -y \
     unzip \
     curl \
     git \
     libzip-dev \
     zip \
-    && docker-php-ext-install zip pdo pdo_mysql
+    libpng-dev \
+    libonig-dev \
+    libxml2-dev \
+    && docker-php-ext-install pdo pdo_mysql zip
 
 # Install Composer
-RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
 
 # Set working directory
 WORKDIR /var/www/html
 
-# Copy Laravel source
+# Copy Laravel app
 COPY . .
 
-# Copy Vite build result from first stage
-COPY --from=node /app/public/build ./public/build
+# Copy Vite build dari tahap node
+COPY --from=node /app/public/build public/build
 
-# Install PHP dependencies
+# Install dependencies Laravel
 RUN composer install --no-dev --optimize-autoloader
 
-# Set folder permissions
-RUN chown -R www-data:www-data storage bootstrap/cache
-RUN chmod -R 775 storage bootstrap/cache
+# Set permission
+RUN chown -R www-data:www-data \
+    bootstrap/cache \
+    storage && \
+    chmod -R 775 bootstrap/cache storage
 
-# Enable Apache rewrite module
+# Enable mod_rewrite
 RUN a2enmod rewrite
 
-# Configure Apache
-COPY .htaccess ./public/
-RUN sed -i 's/Listen 80/Listen 8000/g' /etc/apache2/ports.conf
-RUN sed -i 's/:80/:8000/g' /etc/apache2/sites-available/000-default.conf
+# Salin .htaccess ke public (jika tidak ada, lewati saja)
+COPY public/.htaccess public/.htaccess
 
+# Ganti port Apache (optional)
+RUN sed -i 's/Listen 80/Listen 8000/g' /etc/apache2/ports.conf && \
+    sed -i 's/:80/:8000/g' /etc/apache2/sites-available/000-default.conf
+
+# Expose port
 EXPOSE 8000
+
+# Jalankan apache
 CMD ["apache2-foreground"]
