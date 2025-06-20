@@ -5,10 +5,11 @@
     <meta charset="UTF-8">
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="{{ asset('images/logo.png') }}">
-    <title>{{ $title ?? 'HamzTech Portofolio' }}</title>
-            @vite(['resources/css/app.css', 'resources/js/app.js'])
+    <title>{{ $title ?? 'HamzTech Portofolio' }}</title>            
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+    <link rel="stylesheet" crossorigin href="{{ asset('assets/app-DN-dUXdv.css') }}">
+    <script type="module" crossorigin src="{{ asset('assets/app-T1DpEqax.js') }}"></script>
 </head>
 <body class="font-sans bg-gray-50 text-gray-800">
     <nav x-data="{ open: false }" class="bg-gray-900 text-white shadow-lg">
