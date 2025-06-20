@@ -3,20 +3,17 @@ FROM node:18 AS node
 
 WORKDIR /app
 
-# Salin & install dependencies frontend
+# Hanya operasi Node.js di stage ini
 COPY package*.json ./
 RUN npm install
 
-# Salin semua file JS/TS frontend
 COPY resources/ resources/
 COPY vite.config.js .
 
-# Build asset Vite
 RUN npm run build
 
-
 # === Step 2: Build Laravel app ===
-FROM php:8.1-apache
+FROM php:8.2-apache
 
 # Install PHP dependencies
 RUN apt-get update && apt-get install -y \
@@ -33,36 +30,46 @@ RUN apt-get update && apt-get install -y \
 # Install Composer
 COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
 
-# Set working directory
 WORKDIR /var/www/html
 
-# Copy Laravel app
+# Copy Laravel app (exclude node_modules)
 COPY . .
 
-# Copy Vite build dari tahap node
-COPY --from=node /app/public/build public/build
-
 # Install dependencies Laravel
-RUN composer install --no-dev --optimize-autoloader
+RUN git config --global --add safe.directory /var/www/html && \
+    composer install --no-dev --optimize-autoloader
+
+# Copy Vite build dari stage node
+COPY --from=node /app/public/build public/build
 
 # Set permission
 RUN chown -R www-data:www-data \
     bootstrap/cache \
     storage && \
     chmod -R 775 bootstrap/cache storage
+    
+RUN chown -R www-data:www-data /var/www/html/public \
+    && chmod -R 755 /var/www/html/public
 
 # Enable mod_rewrite
+RUN a2enmod headers
 RUN a2enmod rewrite
 
-# Salin .htaccess ke public (jika tidak ada, lewati saja)
-COPY public/.htaccess public/.htaccess
+RUN echo '<VirtualHost *:80> \
+    ServerName localhost \
+    DocumentRoot /var/www/html/public \
+    <Directory /var/www/html/public> \
+        Options Indexes FollowSymLinks \
+        AllowOverride All \
+        Require all granted \
+    </Directory> \
+    ErrorLog ${APACHE_LOG_DIR}/error.log \
+    CustomLog ${APACHE_LOG_DIR}/access.log combined \
+</VirtualHost>' > /etc/apache2/sites-available/000-default.conf
 
-# Ganti port Apache (optional)
-RUN sed -i 's/Listen 80/Listen 8000/g' /etc/apache2/ports.conf && \
-    sed -i 's/:80/:8000/g' /etc/apache2/sites-available/000-default.conf
+
 
 # Expose port
 EXPOSE 8000
 
-# Jalankan apache
 CMD ["apache2-foreground"]
