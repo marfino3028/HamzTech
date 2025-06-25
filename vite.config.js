@@ -10,8 +10,14 @@ export default defineConfig({
         }),
         tailwindcss(),
     ],
+    server: {
+        host: '0.0.0.0',
+        hmr: {
+            host: 'hamztech.my.id', // Ensure HMR uses your domain
+        },
+    },
     build: {
-    outDir: 'dist',
+    outDir: 'public/assets',
     emptyOutDir: true,
     manifest: true,
   },
