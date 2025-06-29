@@ -8,7 +8,7 @@
     <title>{{ $title ?? 'HamzTech Portofolio' }}</title>            
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
-    <link rel="stylesheet" crossorigin href="{{ asset('assets/assets/app-rlFf-2Yp.css') }}">
+    <link rel="stylesheet" crossorigin href="{{ asset('assets/assets/app-VvGdORxd.css') }}">
     <script type="module" crossorigin src="{{ asset('assets/assets/app-T1DpEqax.js') }}"></script>
 </head>
 <body class="font-sans bg-gray-50 text-gray-800">

@@ -40,10 +40,14 @@
     <section class="mb-10">
       <h2 class="text-2xl font-semibold text-pink-400 border-b border-pink-600 pb-1 mb-4">💬 Tentang Saya</h2>
       <p class="text-gray-300 leading-relaxed">
-        Saya adalah seorang Fullstack Developer dengan keahlian di Laravel, Flutter, dan Nuxt.js. Memiliki pengalaman dalam membangun aplikasi web dan mobile untuk berbagai instansi, kementerian, dan perusahaan. Saya juga terbiasa dengan CI3, CI4, Vue.js, Phalcon, dan Quasar.<br><br>
+        Saya adalah seorang Fullstack Developer dengan keahlian di Laravel, Flutter, dan Nuxt.js, serta Next.js. Memiliki pengalaman dalam membangun aplikasi web dan mobile untuk berbagai instansi, kementerian, dan perusahaan.<br><br>
 
         🔧 Keahlian lainnya:<br>
-        • DevOps: Docker, Trello, Jira<br>
+        • Backend: CI3, CI4,Phalcon,Golang<br>
+        • Frontend: Vue.js,Quasar,svelte<br>
+        • CSS: Tailwind,bootstrap,materialize<br>
+        • Task Management: Trello, Jira<br>
+        • DevOps: aws,gcp,kubernetes,docker<br>
         • UI/UX: Figma, Whimsical<br>
         • CMS: WordPress plugin & theme<br>
         • IT Support & jaringan<br>
@@ -76,14 +80,14 @@
     <section class="mb-10">
       <h2 class="text-2xl font-semibold text-green-400 border-b border-green-600 pb-1 mb-4">🛠️ Skill Unggulan</h2>
       <ul class="grid grid-cols-2 gap-2 text-sm">
-        <li>Laravel, CI3, CI4, Phalcon</li>
-        <li>Flutter (Android/iOS)</li>
-        <li>Vue.js, Nuxt.js, Quasar</li>
-        <li>Svelte, TailwindCSS</li>
-        <li>Golang</li>
-        <li>Docker, Trello, Figma, Jira, Notion</li>
-        <li>WordPress (plugin & theme dev)</li>
-        <li>IT Support & Jaringan</li>
+       <li> Backend: CI3, CI4,Phalcon, Golang<li>
+        <li> Frontend: Vue.js,Quasar,svelte<li>
+        <li> CSS: Tailwind,bootstrap,materialize<li>
+        <li> Task Management: Trello, Jira<li>
+        <li> DevOps: aws,gcp,kubernetes,docker<li>
+        <li> UI/UX: Figma, Whimsical<li>
+        <li> CMS: WordPress plugin & theme<li>
+        <li> IT Support & jaringan<li>
       </ul>
     </section>
   </div>
