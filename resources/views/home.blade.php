@@ -66,7 +66,7 @@
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <div class="bg-white p-6 rounded-lg shadow-lg border border-gray-200">
                     <h3 class="text-xl font-semibold mb-2 text-gray-800">Paket Basic</h3>
-                    <p class="text-2xl font-bold mb-2 text-gray-800">Rp 500.000</p>
+                    <p class="text-2xl font-bold mb-2 text-gray-800">Rp 499.999</p>
                     <p class="text-gray-600 mb-4">Fokus pada Website siap pakai sederhana. Tanpa ada tambahan lain.</p>
                     <ul class="text-left text-gray-600 text-sm space-y-2 mb-4">
                         <li>✔ Website Siap Pakai</li>
@@ -82,7 +82,7 @@
                 </div>
                 <div class="bg-white p-6 rounded-lg shadow-lg border border-gray-200">
                     <h3 class="text-xl font-semibold mb-2 text-gray-800">Paket Premium</h3>
-                    <p class="text-2xl font-bold mb-2 text-gray-800">Rp 1.500.000</p>
+                    <p class="text-2xl font-bold mb-2 text-gray-800">Rp 1.499.999</p>
                     <p class="text-gray-600 mb-4">Paket paling dicari. Tampilan Lebih bagus, Fitur Lebih banyak.</p>
                     <ul class="text-left text-gray-600 text-sm space-y-2 mb-4">
                         <li>✔ Website Siap Pakai</li>
@@ -98,7 +98,7 @@
                 </div>
                 <div class="bg-white p-6 rounded-lg shadow-lg border border-gray-200">
                     <h3 class="text-xl font-semibold mb-2 text-gray-800">Paket Luxury</h3>
-                    <p class="text-2xl font-bold mb-2 text-gray-800">Rp 3.000.000</p>
+                    <p class="text-2xl font-bold mb-2 text-gray-800">Rp 3.999.999</p>
                     <p class="text-gray-600 mb-4">Paket Rekomendasi untuk Perusahaan Profesional. Banyak Bonusnya.</p>
                     <ul class="text-left text-gray-600 text-sm space-y-2 mb-4">
                         <li>✔ Website Siap Pakai</li>
