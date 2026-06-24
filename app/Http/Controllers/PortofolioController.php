@@ -17,13 +17,6 @@ class PortofolioController extends Controller
                 'desc' => 'Aplikasi yang disingkat Ekspor Impor adalah sistem yang membantu dalam menentukan negara tujuan ekspor berdasarkan skema Free Trade Agreement (FTA) / Preferential Trade Agreement (PTA) / Comprehensive Economic.',
                 'images' => ['exim1.png', 'exim2.png', 'exim3.png'],
             ],
-            'ritgrow-flutter' => [
-                'title' => 'Ritgrow',
-                'slug' => 'ritgrow-flutter',
-                'image' => 'ritgrow1.png',
-                'desc' => 'Ritgrow adalah perusahaan Solusi dan Pengembang Aplikasi yang dibangun atas dedikasi, berisi tim yang berpengalaman di masing - masing bidangnya. Perjalanan panjang telah melahirkan Ritgrow yang akan Fokus pada solusi retail, bukan hanya aplikasi POS tapi keseluruhan solusi yang dapat mendukung perkembangan bisnis ritel di Indonesia. Inovasi adalah sasaran utama kami, menghubungkan semua kebutuhan menjadikan solusi untuk Partner dan Klien.',
-                'images' => ['ritgrow1.png', 'ritgrow2.png', 'ritgrow3.png'],
-            ],
             'e-kemendag-flutter' => [
                 'title' => 'E Kemendag',
                 'slug' => 'e-kemendag-flutter',
