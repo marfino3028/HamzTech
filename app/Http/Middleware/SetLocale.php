@@ -12,7 +12,8 @@ class SetLocale
     /** Terapkan bahasa dari session (default: id). */
     public function handle(Request $request, Closure $next): Response
     {
-        $locale = session('locale', config('app.locale', 'id'));
+        // default Indonesia (abaikan APP_LOCALE .env yang sering 'en')
+        $locale = session('locale', 'id');
         if (! in_array($locale, ['id', 'en'], true)) {
             $locale = 'id';
         }
