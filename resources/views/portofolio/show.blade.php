@@ -2,8 +2,21 @@
 
 @section('content')
 <div x-data="{ showModal: false, modalImg: '' }">
-    <h2 class="text-2xl font-bold mb-4">{{ $item['title'] }}</h2>
-    <p class="mb-6 text-gray-600">{{ $item['desc'] }}</p>
+    <h2 class="text-2xl font-bold mb-2">{{ $item['title'] }}</h2>
+
+    <div class="flex flex-wrap items-center gap-3 mb-4">
+        @if (!empty($item['tech']))
+            <span class="inline-block bg-blue-100 text-blue-800 text-xs font-semibold px-3 py-1 rounded-full">{{ $item['tech'] }}</span>
+        @endif
+        @if (!empty($item['type']))
+            <span class="inline-block bg-gray-100 text-gray-700 text-xs font-semibold px-3 py-1 rounded-full">{{ $item['type'] === 'mobile' ? 'Mobile App' : 'Web' }}</span>
+        @endif
+        @if (!empty($item['url']))
+            <a href="{{ $item['url'] }}" target="_blank" rel="noopener" class="inline-block bg-green-600 text-white text-xs font-semibold px-3 py-1 rounded-full hover:bg-green-700">Kunjungi ↗</a>
+        @endif
+    </div>
+
+    <p class="mb-6 text-gray-600 whitespace-pre-line">{{ $item['desc'] }}</p>
 
     <div class="grid md:grid-cols-3 gap-4">
         @foreach ($item['images'] as $img)
