@@ -9,14 +9,14 @@
             <span class="inline-block bg-blue-100 text-blue-800 text-xs font-semibold px-3 py-1 rounded-full">{{ $item['tech'] }}</span>
         @endif
         @if (!empty($item['type']))
-            <span class="inline-block bg-gray-100 text-gray-700 text-xs font-semibold px-3 py-1 rounded-full">{{ $item['type'] === 'mobile' ? 'Mobile App' : 'Web' }}</span>
+            <span class="inline-block bg-gray-100 text-gray-700 text-xs font-semibold px-3 py-1 rounded-full">{{ $item['type'] === 'mobile' ? __('site.portfolio_type_mobile') : __('site.portfolio_type_web') }}</span>
         @endif
         @if (!empty($item['url']))
-            <a href="{{ $item['url'] }}" target="_blank" rel="noopener" class="inline-block bg-green-600 text-white text-xs font-semibold px-3 py-1 rounded-full hover:bg-green-700">Kunjungi ↗</a>
+            <a href="{{ $item['url'] }}" target="_blank" rel="noopener" class="inline-block bg-green-600 text-white text-xs font-semibold px-3 py-1 rounded-full hover:bg-green-700">{{ __('site.portfolio_visit') }}</a>
         @endif
     </div>
 
-    <p class="mb-6 text-gray-600 whitespace-pre-line">{{ $item['desc'] }}</p>
+    <p class="mb-6 text-gray-600 whitespace-pre-line">{{ app()->getLocale() === 'en' ? ($item['desc_en'] ?? $item['desc']) : $item['desc'] }}</p>
 
     <div class="grid md:grid-cols-3 gap-4">
         @foreach ($item['images'] as $img)

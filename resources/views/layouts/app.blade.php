@@ -1,11 +1,11 @@
 <!-- resources/views/layouts/app.blade.php -->
 <!DOCTYPE html>
-<html lang="id">
+<html lang="{{ app()->getLocale() }}">
 <head>
     <meta charset="UTF-8">
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="{{ asset('images/logo.png') }}">
-    <title>{{ $title ?? 'HamzTech Portofolio' }}</title>            
+    <title>{{ $title ?? __('site.default_title') }}</title>
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
     <link rel="stylesheet" crossorigin href="{{ asset('assets/assets/app-VvGdORxd.css') }}">
@@ -19,29 +19,34 @@
                 <span class="text-lg font-bold">HamzTech</span>
             </a>
 
-            <div class="hidden md:flex space-x-6">
-                <a href="/" class="hover:text-indigo-400 transition">Beranda</a>
+            <div class="hidden md:flex items-center space-x-6">
+                <a href="/" class="hover:text-indigo-400 transition">{{ __('site.nav_home') }}</a>
                 <div class="relative group" x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false" @click.away="open = false">
                     <a href="#" @click.prevent="open = !open" class="hover:text-indigo-400 transition inline-flex items-center">
-                        Jasa
+                        {{ __('site.nav_services') }}
                         <svg class="ml-1 w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M5.5 7l4.5 4 4.5-4z"/></svg>
                     </a>
-                    <div class="absolute bg-indigo-900 shadow rounded mt-2 w-48 z-50 transition-all duration-200" 
-                        x-show="open" 
+                    <div class="absolute bg-indigo-900 shadow rounded mt-2 w-48 z-50 transition-all duration-200"
+                        x-show="open"
                         x-transition:enter="transition ease-out duration-200"
                         x-transition:enter-start="opacity-0 scale-95"
                         x-transition:enter-end="opacity-100 scale-100"
                         x-transition:leave="transition ease-in duration-200"
                         x-transition:leave-start="opacity-100 scale-100"
                         x-transition:leave-end="opacity-0 scale-95">
-                        <a href="/jasa-it-solo" class="block px-4 py-2 hover:bg-indigo-50 hover:text-indigo-500">Jasa IT Solo</a>
-                        <a href="/jasa-it-klaten" class="block px-4 py-2 hover:bg-indigo-50 hover:text-indigo-500">Jasa IT Klaten</a>
-                        <a href="/jasa-it-cikarang" class="block px-4 py-2 hover:bg-indigo-50 hover:text-indigo-500">Jasa IT Cikarang</a>
-                        <a href="/jasa-it-jakarta" class="block px-4 py-2 hover:bg-indigo-50 hover:text-indigo-500">Jasa IT Jakarta</a>
+                        <a href="/jasa-it-solo" class="block px-4 py-2 hover:bg-indigo-50 hover:text-indigo-500">{{ __('site.nav_services_solo') }}</a>
+                        <a href="/jasa-it-klaten" class="block px-4 py-2 hover:bg-indigo-50 hover:text-indigo-500">{{ __('site.nav_services_klaten') }}</a>
+                        <a href="/jasa-it-cikarang" class="block px-4 py-2 hover:bg-indigo-50 hover:text-indigo-500">{{ __('site.nav_services_cikarang') }}</a>
+                        <a href="/jasa-it-jakarta" class="block px-4 py-2 hover:bg-indigo-50 hover:text-indigo-500">{{ __('site.nav_services_jakarta') }}</a>
                     </div>
                 </div>
-                <a href="/about" class="hover:text-indigo-400 transition">Tentang</a>
-                <a href="/contact" class="hover:text-indigo-400 transition">Kontak</a>
+                <a href="/about" class="hover:text-indigo-400 transition">{{ __('site.nav_about') }}</a>
+                <a href="/contact" class="hover:text-indigo-400 transition">{{ __('site.nav_contact') }}</a>
+                <div class="flex items-center space-x-2 border-l border-gray-700 pl-4">
+                    <a href="{{ url('/lang/id') }}" class="{{ app()->getLocale() === 'id' ? 'font-bold text-indigo-400' : 'text-gray-400 hover:text-indigo-400' }} transition">ID</a>
+                    <span class="text-gray-600">|</span>
+                    <a href="{{ url('/lang/en') }}" class="{{ app()->getLocale() === 'en' ? 'font-bold text-indigo-400' : 'text-gray-400 hover:text-indigo-400' }} transition">EN</a>
+                </div>
             </div>
 
             <button @click="open = !open" class="md:hidden focus:outline-none">
@@ -52,10 +57,15 @@
         </div>
 
         <div x-show="open" class="md:hidden px-4 pb-4 space-y-2">
-            <a href="/" class="block hover:text-indigo-400">Beranda</a>
-            <a href="/jasa" class="block hover:text-indigo-400">Jasa</a>
-            <a href="/portofolio" class="block hover:text-indigo-400">Portofolio</a>
-            <a href="/kontak" class="block hover:text-indigo-400">Kontak</a>
+            <a href="/" class="block hover:text-indigo-400">{{ __('site.nav_home') }}</a>
+            <a href="/jasa" class="block hover:text-indigo-400">{{ __('site.nav_services') }}</a>
+            <a href="/portofolio" class="block hover:text-indigo-400">{{ __('site.nav_portfolio') }}</a>
+            <a href="/kontak" class="block hover:text-indigo-400">{{ __('site.nav_contact') }}</a>
+            <div class="flex items-center space-x-3 pt-2 border-t border-gray-700">
+                <a href="{{ url('/lang/id') }}" class="{{ app()->getLocale() === 'id' ? 'font-bold text-indigo-400' : 'text-gray-400 hover:text-indigo-400' }}">ID</a>
+                <span class="text-gray-600">|</span>
+                <a href="{{ url('/lang/en') }}" class="{{ app()->getLocale() === 'en' ? 'font-bold text-indigo-400' : 'text-gray-400 hover:text-indigo-400' }}">EN</a>
+            </div>
         </div>
     </nav>
 
@@ -67,7 +77,7 @@
 
     <a href="https://lynk.id/marfino3028" target="_blank"
         class="fixed bottom-5 right-5 bg-pink-600 text-white px-4 py-2 rounded-full shadow-lg hover:bg-pink-700 z-50">
-        🎁 Promo & Afiliasi
+        {{ __('site.promo_button') }}
     </a>
 
     <!-- Affiliate Pop-up -->
@@ -83,11 +93,11 @@
         x-init="init()">
 
         <div class="bg-white rounded-xl p-6 max-w-sm w-full shadow-xl text-center">
-            <h2 class="text-xl font-semibold mb-2">🎉 Promo & Afiliasi Spesial!</h2>
-            <p class="mb-4">Lihat produk dan jasa terbaik dari saya, bisa bantu kamu upgrade bisnis!</p>
+            <h2 class="text-xl font-semibold mb-2">{{ __('site.promo_popup_heading') }}</h2>
+            <p class="mb-4">{{ __('site.promo_popup_body') }}</p>
             <a href="https://lynk.id/marfino3028" target="_blank"
-            class="bg-pink-600 text-white px-4 py-2 rounded hover:bg-pink-700 transition">Lihat Sekarang</a>
-            <button @click="close()" class="block mt-3 text-sm text-gray-500 hover:underline mx-auto">Tutup</button>
+            class="bg-pink-600 text-white px-4 py-2 rounded hover:bg-pink-700 transition">{{ __('site.promo_popup_cta') }}</a>
+            <button @click="close()" class="block mt-3 text-sm text-gray-500 hover:underline mx-auto">{{ __('site.promo_popup_close') }}</button>
         </div>
     </div>
 
@@ -100,14 +110,14 @@
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
             d="M8 10h.01M12 14h.01M16 10h.01M21 12c0 4.97-4.03 9-9 9s-9-4.03-9-9 4.03-9 9-9 9 4.03 9 9z"/>
     </svg>
-    <span>Butuh bantuan cepat? <a href="https://wa.me/6289626312680" target="_blank"
-                                class="underline font-semibold">Chat via WA!</a></span>
+    <span>{{ __('site.wa_helper_text') }} <a href="https://wa.me/6289626312680" target="_blank"
+                                class="underline font-semibold">{{ __('site.wa_helper_link') }}</a></span>
     </div>
 
     <!-- Footer -->
     <footer class="bg-gray-900 text-white py-6 mt-12">
         <div class="container mx-auto text-center">
-            <p>© 2025 HamzTech. All rights reserved.</p>
+            <p>{{ __('site.footer_copyright') }}</p>
         </div>
     </footer>
 

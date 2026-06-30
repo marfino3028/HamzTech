@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<h1 class="text-3xl font-bold mb-4">Layanan Jasa IT</h1>
+<h1 class="text-3xl font-bold mb-4">{{ __('site.services_heading') }}</h1>
 
 <div class="grid md:grid-cols-2 gap-6">
     @foreach ($services as $service)
