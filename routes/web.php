@@ -3,6 +3,14 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PortofolioController;
 
+// Ganti bahasa (id|en), simpan di session, balik ke halaman sebelumnya
+Route::get('/lang/{locale}', function (string $locale) {
+    if (in_array($locale, ['id', 'en'], true)) {
+        session(['locale' => $locale]);
+    }
+    return redirect()->back();
+})->name('lang.switch');
+
 // Data portofolio tunggal: config/portfolios.php
 
 Route::get('/', function () {
