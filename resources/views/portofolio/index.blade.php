@@ -5,7 +5,7 @@
 
 <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
     @foreach ($data as $project)
-    <a href="{{ url('/portofolio/' . $project['slug']) }}" class="block bg-white rounded-2xl shadow p-4 hover:shadow-xl transition transform hover:-translate-y-1">
+    <a href="{{ '/portofolio/' . $project['slug'] }}" class="block bg-white rounded-2xl shadow p-4 hover:shadow-xl transition transform hover:-translate-y-1">
         <img src="{{ asset('images/portfolio/' . $project['image']) }}" alt="{{ $project['title'] }}" class="w-full h-48 object-cover rounded-md mb-3">
         <h2 class="text-xl font-semibold">{{ $project['title'] }}</h2>
         <p class="text-gray-600 text-sm">{{ app()->getLocale() === 'en' ? ($project['desc_en'] ?? $project['desc']) : $project['desc'] }}</p>

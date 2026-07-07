@@ -86,7 +86,7 @@
     </div>
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         @foreach ($projects as $project)
-        <a href="{{ url('/portofolio/' . $project['slug']) }}"
+        <a href="{{ '/portofolio/' . $project['slug'] }}"
            class="card card-hover overflow-hidden reveal {{ $loop->index % 3 == 1 ? 'reveal-d1' : ($loop->index % 3 == 2 ? 'reveal-d2' : '') }}">
             <div class="aspect-[16/10] overflow-hidden border-b border-slate-200">
                 <img src="{{ asset('images/portfolio/' . $project['image']) }}" alt="{{ $project['title'] }}" class="shot" loading="lazy">

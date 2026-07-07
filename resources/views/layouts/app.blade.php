@@ -55,9 +55,9 @@
                 <a href="/contact" class="navlink">{{ __('site.nav_contact') }}</a>
 
                 <div class="flex items-center gap-2 text-sm">
-                    <a href="{{ url('/lang/id') }}" class="{{ app()->getLocale() === 'id' ? 'text-flame-400 font-bold' : 'text-slate-400 hover:text-white' }} transition">ID</a>
+                    <a href="{{ '/lang/id' }}" class="{{ app()->getLocale() === 'id' ? 'text-flame-400 font-bold' : 'text-slate-400 hover:text-white' }} transition">ID</a>
                     <span class="text-slate-600">/</span>
-                    <a href="{{ url('/lang/en') }}" class="{{ app()->getLocale() === 'en' ? 'text-flame-400 font-bold' : 'text-slate-400 hover:text-white' }} transition">EN</a>
+                    <a href="{{ '/lang/en' }}" class="{{ app()->getLocale() === 'en' ? 'text-flame-400 font-bold' : 'text-slate-400 hover:text-white' }} transition">EN</a>
                 </div>
                 <a href="https://wa.me/6289626312680" target="_blank" class="btn btn-gold py-2 px-4 text-sm">{{ __('site.nav_contact') }}</a>
             </div>
@@ -76,9 +76,9 @@
             <a href="/about" class="block py-2 navlink">{{ __('site.nav_about') }}</a>
             <a href="/contact" class="block py-2 navlink">{{ __('site.nav_contact') }}</a>
             <div class="flex items-center gap-3 pt-2 border-t border-white/10">
-                <a href="{{ url('/lang/id') }}" class="{{ app()->getLocale() === 'id' ? 'text-flame-400 font-bold' : 'text-slate-400' }}">ID</a>
+                <a href="{{ '/lang/id' }}" class="{{ app()->getLocale() === 'id' ? 'text-flame-400 font-bold' : 'text-slate-400' }}">ID</a>
                 <span class="text-slate-600">/</span>
-                <a href="{{ url('/lang/en') }}" class="{{ app()->getLocale() === 'en' ? 'text-flame-400 font-bold' : 'text-slate-400' }}">EN</a>
+                <a href="{{ '/lang/en' }}" class="{{ app()->getLocale() === 'en' ? 'text-flame-400 font-bold' : 'text-slate-400' }}">EN</a>
             </div>
         </div>
     </nav>

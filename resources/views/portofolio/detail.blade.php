@@ -10,7 +10,7 @@
     @endforeach
 </div>
 
-<a href="{{ url('/') }}" class="inline-block mt-8 text-blue-600 hover:underline">
+<a href="{{ '/' }}" class="inline-block mt-8 text-blue-600 hover:underline">
     {{ __('site.portfolio_back') }}
 </a>
 @endsection
