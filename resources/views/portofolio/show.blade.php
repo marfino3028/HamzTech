@@ -1,51 +1,49 @@
 @extends('layouts.app')
 
-@section('content')
-<div x-data="{ showModal: false, modalImg: '' }">
-    <h2 class="text-2xl font-bold mb-2">{{ $item['title'] }}</h2>
+@section('mainClass', '')
 
-    <div class="flex flex-wrap items-center gap-3 mb-4">
-        @if (!empty($item['tech']))
-            <span class="inline-block bg-blue-100 text-blue-800 text-xs font-semibold px-3 py-1 rounded-full">{{ $item['tech'] }}</span>
-        @endif
-        @if (!empty($item['type']))
-            <span class="inline-block bg-gray-100 text-gray-700 text-xs font-semibold px-3 py-1 rounded-full">{{ $item['type'] === 'mobile' ? __('site.portfolio_type_mobile') : __('site.portfolio_type_web') }}</span>
-        @endif
-        @if (!empty($item['url']))
-            <a href="{{ $item['url'] }}" target="_blank" rel="noopener" class="inline-block bg-green-600 text-white text-xs font-semibold px-3 py-1 rounded-full hover:bg-green-700">{{ __('site.portfolio_visit') }}</a>
-        @endif
+@section('content')
+
+@php
+    $actions = [];
+    if (!empty($item['url'])) {
+        $actions[] = ['url' => $item['url'], 'label' => trim(str_replace('↗', '', __('site.portfolio_visit')))];
+    }
+    $actions[] = ['url' => 'https://wa.me/6289626312680?text=' . rawurlencode(__('site.portfolio_wa_text', ['project' => $item['title']])), 'label' => __('site.portfolio_similar_cta')];
+@endphp
+
+@include('partials.page-hero', [
+    'back'    => ['url' => '/portofolio', 'label' => __('site.portfolio_back_short')],
+    'eyebrow' => ($item['type'] ?? 'web') === 'mobile' ? __('site.portfolio_type_mobile') : __('site.portfolio_type_web'),
+    'title'   => $item['title'],
+    'badges'  => !empty($item['tech']) ? array_map('trim', explode('+', $item['tech'])) : [],
+    'actions' => $actions,
+])
+
+<section class="max-w-6xl mx-auto px-6 -mt-10 relative z-10" x-data="{ showModal: false, modalImg: '' }">
+    <div class="card p-7 reveal">
+        <p class="text-slate-600 leading-relaxed whitespace-pre-line">{{ app()->getLocale() === 'en' ? ($item['desc_en'] ?? $item['desc']) : $item['desc'] }}</p>
     </div>
 
-    <p class="mb-6 text-gray-600 whitespace-pre-line">{{ app()->getLocale() === 'en' ? ($item['desc_en'] ?? $item['desc']) : $item['desc'] }}</p>
-
-    <div class="grid md:grid-cols-3 gap-4">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 mt-8">
         @foreach ($item['images'] as $img)
-        <img 
-            src="{{ asset('images/portfolio/' . $img) }}" 
-            alt="Screenshot {{ $img }}" 
-            class="rounded shadow cursor-pointer hover:scale-105 transition"
-            @click="showModal = true; modalImg = '{{ asset('images/portfolio/' . $img) }}'"
-        >
+        <button type="button" class="card card-hover overflow-hidden text-left reveal {{ $loop->index % 3 == 1 ? 'reveal-d1' : ($loop->index % 3 == 2 ? 'reveal-d2' : '') }}"
+                @click="showModal = true; modalImg = '{{ asset('images/portfolio/' . $img) }}'">
+            <img src="{{ asset('images/portfolio/' . $img) }}" alt="{{ $item['title'] }} screenshot {{ $loop->iteration }}" class="shot w-full" loading="lazy">
+        </button>
         @endforeach
     </div>
 
-    <!-- Modal -->
-    <div 
-        x-show="showModal" 
-        x-transition 
-        class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-80 z-50"
-        @click.away="showModal = false"
-        @keydown.escape.window="showModal = false"
-        style="display: none;"
-    >
+    <div x-show="showModal" x-transition style="display:none"
+         class="fixed inset-0 z-50 flex items-center justify-center bg-navy-950/85 backdrop-blur-sm p-4"
+         @click.self="showModal = false" @keydown.escape.window="showModal = false">
         <div class="relative">
-            <img :src="modalImg" class="max-h-[90vh] rounded shadow-lg">
-            <button 
-                @click="showModal = false" 
-                class="absolute top-2 right-2 text-white text-3xl font-bold"
-                aria-label="Close"
-            >&times;</button>
+            <img :src="modalImg" class="max-h-[88vh] max-w-full rounded-2xl shadow-2xl" alt="">
+            <button @click="showModal = false" class="absolute -top-3 -right-3 w-10 h-10 rounded-full bg-white text-navy-900 text-2xl font-bold shadow-lg" aria-label="Close">&times;</button>
         </div>
     </div>
-</div>
+</section>
+
+@include('partials.cta')
+
 @endsection

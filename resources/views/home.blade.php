@@ -102,26 +102,7 @@
     </div>
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         @foreach ($projects as $project)
-        <a href="{{ '/portofolio/' . $project['slug'] }}"
-           class="card card-hover overflow-hidden reveal {{ $loop->index % 3 == 1 ? 'reveal-d1' : ($loop->index % 3 == 2 ? 'reveal-d2' : '') }}">
-            <div class="aspect-[16/10] overflow-hidden border-b border-slate-200">
-                <img src="{{ asset('images/portfolio/' . $project['image']) }}" alt="{{ $project['title'] }}" class="shot" loading="lazy">
-            </div>
-            <div class="p-6">
-                <div class="flex items-center justify-between mb-2 gap-3">
-                    <h3 class="font-bold text-lg text-navy-900">{{ $project['title'] }}</h3>
-                    <span class="badge badge-blue shrink-0">{{ ucfirst($project['type'] ?? 'web') }}</span>
-                </div>
-                <p class="text-sm text-slate-500 line-clamp-2 mb-4">{{ app()->getLocale() === 'en' ? ($project['desc_en'] ?? $project['desc']) : $project['desc'] }}</p>
-                @if(!empty($project['tech']))
-                <div class="flex flex-wrap gap-1.5">
-                    @foreach(explode('+', $project['tech']) as $t)
-                        <span class="badge">{{ trim($t) }}</span>
-                    @endforeach
-                </div>
-                @endif
-            </div>
-        </a>
+            @include('partials.project-card', ['project' => $project, 'i' => $loop->index])
         @endforeach
     </div>
 </section>
@@ -293,31 +274,9 @@
 </section>
 
 {{-- ======================= AFFILIATE BANNER ======================= --}}
-<section class="max-w-6xl mx-auto px-6 pb-8">
-    <div class="border-grad p-1 reveal">
-        <div class="rounded-[24px] bg-white px-6 py-5 flex flex-col sm:flex-row items-center justify-between gap-4">
-            <p class="text-navy-800 font-medium text-sm">
-                {{ __('site.affiliate_banner_text') }}
-            </p>
-            <a href="https://lynk.id/marfino3028" target="_blank" class="btn btn-gold text-sm whitespace-nowrap">lynk.id/marfino3028</a>
-        </div>
-    </div>
-</section>
+@include('partials.affiliate-banner')
 
 {{-- ======================= CONTACT CTA ======================= --}}
-<section class="hero py-20 mt-10">
-    <div class="hero-glow c" style="opacity:.5"></div>
-    <div class="max-w-4xl mx-auto px-6 text-center relative reveal">
-        <span class="eyebrow on-dark mb-4" style="display:inline-flex">Hubungi Kami</span>
-        <h2 class="section-title text-white mb-4">Punya proyek? Mari kita bangun.</h2>
-        <p class="lede mb-8 mx-auto max-w-xl" style="color:var(--slate-300)">
-            Ceritakan kebutuhan Anda — kami balas langsung dengan estimasi dan langkah berikutnya.
-        </p>
-        <div class="flex flex-wrap justify-center gap-3">
-            <a href="https://wa.me/6289626312680" target="_blank" class="btn btn-gold">WhatsApp 0896-2631-2680</a>
-            <a href="mailto:marfinohamzah455@gmail.com" class="btn btn-outline-light">marfinohamzah455@gmail.com</a>
-        </div>
-    </div>
-</section>
+@include('partials.cta')
 
 @endsection

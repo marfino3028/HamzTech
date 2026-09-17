@@ -1,22 +1,34 @@
 @extends('layouts.app')
 
-@section('content')
-<h1 class="text-3xl font-bold mb-4">{{ __('site.portfolio_heading') }}</h1>
+@section('mainClass', '')
 
-<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-    @foreach ($data as $project)
-    <a href="{{ '/portofolio/' . $project['slug'] }}" class="block bg-white rounded-2xl shadow p-4 hover:shadow-xl transition transform hover:-translate-y-1">
-        <img src="{{ asset('images/portfolio/' . $project['image']) }}" alt="{{ $project['title'] }}" class="w-full h-48 object-cover rounded-md mb-3">
-        <h2 class="text-xl font-semibold">{{ $project['title'] }}</h2>
-        <p class="text-gray-600 text-sm">{{ app()->getLocale() === 'en' ? ($project['desc_en'] ?? $project['desc']) : $project['desc'] }}</p>
-    </a>
-@endforeach
-</div>
-<div class="bg-yellow-100 border-l-4 border-yellow-400 p-4 rounded mb-6">
-    <p class="font-medium text-yellow-800">
-        {{ __('site.affiliate_banner_text') }}
-        <a href="https://lynk.id/marfino3028" target="_blank"
-           class="text-blue-600 underline font-semibold">lynk.id/marfino3028</a>
-    </p>
-</div>
+@section('content')
+
+@include('partials.page-hero', [
+    'eyebrow' => __('site.portfolio_heading'),
+    'title'   => __('site.portfolio_hero_title', ['count' => count($data)]),
+    'lede'    => __('site.portfolio_hero_lede'),
+])
+
+<section class="max-w-6xl mx-auto px-6 -mt-10 relative z-10" x-data="{ type: 'all' }">
+    <div class="flex flex-wrap gap-2 mb-8">
+        @foreach (['all' => __('site.portfolio_filter_all'), 'web' => __('site.portfolio_type_web'), 'mobile' => __('site.portfolio_type_mobile')] as $key => $label)
+            <button type="button" @click="type = '{{ $key }}'"
+                    :class="type === '{{ $key }}' ? 'btn-gold' : 'btn-ghost bg-white'"
+                    class="btn text-sm py-2 px-5">{{ $label }}</button>
+        @endforeach
+    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        @foreach ($data as $project)
+            <div x-show="type === 'all' || type === '{{ $project['type'] ?? 'web' }}'" class="grid">
+                @include('partials.project-card', ['project' => $project, 'i' => $loop->index])
+            </div>
+        @endforeach
+    </div>
+</section>
+
+@include('partials.affiliate-banner')
+
+@include('partials.cta')
+
 @endsection

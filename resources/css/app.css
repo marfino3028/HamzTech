@@ -75,6 +75,7 @@ h1,h2,h3,h4 { letter-spacing:-.028em; line-height:1.1; }
 .text-gradient { background:var(--grad-blue); -webkit-background-clip:text; background-clip:text; color:transparent; }
 .text-gradient-gold { background:var(--grad-gold); -webkit-background-clip:text; background-clip:text; color:transparent; }
 .section-title { font-size:clamp(1.8rem,3.6vw,2.9rem); font-weight:800; color:var(--navy-900); }
+.hero .section-title { color:#fff; }
 .lede { color:var(--slate-500); font-size:clamp(1rem,1.3vw,1.12rem); }
 
 /* Buttons */
