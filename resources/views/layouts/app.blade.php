@@ -122,7 +122,7 @@
     </div>
 
     <!-- ============================ FOOTER ============================ -->
-    <footer class="bg-navy-950 text-slate-400 mt-16">
+    <footer class="bg-navy-950 text-slate-400 @yield('footerGap', 'mt-16')">
         <div class="max-w-6xl mx-auto px-6 py-12">
             <div class="flex flex-col md:flex-row md:items-center justify-between gap-6">
                 <div>

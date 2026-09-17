@@ -1,4 +1,5 @@
-{{-- CTA penutup halaman (dipakai home & halaman lain) --}}
+{{-- CTA penutup halaman (dipakai home & halaman lain). Selalu jadi section terakhir: footer menempel tanpa jarak. --}}
+@section('footerGap', 'border-t border-white/10')
 <section class="hero py-20 mt-20">
     <div class="hero-glow c" style="opacity:.5"></div>
     <div class="max-w-4xl mx-auto px-6 text-center relative reveal">
