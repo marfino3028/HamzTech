@@ -125,7 +125,7 @@ return [
 
     // ===== Contact page =====
     'contact_role' => 'Backend Developer @ Kemendag',
-    'contact_location' => '📍 Jawa Tengah, Indonesia | 📱 0896-2631-2680',
+    'contact_location' => '📍 Solo & Bekasi | 📱 0896-2631-2680',
     'contact_wa_heading' => '📱 Hubungi Saya via WhatsApp',
     'contact_label_name' => 'Nama Anda',
     'contact_label_message' => 'Pesan',
@@ -174,5 +174,22 @@ return [
     'lokasi_item2' => 'Bisa konsultasi lewat WA',
     'lokasi_item3' => 'Respon cepat dan harga bersahabat',
     'lokasi_contact_now' => 'Hubungi Sekarang',
+
+    'home_hero_hook' => 'Website jadi mulai Rp 499rb · Konsultasi & estimasi gratis',
+    'home_hero_title_pre' => 'Aplikasi',
+    'home_hero_title_hl' => 'standar Kementerian,',
+    'home_hero_title_post' => 'kini untuk bisnis Anda.',
+    'home_hero_lede' => 'Tim yang sama di balik 10+ aplikasi pemerintah (Kemendag, Kemenkeu, Pemda DIY) membangun website, aplikasi mobile, dan sistem internal — booking, ERP, dashboard — untuk UMKM hingga enterprise.',
+    'home_hero_cta' => 'Minta Estimasi Gratis',
+    'home_hero_cta_wa_text' => 'Halo HamzTech, saya mau minta estimasi gratis untuk proyek saya.',
+    'home_hero_cta_note' => 'Dibalas langsung via WhatsApp · Tanpa komitmen',
+    'home_hero_cta_portfolio' => 'Lihat :count Proyek Nyata',
+    'home_trusted_eyebrow' => 'Dipercaya',
+    'home_trusted_heading' => 'Dipercaya instansi & bisnis di seluruh Indonesia.',
+    'home_clients_label' => 'Klien',
+    'home_partners_label' => 'Partner',
+    'contact_offices_heading' => '📍 Kantor Kami',
+    'contact_offices_open_maps' => 'Buka di Google Maps',
+    'footer_offices_label' => 'Kantor',
 
 ];

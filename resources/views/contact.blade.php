@@ -37,6 +37,28 @@
       </form>
     </div>
 
+    <!-- Alamat kantor: data di config/company.php -->
+    <section class="mb-10">
+      <h2 class="text-2xl font-semibold text-orange-400 border-b border-orange-600 pb-1 mb-4">{{ __('site.contact_offices_heading') }}</h2>
+      <div class="grid md:grid-cols-2 gap-6">
+        @foreach (config('company.offices') as $office)
+        <div class="bg-gray-800 rounded-lg overflow-hidden shadow-lg border border-gray-700">
+          <iframe src="https://maps.google.com/maps?q={{ $office['lat'] }},{{ $office['lng'] }}&z=16&output=embed"
+                  class="w-full h-56 border-0" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="{{ $office['name'] }}"></iframe>
+          <div class="p-5">
+            <h3 class="text-lg font-bold text-cyan-300">{{ $office['name'] }}</h3>
+            <p class="text-xs text-gray-400 mb-2">{{ $office['city'] }}</p>
+            <p class="text-sm text-gray-300 leading-relaxed mb-4">{{ $office['address'] }}</p>
+            <a href="{{ $office['maps'] }}" target="_blank" rel="noopener"
+               class="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white text-sm font-bold py-2 px-4 rounded-md transition">
+              {{ __('site.contact_offices_open_maps') }} &rarr;
+            </a>
+          </div>
+        </div>
+        @endforeach
+      </div>
+    </section>
+
     <section class="mb-10">
       <h2 class="text-2xl font-semibold text-pink-400 border-b border-pink-600 pb-1 mb-4">{{ __('site.contact_about_heading') }}</h2>
       <p class="text-gray-300 leading-relaxed">
@@ -99,7 +121,7 @@ document.getElementById('whatsappForm').addEventListener('submit', function(e) {
   
   const name = document.getElementById('name').value;
   const message = document.getElementById('message').value;
-  const phoneNumber = '089626312680'; // Nomor WhatsApp Anda
+  const phoneNumber = '6289626312680'; // Nomor WhatsApp Anda
   
   // Encode message untuk URL
   const encodedMessage = encodeURIComponent(`Halo Marfino, saya ${name}.\n${message}`);

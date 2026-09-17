@@ -131,6 +131,13 @@
                         <span class="text-lg font-extrabold text-white">Hamz<span class="text-gradient-gold">Tech</span></span>
                     </a>
                     <p class="text-sm max-w-sm">Software Development Company — Web · Mobile · AI · Automation · Cloud · Government Digital Solutions.</p>
+                    <div class="mt-4 space-y-2 text-sm max-w-sm">
+                        @foreach (config('company.offices') as $office)
+                        <a href="{{ $office['maps'] }}" target="_blank" rel="noopener" class="flex gap-2 hover:text-white transition">
+                            <span class="text-flame-400">📍</span><span><strong class="text-slate-200">{{ $office['name'] }}</strong> — {{ $office['address'] }}</span>
+                        </a>
+                        @endforeach
+                    </div>
                 </div>
                 <div class="flex flex-wrap gap-x-8 gap-y-2 text-sm">
                     <a href="/about" class="hover:text-white transition">{{ __('site.nav_about') }}</a>

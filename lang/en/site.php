@@ -125,7 +125,7 @@ return [
 
     // ===== Contact page =====
     'contact_role' => 'Backend Developer @ Kemendag',
-    'contact_location' => '📍 Central Java, Indonesia | 📱 0896-2631-2680',
+    'contact_location' => '📍 Solo & Bekasi | 📱 0896-2631-2680',
     'contact_wa_heading' => '📱 Contact Me via WhatsApp',
     'contact_label_name' => 'Your Name',
     'contact_label_message' => 'Message',
@@ -174,5 +174,22 @@ return [
     'lokasi_item2' => 'Consultation available via WhatsApp',
     'lokasi_item3' => 'Fast response and friendly pricing',
     'lokasi_contact_now' => 'Contact Now',
+
+    'home_hero_hook' => 'Websites from Rp 499k · Free consultation & estimate',
+    'home_hero_title_pre' => '',
+    'home_hero_title_hl' => 'Government-grade',
+    'home_hero_title_post' => 'apps, now built for your business.',
+    'home_hero_lede' => 'The same team behind 10+ government apps (Ministry of Trade, Ministry of Finance, Yogyakarta Govt) builds websites, mobile apps, and internal systems — booking, ERP, dashboards — for SMEs to enterprises.',
+    'home_hero_cta' => 'Get a Free Estimate',
+    'home_hero_cta_wa_text' => 'Hi HamzTech, I would like a free estimate for my project.',
+    'home_hero_cta_note' => 'Direct reply via WhatsApp · No commitment',
+    'home_hero_cta_portfolio' => 'See :count Real Projects',
+    'home_trusted_eyebrow' => 'Trusted By',
+    'home_trusted_heading' => 'Trusted by institutions & businesses across Indonesia.',
+    'home_clients_label' => 'Clients',
+    'home_partners_label' => 'Partners',
+    'contact_offices_heading' => '📍 Our Offices',
+    'contact_offices_open_maps' => 'Open in Google Maps',
+    'footer_offices_label' => 'Offices',
 
 ];

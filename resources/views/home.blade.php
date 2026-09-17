@@ -11,13 +11,12 @@
     <div class="max-w-6xl mx-auto px-6 relative">
         <div class="grid lg:grid-cols-12 gap-12 items-center">
             <div class="lg:col-span-7 reveal">
-                <span class="badge badge-gold mb-6"><span class="badge-dot" style="background:var(--gold-500)"></span>Software Development Company</span>
+                <span class="badge badge-gold mb-6"><span class="badge-dot" style="background:var(--gold-500)"></span>{{ __('site.home_hero_hook') }}</span>
                 <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-white leading-[1.05]">
-                    Jasa pembuatan <span class="text-gradient-gold">web, mobile &amp; sistem</span> kelas enterprise.
+                    {{ __('site.home_hero_title_pre') }} <span class="text-gradient-gold">{{ __('site.home_hero_title_hl') }}</span> {{ __('site.home_hero_title_post') }}
                 </h1>
                 <p class="lede mt-6 max-w-xl" style="color:var(--slate-300)">
-                    HamzTech membangun website, aplikasi mobile, dan sistem custom yang bersih,
-                    scalable, dan siap produksi — dari UMKM hingga instansi pemerintah.
+                    {{ __('site.home_hero_lede') }}
                 </p>
                 <div class="flex flex-wrap gap-2.5 mt-8">
                     <span class="service-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h10"/></svg>Web Development</span>
@@ -26,12 +25,13 @@
                     <span class="service-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M5 21V10l7-5 7 5v11"/></svg>Government Solution</span>
                 </div>
                 <div class="flex flex-wrap gap-3 mt-9">
-                    <a href="https://wa.me/6289626312680" target="_blank" class="btn btn-gold">
-                        Konsultasi Gratis
+                    <a href="https://wa.me/6289626312680?text={{ rawurlencode(__('site.home_hero_cta_wa_text')) }}" target="_blank" class="btn btn-gold">
+                        {{ __('site.home_hero_cta') }}
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
                     </a>
-                    <a href="#portofolio" class="btn btn-outline-light">Lihat Portofolio</a>
+                    <a href="#portofolio" class="btn btn-outline-light">{{ __('site.home_hero_cta_portfolio', ['count' => count($projects)]) }}</a>
                 </div>
+                <p class="text-xs mt-3" style="color:var(--slate-400)">{{ __('site.home_hero_cta_note') }}</p>
             </div>
 
             <div class="lg:col-span-5 reveal reveal-d2">
@@ -56,14 +56,6 @@
                 </div>
             </div>
         </div>
-
-        <div class="mt-14 pt-8" style="border-top:1px solid rgba(255,255,255,.10)">
-            <p class="text-xs uppercase tracking-[.2em] text-slate-400 mb-4">Dipercaya untuk sistem nasional &amp; enterprise</p>
-            <div class="flex flex-wrap gap-x-8 gap-y-3 text-slate-300 font-semibold text-sm">
-                <span>Kementerian Perdagangan RI</span><span>Kemenkeu RI</span><span>BAPPEDA DIY</span>
-                <span>UNESA</span><span>RS Brawijaya</span><span>Invesnow</span>
-            </div>
-        </div>
     </div>
 </section>
 
@@ -75,6 +67,30 @@
         <div class="card p-6 text-center reveal reveal-d2"><div class="stat-num gold"><span data-count="10" data-suffix="+">10+</span></div><div class="text-sm font-semibold text-navy-800 mt-2">Proyek Pemerintah</div></div>
         <div class="card p-6 text-center reveal reveal-d3"><div class="stat-num gold"><span data-count="100" data-suffix="%">100%</span></div><div class="text-sm font-semibold text-navy-800 mt-2">Custom Development</div></div>
     </div>
+</section>
+
+{{-- ======================= TRUSTED BY & PARTNERS ======================= --}}
+<section class="max-w-6xl mx-auto px-6 pt-20">
+    <div class="text-center max-w-2xl mx-auto mb-10 reveal">
+        <span class="eyebrow mb-4" style="display:inline-flex">{{ __('site.home_trusted_eyebrow') }}</span>
+        <h2 class="section-title">{{ __('site.home_trusted_heading') }}</h2>
+    </div>
+    @foreach (['clients' => __('site.home_clients_label'), 'partners' => __('site.home_partners_label')] as $group => $label)
+    <div class="reveal {{ $loop->first ? '' : 'mt-10' }}">
+        <p class="text-center text-xs font-bold uppercase tracking-[.2em] text-slate-400 mb-5">{{ $label }}</p>
+        <div class="flex flex-wrap justify-center gap-4">
+            @foreach (config('company.' . $group) as $c)
+            <div class="logo-tile" title="{{ $c['name'] }}">
+                @if ($c['logo'])
+                    <img src="{{ asset('images/clients/' . $c['logo']) }}" alt="{{ $c['name'] }}" loading="lazy">
+                @else
+                    <span>{{ $c['name'] }}</span>
+                @endif
+            </div>
+            @endforeach
+        </div>
+    </div>
+    @endforeach
 </section>
 
 {{-- ======================= PORTFOLIO ======================= --}}
