@@ -46,7 +46,7 @@
                     <div class="my-6 h-px" style="background:linear-gradient(90deg,transparent,rgba(255,255,255,.2),transparent)"></div>
                     <div class="grid grid-cols-3 gap-4 text-center">
                         <div><div class="text-2xl font-extrabold text-white">7<span class="text-flame-400">+</span></div><div class="text-[11px] uppercase tracking-wider text-slate-400 mt-1">Tahun</div></div>
-                        <div><div class="text-2xl font-extrabold text-white">35<span class="text-flame-400">+</span></div><div class="text-[11px] uppercase tracking-wider text-slate-400 mt-1">Proyek</div></div>
+                        <div><div class="text-2xl font-extrabold text-white">24<span class="text-flame-400">+</span></div><div class="text-[11px] uppercase tracking-wider text-slate-400 mt-1">Proyek</div></div>
                         <div><div class="text-2xl font-extrabold text-white">10<span class="text-flame-400">+</span></div><div class="text-[11px] uppercase tracking-wider text-slate-400 mt-1">Gov App</div></div>
                     </div>
                     <div class="mt-6 flex flex-wrap gap-2">
@@ -63,7 +63,7 @@
 <section class="max-w-6xl mx-auto px-6 -mt-10 relative z-10">
     <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
         <div class="card p-6 text-center reveal"><div class="stat-num"><span data-count="7" data-suffix="+">7+</span></div><div class="text-sm font-semibold text-navy-800 mt-2">Tahun Pengalaman</div></div>
-        <div class="card p-6 text-center reveal reveal-d1"><div class="stat-num"><span data-count="35" data-suffix="+">35+</span></div><div class="text-sm font-semibold text-navy-800 mt-2">Proyek Selesai</div></div>
+        <div class="card p-6 text-center reveal reveal-d1"><div class="stat-num"><span data-count="24" data-suffix="+">24+</span></div><div class="text-sm font-semibold text-navy-800 mt-2">Proyek Selesai</div></div>
         <div class="card p-6 text-center reveal reveal-d2"><div class="stat-num gold"><span data-count="10" data-suffix="+">10+</span></div><div class="text-sm font-semibold text-navy-800 mt-2">Proyek Pemerintah</div></div>
         <div class="card p-6 text-center reveal reveal-d3"><div class="stat-num gold"><span data-count="100" data-suffix="%">100%</span></div><div class="text-sm font-semibold text-navy-800 mt-2">Custom Development</div></div>
     </div>
