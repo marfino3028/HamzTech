@@ -1,40 +1,49 @@
-name: Deploy Laravel to Koyeb
+name: Deploy to VPS
 
 on:
   push:
     branches:
       - main
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-vps-hamztech
+  cancel-in-progress: false
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    timeout-minutes: 20
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v3
+      - name: Deploy via SSH
+        env:
+          VPS_HOST: ${{ secrets.VPS_HOST }}
+          VPS_USER: ${{ secrets.VPS_USER }}
+          VPS_PORT: ${{ secrets.VPS_PORT }}
+          VPS_SSH_KEY: ${{ secrets.VPS_SSH_KEY }}
+          # Host key server (ssh-ed25519) supaya koneksi tidak bisa dibajak. Ganti bila server diganti.
+          VPS_HOST_KEY: ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFsL6pjzW7Jn9zd37j9jYlbMuusTv84WkBQStCq4jVHh
+        run: |
+          set -euo pipefail
+          PORT="${VPS_PORT:-22}"
 
-    - name: Set up PHP
-      uses: shivammathur/setup-php@v2
-      with:
-        php-version: '8.1'
+          mkdir -p ~/.ssh
+          chmod 700 ~/.ssh
+          printf '%s\n' "$VPS_SSH_KEY" > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
 
-    - name: Install Composer Dependencies
-      run: composer install --no-dev --optimize-autoloader
+          if [ "$PORT" = "22" ]; then
+            echo "$VPS_HOST $VPS_HOST_KEY" > ~/.ssh/known_hosts
+          else
+            echo "[$VPS_HOST]:$PORT $VPS_HOST_KEY" > ~/.ssh/known_hosts
+          fi
 
-    - name: Install Node.js
-      uses: actions/setup-node@v3
-      with:
-        node-version: '18'
-
-    - name: Install npm Dependencies
-      run: npm install
-
-    - name: Build Frontend Assets
-      run: npm run build
-
-    - name: Deploy to Koyeb
-      uses: koyeb/gha-koyeb@v1
-      with:
-        koyeb_token: ${{ secrets.KOYEB_TOKEN }}
-        app_name: my-laravel-app
-        service_name: my-laravel-service
+          # Key di server dibatasi forced command, jadi koneksi ini selalu menjalankan deploy-hamztech.sh.
+          ssh -i ~/.ssh/deploy_key \
+            -p "$PORT" \
+            -o IdentitiesOnly=yes \
+            -o StrictHostKeyChecking=yes \
+            -o BatchMode=yes \
+            -o ServerAliveInterval=30 \
+            "$VPS_USER@$VPS_HOST" deploy
