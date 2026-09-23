@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#04182C">
+    <meta name="theme-color" content="#071A3D">
     <link rel="icon" type="image/png" href="{{ asset('images/favicon.png') }}">
     <link rel="apple-touch-icon" href="{{ asset('images/logo-mark.png') }}">
     <title>{{ $title ?? __('site.default_title') }}</title>
