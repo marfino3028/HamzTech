@@ -169,6 +169,90 @@ return [
         'type' => 'web',
     ],
 
+    'ratapay-quasar-laravel' => [
+        'title' => 'Ratapay',
+        'slug' => 'ratapay-quasar-laravel',
+        'image' => 'ratapay1.png',
+        'images' => ['ratapay1.png', 'ratapay2.png'],
+        'desc' => 'Aplikasi pembayaran berbasis web app untuk mengelola transaksi pembayaran, dengan antarmuka mobile-first yang ringan dan cepat.',
+        'desc_en' => 'A web-app-based payment application to manage payment transactions, with a lightweight and fast mobile-first interface.',
+        'tech' => 'Quasar + Laravel',
+        'url' => 'https://app.ratapay.co.id',
+        'type' => 'web',
+    ],
+
+    'ekohort-ci3' => [
+        'title' => 'e-Kohort Kemenkes',
+        'slug' => 'ekohort-ci3',
+        'image' => 'ekohort1.png',
+        'images' => ['ekohort1.png'],
+        'desc' => 'Aplikasi e-Kohort Direktorat Kesehatan Keluarga, Kementerian Kesehatan RI, untuk mencatat dan memantau kesehatan ibu hamil mulai dari masa kehamilan hingga persalinan. Dikembangkan dengan dukungan USAID (Kesehatan Ibu dan Anak) dan UNFPA (Kesehatan Reproduksi).',
+        'desc_en' => 'The e-Kohort application of the Directorate of Family Health, Indonesian Ministry of Health, to record and monitor the health of pregnant women from pregnancy through childbirth. Developed with support from USAID (Maternal and Child Health) and UNFPA (Reproductive Health).',
+        'tech' => 'CodeIgniter 3',
+        'url' => 'https://ekohort.kemkes.go.id',
+        'type' => 'web',
+    ],
+
+    'konvertin-nuxt-nest' => [
+        'title' => 'Konvertin',
+        'slug' => 'konvertin-nuxt-nest',
+        'image' => 'konvertin1.png',
+        'images' => ['konvertin1.png', 'konvertin2.png', 'konvertin3.png'],
+        'desc' => 'Website SaaS all-in-one untuk jualan produk digital maupun fisik: landing page, checkout, online store, affiliate, LMS, email marketing, WhatsApp gateway, hingga tracking pixel dalam satu dashboard.',
+        'desc_en' => 'An all-in-one SaaS website for selling digital and physical products: landing pages, checkout, online store, affiliate, LMS, email marketing, WhatsApp gateway, and tracking pixels in one dashboard.',
+        'tech' => 'Nuxt.js + NestJS',
+        'url' => 'https://konvertin.id',
+        'type' => 'web',
+    ],
+
+    'technocare-nuxt-nest' => [
+        'title' => 'Technocare',
+        'slug' => 'technocare-nuxt-nest',
+        'image' => 'technocare1.png',
+        'images' => ['technocare1.png', 'technocare2.png', 'technocare3.png'],
+        'desc' => 'Company profile Technocare untuk produk-produk aplikasi kesehatan: sistem manajemen klinik dan rumah sakit untuk pendaftaran pasien, rekam medis, farmasi, dan laporan faskes, lengkap dengan halaman modul, layanan, harga, dan berita.',
+        'desc_en' => 'The Technocare company profile for its health application products: a clinic and hospital management system for patient registration, medical records, pharmacy, and facility reports, complete with module, service, pricing, and news pages.',
+        'tech' => 'Nuxt.js + NestJS',
+        'url' => 'https://technocare.id',
+        'type' => 'web',
+    ],
+
+    'knowledge-technocare-nuxt-nest' => [
+        'title' => 'Knowledge Base Technocare',
+        'slug' => 'knowledge-technocare-nuxt-nest',
+        'image' => 'knowledgetechnocare1.png',
+        'images' => ['knowledgetechnocare1.png', 'knowledgetechnocare2.png', 'knowledgetechnocare3.png'],
+        'desc' => 'Learning management system untuk pengguna produk aplikasi kesehatan Technocare. Berisi panduan per modul (worklist dokter & perawat, farmasi, laboratorium, radiologi, hemodialisa, dan lainnya) yang dapat diakses oleh pengguna yang memiliki akun.',
+        'desc_en' => 'A learning management system for users of Technocare health application products. It contains guides per module (doctor & nurse worklist, pharmacy, laboratory, radiology, hemodialysis, and more) accessible to users with an account.',
+        'tech' => 'Nuxt.js + NestJS',
+        'url' => 'https://knowledge.technocare.id',
+        'type' => 'web',
+    ],
+
+    'pratamainnovation-nuxt-laravel' => [
+        'title' => 'Pratama Tech Innovations',
+        'slug' => 'pratamainnovation-nuxt-laravel',
+        'image' => 'pratamainnovation1.png',
+        'images' => ['pratamainnovation1.png', 'pratamainnovation2.png', 'pratamainnovation3.png'],
+        'desc' => 'Company profile software house Pratama Tech Innovations: layanan pengembangan web & mobile app, UI/UX design, dan IT outsourcing, dilengkapi galeri portofolio, koleksi, dan artikel.',
+        'desc_en' => 'The company profile of the Pratama Tech Innovations software house: web & mobile app development, UI/UX design, and IT outsourcing services, with a portfolio gallery, collection, and articles.',
+        'tech' => 'Nuxt.js + Laravel',
+        'url' => 'https://pratamainnovation.com',
+        'type' => 'web',
+    ],
+
+    'rossieannacraft-nuxt-laravel' => [
+        'title' => 'Rossie Anna Craft',
+        'slug' => 'rossieannacraft-nuxt-laravel',
+        'image' => 'rossieannacraft1.png',
+        'images' => ['rossieannacraft1.png', 'rossieannacraft2.png', 'rossieannacraft3.png'],
+        'desc' => 'Website katalog dan penjualan Fudao Scrunchie, aksesori ikat rambut handcrafted berbahan satin silk. Tersedia untuk pembelian satuan, hampers, hingga souvenir pernikahan, dengan pemesanan lewat WhatsApp dan Shopee.',
+        'desc_en' => 'A catalog and sales website for Fudao Scrunchie, handcrafted satin silk hair ties. Available for single purchase, hampers, and wedding souvenirs, with ordering via WhatsApp and Shopee.',
+        'tech' => 'Nuxt.js + Laravel',
+        'url' => 'https://rossieannacraft.com',
+        'type' => 'web',
+    ],
+
     // ===== Aplikasi mobile (Play Store / App Store) =====
 
     'e-kemendag-flutter' => [
@@ -180,30 +264,6 @@ return [
         'desc_en' => 'The Ministry of Trade super app — Integrated Internal Services in one place for Kemendag staff: face recognition attendance, electronic official correspondence, integrated scheduling (TNDE, E-SPPD, HRIS), staffing information, and much more. Accessed via Intra Kemendag Single Sign On (SSO).',
         'tech' => 'Flutter',
         'url' => 'https://apps.apple.com/id/app/e-kemendag-mobile/',
-        'type' => 'mobile',
-    ],
-
-    'hero-flutter' => [
-        'title' => 'Hero Kemendag',
-        'slug' => 'hero-flutter',
-        'image' => 'hero1.png',
-        'images' => ['hero1.png', 'hero2.png', 'hero3.png'],
-        'desc' => 'Aplikasi layanan publik & layanan internal milik Kementerian Perdagangan. Pengguna dapat mengajukan pertanyaan, permohonan, dan aduan melalui sistem tiket. Tersedia untuk iOS dan Android.',
-        'desc_en' => 'A public and internal services application owned by the Ministry of Trade. Users can submit questions, requests, and complaints through a ticketing system. Available for iOS and Android.',
-        'tech' => 'Flutter',
-        'url' => 'https://apps.apple.com/id/app/hero-kemendag/',
-        'type' => 'mobile',
-    ],
-
-    'sisp-flutter' => [
-        'title' => 'SISP Kemendag',
-        'slug' => 'sisp-flutter',
-        'image' => 'sisp1.png',
-        'images' => ['sisp1.png', 'sisp2.png', 'sisp3.png'],
-        'desc' => 'Sistem Informasi Perdagangan (SISP) untuk digitalisasi pasar — hasil kolaborasi Kementerian Perdagangan RI dalam memfasilitasi transisi pasar konvensional ke ranah digital di seluruh Indonesia.',
-        'desc_en' => 'A Trade Information System (SISP) for market digitalization — a collaboration of the Indonesian Ministry of Trade to facilitate the transition of conventional markets into the digital realm across Indonesia.',
-        'tech' => 'Flutter',
-        'url' => 'https://apps.apple.com/id/app/sisp-kemendag/',
         'type' => 'mobile',
     ],
 
@@ -240,18 +300,6 @@ return [
         'desc_en' => 'An application that makes it easy for the Marketing/Management team to manage Hajj & Umrah pilgrims, while also making it easy for pilgrims to register and obtain information about Hajj and Umrah.',
         'tech' => 'Flutter + PHP 5.4',
         'url' => 'https://play.google.com/store/apps/details?id=com.zhafirah.mobile.zhafirah_marketing',
-        'type' => 'mobile',
-    ],
-
-    'sqp-membership-flutter' => [
-        'title' => 'SQP Membership',
-        'slug' => 'sqp-membership-flutter',
-        'image' => 'sqpmembership1.png',
-        'images' => ['sqpmembership1.png', 'sqpmembership2.png'],
-        'desc' => 'Aplikasi membership untuk mengelola keanggotaan, poin, dan benefit pelanggan.',
-        'desc_en' => 'A membership application to manage customer memberships, points, and benefits.',
-        'tech' => 'Flutter + CodeIgniter 3',
-        'url' => 'https://play.google.com/store/apps/details?id=com.sqp.membership.membership',
         'type' => 'mobile',
     ],
 
@@ -318,13 +366,11 @@ return [
     /*
      * ===== DIPARKIR — belum ada screenshot (.png). Restore saat sudah difoto. =====
      * Tinggal pindahkan kembali ke array di atas + pastikan file gambarnya ada.
+     * Cek 2026-09-28: mirotaklik.id tidak resolve (DNS), listing Play Store PIP
+     * Kemenkeu 404, zigra.co.id "Domain Expired". Listing Play com.liburania.wezata
+     * dan com.mobilereseller.liburania adalah Wezata dan Jatrav versi Android,
+     * sudah tercakup entri 'wezata-flutter-go' dan 'jatrav-flutter'.
      *
-     * 'ratapay-quasar-laravel' => [
-     *     'title' => 'Ratapay', 'slug' => 'ratapay-quasar-laravel',
-     *     'image' => 'ratapay1.png', 'images' => ['ratapay1.png', 'ratapay2.png', 'ratapay3.png'],
-     *     'desc' => 'Aplikasi pembayaran (payment) berbasis web app. Menangani transaksi pembayaran dengan antarmuka yang ringan dan cepat.',
-     *     'tech' => 'Quasar + Laravel', 'url' => 'https://app.ratapay.co.id', 'type' => 'web',
-     * ],
      * 'mirotaklik-erp' => [
      *     'title' => 'Mirotaklik', 'slug' => 'mirotaklik-erp',
      *     'image' => 'mirotaklik1.png', 'images' => ['mirotaklik1.png', 'mirotaklik2.png', 'mirotaklik3.png'],
@@ -337,17 +383,11 @@ return [
      *     'desc' => 'Aplikasi laporan perjalanan dinas di Kementerian Keuangan untuk mendukung digitalisasi proses pelaporan.',
      *     'tech' => 'Flutter + CodeIgniter', 'url' => 'https://play.google.com/store/apps/details?id=id.go.kemenkeu.pip.keu', 'type' => 'mobile',
      * ],
-     * 'liburania-reseller-flutter' => [
-     *     'title' => 'Liburania Reseller', 'slug' => 'liburania-reseller-flutter',
-     *     'image' => 'liburaniareseller1.png', 'images' => ['liburaniareseller1.png', 'liburaniareseller2.png', 'liburaniareseller3.png'],
-     *     'desc' => 'Aplikasi untuk jasa agen pembelian tiket wisata (mobile reseller Liburania).',
-     *     'tech' => 'Flutter + CodeIgniter 3', 'url' => 'https://play.google.com/store/apps/details?id=com.mobilereseller.liburania', 'type' => 'mobile',
-     * ],
-     * 'wezata-liburan-flutter' => [
-     *     'title' => 'Wezata (Liburania)', 'slug' => 'wezata-liburan-flutter',
-     *     'image' => 'wezataliburan1.png', 'images' => ['wezataliburan1.png', 'wezataliburan2.png', 'wezataliburan3.png'],
-     *     'desc' => 'Aplikasi liburan wisata untuk pengguna akhir — jelajahi dan pesan paket wisata.',
-     *     'tech' => 'Flutter + CodeIgniter 3', 'url' => 'https://play.google.com/store/apps/details?id=com.liburania.wezata', 'type' => 'mobile',
+     * 'zigra-wordpress' => [
+     *     'title' => 'Zigra', 'slug' => 'zigra-wordpress',
+     *     'image' => 'zigra1.png', 'images' => ['zigra1.png', 'zigra2.png', 'zigra3.png'],
+     *     'desc' => 'Website penjualan tiket wisata berbasis custom WordPress.',
+     *     'tech' => 'WordPress', 'url' => 'https://zigra.co.id', 'type' => 'web',
      * ],
      */
 

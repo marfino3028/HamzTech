@@ -63,7 +63,7 @@
 <section class="max-w-6xl mx-auto px-6 -mt-10 relative z-10">
     <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
         <div class="card p-6 text-center reveal"><div class="stat-num"><span data-count="7" data-suffix="+">7+</span></div><div class="text-sm font-semibold text-navy-800 mt-2">Tahun Pengalaman</div></div>
-        <div class="card p-6 text-center reveal reveal-d1"><div class="stat-num"><span data-count="24" data-suffix="+">24+</span></div><div class="text-sm font-semibold text-navy-800 mt-2">Proyek Selesai</div></div>
+        <div class="card p-6 text-center reveal reveal-d1"><div class="stat-num"><span data-count="{{ count($projects) }}" data-suffix="+">{{ count($projects) }}+</span></div><div class="text-sm font-semibold text-navy-800 mt-2">Proyek Selesai</div></div>
         <div class="card p-6 text-center reveal reveal-d2"><div class="stat-num gold"><span data-count="10" data-suffix="+">10+</span></div><div class="text-sm font-semibold text-navy-800 mt-2">Proyek Pemerintah</div></div>
         <div class="card p-6 text-center reveal reveal-d3"><div class="stat-num gold"><span data-count="100" data-suffix="%">100%</span></div><div class="text-sm font-semibold text-navy-800 mt-2">Custom Development</div></div>
     </div>
