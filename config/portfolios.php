@@ -169,18 +169,6 @@ return [
         'type' => 'web',
     ],
 
-    'ratapay-quasar-laravel' => [
-        'title' => 'Ratapay',
-        'slug' => 'ratapay-quasar-laravel',
-        'image' => 'ratapay1.png',
-        'images' => ['ratapay1.png', 'ratapay2.png'],
-        'desc' => 'Aplikasi pembayaran berbasis web app untuk mengelola transaksi pembayaran, dengan antarmuka mobile-first yang ringan dan cepat.',
-        'desc_en' => 'A web-app-based payment application to manage payment transactions, with a lightweight and fast mobile-first interface.',
-        'tech' => 'Quasar + Laravel',
-        'url' => 'https://app.ratapay.co.id',
-        'type' => 'web',
-    ],
-
     'ekohort-ci3' => [
         'title' => 'e-Kohort Kemenkes',
         'slug' => 'ekohort-ci3',
