@@ -150,7 +150,7 @@
             <div class="card p-7 reveal reveal-d1">
                 <span class="eyebrow mb-4">{{ __('site.contact_exp_heading') }}</span>
                 <ul class="space-y-3 text-sm text-slate-600">
-                    @foreach (range(1, 4) as $i)
+                    @foreach (range(1, 3) as $i)
                     <li class="flex gap-2"><span class="text-flame-500">➝</span><span>{!! __('site.contact_exp_item' . $i) !!}</span></li>
                     @endforeach
                 </ul>

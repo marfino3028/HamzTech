@@ -5,8 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#071A3D">
-    <link rel="icon" type="image/png" href="{{ asset('images/favicon.png') }}">
-    <link rel="apple-touch-icon" href="{{ asset('images/logo-mark.png') }}">
+    {{-- ?v= memaksa browser mengambil ulang ikon setelah logo diganti --}}
+    <link rel="icon" type="image/png" sizes="64x64" href="{{ asset('images/favicon.png') }}?v={{ @filemtime(public_path('images/favicon.png')) }}">
+    <link rel="shortcut icon" href="{{ asset('favicon.ico') }}?v={{ @filemtime(public_path('favicon.ico')) }}">
+    <link rel="apple-touch-icon" href="{{ asset('images/logo-mark.png') }}?v={{ @filemtime(public_path('images/logo-mark.png')) }}">
     <title>{{ $title ?? __('site.default_title') }}</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
