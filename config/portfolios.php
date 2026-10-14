@@ -241,6 +241,42 @@ return [
         'type' => 'web',
     ],
 
+    'sirait-nuxt-nest' => [
+        'title' => 'Sirait & Co',
+        'slug' => 'sirait-nuxt-nest',
+        'image' => 'sirait1.png',
+        'images' => ['sirait1.png', 'sirait2.png', 'sirait3.png'],
+        'desc' => 'Website dan aplikasi klien kantor hukum Sirait & Co. Klien dapat mendaftar, menyampaikan kronologi perkara dan berkas, menjadwalkan konsultasi, serta menandatangani surat kuasa secara digital, dengan pemantauan tahapan hukum dari awal sampai selesai.',
+        'desc_en' => 'A client website and app for the Sirait & Co law office. Clients can register, submit case chronologies and documents, book consultations, and sign powers of attorney digitally, while tracking each legal stage from start to finish.',
+        'tech' => 'Nuxt.js + NestJS',
+        'url' => 'https://sirait.co',
+        'type' => 'web',
+    ],
+
+    'posbuku-nuxt-nest' => [
+        'title' => 'Pos Buku',
+        'slug' => 'posbuku-nuxt-nest',
+        'image' => 'posbuku1.png',
+        'images' => ['posbuku1.png', 'posbuku2.png', 'posbuku3.png'],
+        'desc' => 'Website katalog buku perpustakaan: jelajahi koleksi, lihat detail dan ulasan buku, serta ikuti komunitas pembaca.',
+        'desc_en' => 'A library book catalogue website: browse the collection, view book details and reviews, and join the reader community.',
+        'tech' => 'Nuxt.js + NestJS',
+        'url' => 'https://posbuku.com',
+        'type' => 'web',
+    ],
+
+    'dashai-ekpkd-nuxt-nest' => [
+        'title' => 'DashAI EKPKD',
+        'slug' => 'dashai-ekpkd-nuxt-nest',
+        'image' => 'ekpkd1.png',
+        'images' => ['ekpkd1.png'],
+        'desc' => 'Asisten AI pemerintahan untuk Kementerian Dalam Negeri. Pengguna, admin daerah, dan admin OPD dapat bertanya dan menganalisis data tiap pemerintah daerah maupun pusat.',
+        'desc_en' => 'A government AI assistant for the Ministry of Home Affairs. Users, regional admins, and agency admins can ask about and analyse data from each regional and central government.',
+        'tech' => 'Nuxt.js + NestJS',
+        'url' => 'https://ekpkd.dashai.id',
+        'type' => 'web',
+    ],
+
     // ===== Aplikasi mobile (Play Store / App Store) =====
 
     'e-kemendag-flutter' => [
