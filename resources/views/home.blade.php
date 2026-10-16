@@ -11,7 +11,7 @@
     <div class="max-w-6xl mx-auto px-6 relative">
         <div class="grid lg:grid-cols-12 gap-12 items-center">
             <div class="lg:col-span-7 reveal">
-                <span class="badge badge-gold mb-6"><span class="badge-dot" style="background:var(--gold-500)"></span>{{ __('site.home_hero_hook') }}</span>
+                <span class="badge-hero mb-6"><span class="badge-hero__dot" aria-hidden="true"></span>{{ __('site.home_hero_hook') }}</span>
                 <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-white leading-[1.05]">
                     {{ __('site.home_hero_title_pre') }} <span class="text-gradient-gold">{{ __('site.home_hero_title_hl') }}</span> {{ __('site.home_hero_title_post') }}
                 </h1>
@@ -110,20 +110,6 @@
         @endif
     </div>
     @endforeach
-</section>
-
-{{-- ======================= PORTFOLIO ======================= --}}
-<section id="portofolio" class="max-w-6xl mx-auto px-6 py-20">
-    <div class="max-w-2xl mb-12 reveal">
-        <span class="eyebrow mb-4">Portofolio</span>
-        <h2 class="section-title mb-4">{{ __('site.home_portfolio_heading') }}</h2>
-        <p class="lede">Sistem produksi untuk kementerian, universitas, dan bisnis — web &amp; mobile.</p>
-    </div>
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        @foreach ($projects as $project)
-            @include('partials.project-card', ['project' => $project, 'i' => $loop->index])
-        @endforeach
-    </div>
 </section>
 
 {{-- ======================= SERVICES ======================= --}}
@@ -231,6 +217,20 @@
     <div class="text-center mt-8 reveal">
         <p class="text-slate-500 mb-4">{{ __('site.home_price_footer') }}</p>
         <a href="https://wa.me/6289626312680" target="_blank" class="btn btn-wa">{{ __('site.home_price_agent') }}</a>
+    </div>
+</section>
+
+{{-- ======================= PORTFOLIO ======================= --}}
+<section id="portofolio" class="max-w-6xl mx-auto px-6 py-20">
+    <div class="max-w-2xl mb-12 reveal">
+        <span class="eyebrow mb-4">Portofolio</span>
+        <h2 class="section-title mb-4">{{ __('site.home_portfolio_heading') }}</h2>
+        <p class="lede">Sistem produksi untuk kementerian, universitas, dan bisnis — web &amp; mobile.</p>
+    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        @foreach ($projects as $project)
+            @include('partials.project-card', ['project' => $project, 'i' => $loop->index])
+        @endforeach
     </div>
 </section>
 

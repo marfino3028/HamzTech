@@ -44,12 +44,12 @@
                         <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M5.5 7l4.5 4 4.5-4z"/></svg>
                     </button>
                     <div x-show="o" x-transition
-                         class="absolute right-0 mt-3 w-52 rounded-2xl overflow-hidden glass-dark shadow-xl z-50" style="display:none">
-                        <a href="/services" class="block px-4 py-2.5 text-sm text-slate-200 hover:bg-white/10">{{ __('site.nav_services') }}</a>
-                        <a href="/jasa-it-solo" class="block px-4 py-2.5 text-sm text-slate-200 hover:bg-white/10">{{ __('site.nav_services_solo') }}</a>
-                        <a href="/jasa-it-klaten" class="block px-4 py-2.5 text-sm text-slate-200 hover:bg-white/10">{{ __('site.nav_services_klaten') }}</a>
-                        <a href="/jasa-it-cikarang" class="block px-4 py-2.5 text-sm text-slate-200 hover:bg-white/10">{{ __('site.nav_services_cikarang') }}</a>
-                        <a href="/jasa-it-jakarta" class="block px-4 py-2.5 text-sm text-slate-200 hover:bg-white/10">{{ __('site.nav_services_jakarta') }}</a>
+                         class="nav-dropdown absolute right-0 mt-3 w-56 z-50" style="display:none">
+                        <a href="/services" class="nav-dropdown__item">{{ __('site.nav_services') }}</a>
+                        <a href="/jasa-it-solo" class="nav-dropdown__item">{{ __('site.nav_services_solo') }}</a>
+                        <a href="/jasa-it-klaten" class="nav-dropdown__item">{{ __('site.nav_services_klaten') }}</a>
+                        <a href="/jasa-it-cikarang" class="nav-dropdown__item">{{ __('site.nav_services_cikarang') }}</a>
+                        <a href="/jasa-it-jakarta" class="nav-dropdown__item">{{ __('site.nav_services_jakarta') }}</a>
                     </div>
                 </div>
                 <a href="/portofolio" class="navlink">{{ __('site.nav_portfolio') }}</a>
@@ -90,11 +90,21 @@
         @yield('content')
     </main>
 
-    <!-- Floating WhatsApp CTA -->
-    <a href="https://affiliate.hamztech.my.id"
-        class="no-print fixed bottom-5 right-5 btn btn-gold shadow-lg z-50 text-sm">
-        {{ __('site.promo_button') }}
-    </a>
+    <!-- Tombol mengambang kanan bawah: WhatsApp (bulat) di atas, Promo & Afiliasi (pill) di bawah -->
+    <div class="fab-dock no-print" x-data="{ tip: true }" x-init="setTimeout(() => tip = false, 7000)">
+        <div class="fab-row">
+            <a x-show="tip" x-transition.opacity href="https://wa.me/6289626312680" target="_blank" rel="noopener" class="fab-tip" style="display:none">
+                {{ __('site.wa_helper_text') }} <b>{{ __('site.wa_helper_link') }}</b>
+            </a>
+            <a href="https://wa.me/6289626312680" target="_blank" rel="noopener" class="fab-wa" aria-label="WhatsApp HamzTech">
+                <svg viewBox="0 0 32 32" class="w-6 h-6" fill="currentColor" aria-hidden="true"><path d="M16.04 3C8.9 3 3.1 8.8 3.1 15.94c0 2.28.6 4.5 1.73 6.46L3 29l6.77-1.78a12.9 12.9 0 0 0 6.27 1.6h.01c7.13 0 12.93-5.8 12.93-12.93C28.98 8.8 23.18 3 16.04 3Zm0 23.63h-.01a10.7 10.7 0 0 1-5.46-1.5l-.39-.23-4.02 1.05 1.07-3.92-.25-.4a10.7 10.7 0 0 1-1.64-5.7c0-5.92 4.82-10.73 10.74-10.73 5.92 0 10.73 4.81 10.73 10.73 0 5.92-4.82 10.7-10.77 10.7Zm5.89-8.03c-.32-.16-1.91-.94-2.2-1.05-.3-.11-.51-.16-.73.16-.21.32-.84 1.05-1.03 1.27-.19.21-.38.24-.7.08-.32-.16-1.36-.5-2.59-1.6-.96-.85-1.6-1.9-1.79-2.22-.19-.32-.02-.5.14-.66.15-.14.32-.38.48-.56.16-.19.21-.32.32-.54.1-.21.05-.4-.03-.56-.08-.16-.73-1.75-.99-2.4-.26-.63-.53-.54-.73-.55h-.62c-.21 0-.56.08-.86.4-.3.32-1.13 1.1-1.13 2.69 0 1.58 1.16 3.12 1.32 3.33.16.21 2.28 3.48 5.52 4.88.77.33 1.37.53 1.84.68.77.25 1.48.21 2.03.13.62-.09 1.91-.78 2.18-1.53.27-.75.27-1.4.19-1.53-.08-.13-.29-.21-.61-.37Z"/></svg>
+            </a>
+        </div>
+        <a href="https://affiliate.hamztech.my.id" class="fab-promo">
+            <span class="fab-promo__icon" aria-hidden="true">🎁</span>
+            <span>{{ __('site.nav_affiliate') }}</span>
+        </a>
+    </div>
 
     <!-- Affiliate Pop-up -->
     <div x-data="promoPopup()" x-show="show" id="promoPopup"
@@ -113,15 +123,6 @@
         </div>
     </div>
 
-    <!-- WhatsApp helper toast -->
-    <div x-data="{ open: true }" x-show="open" x-transition
-        class="no-print fixed bottom-5 left-5 btn-wa px-4 py-3 rounded-2xl shadow-lg z-40 flex items-center gap-2 text-sm text-white"
-        x-init="setTimeout(() => open = false, 8000)">
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 14h.01M16 10h.01M21 12c0 4.97-4.03 9-9 9s-9-4.03-9-9 4.03-9 9-9 9 4.03 9 9z"/>
-        </svg>
-        <span>{{ __('site.wa_helper_text') }} <a href="https://wa.me/6289626312680" target="_blank" class="underline font-semibold">{{ __('site.wa_helper_link') }}</a></span>
-    </div>
 
     <!-- ============================ FOOTER ============================ -->
     <footer class="bg-navy-950 text-slate-400 @yield('footerGap', 'mt-16')">

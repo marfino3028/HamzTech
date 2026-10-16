@@ -24,6 +24,22 @@ return [
             'lat'     => -6.2208766,
             'lng'     => 107.1667887,
         ],
+        [
+            'name'    => 'HamzTech Klaten',
+            'city'    => 'Kabupaten Klaten, Jawa Tengah',
+            'address' => 'Palemsari Wetan, Jeblog, Kabupaten Klaten, Jawa Tengah 57482 (dekat Umbul Ponggok)',
+            'maps'    => 'https://www.google.com/maps?q=-7.613075,110.635519',
+            'lat'     => -7.613075,
+            'lng'     => 110.635519,
+        ],
+        [
+            'name'    => 'HamzTech Jakarta',
+            'city'    => 'Jakarta Pusat, DKI Jakarta',
+            'address' => 'Gg. Tembok, Kebon Sirih, Kec. Menteng, Jakarta Pusat, DKI Jakarta 10340',
+            'maps'    => 'https://www.google.com/maps?q=-6.1859855,106.8391916',
+            'lat'     => -6.1859855,
+            'lng'     => 106.8391916,
+        ],
     ],
 
     'clients' => [

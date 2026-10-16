@@ -3,5 +3,5 @@
 @section('mainClass', '')
 
 @section('content')
-@include('lokasi.partials.page', ['city' => 'jakarta', 'office' => 1])
+@include('lokasi.partials.page', ['city' => 'jakarta', 'office' => 3])
 @endsection
