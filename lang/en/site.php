@@ -16,7 +16,6 @@ return [
     // ===== Layout: title, promo button, popup, WA helper, footer =====
     'default_title' => 'HamzTech Portfolio',
     'nav_affiliate' => 'Promo & Affiliate',
-    'home_hero_affiliate_note' => 'Selected digital products at promo prices',
     'promo_button' => '🎁 Promo & Affiliate',
     'promo_popup_heading' => '🎉 Special Promo & Affiliate!',
     'promo_popup_body' => 'Check out my best products and services that can help you upgrade your business!',

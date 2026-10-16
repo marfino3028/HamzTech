@@ -55,7 +55,6 @@
                 <a href="/portofolio" class="navlink">{{ __('site.nav_portfolio') }}</a>
                 <a href="/about" class="navlink">{{ __('site.nav_about') }}</a>
                 <a href="/contact" class="navlink">{{ __('site.nav_contact') }}</a>
-                <a href="https://affiliate.hamztech.my.id" class="navlink font-semibold hidden lg:inline whitespace-nowrap" style="color:#FF6A00">{{ __('site.nav_affiliate') }}</a>
 
                 <div class="flex items-center gap-2 text-sm">
                     <a href="{{ '/lang/id' }}" class="{{ app()->getLocale() === 'id' ? 'text-flame-400 font-bold' : 'text-slate-400 hover:text-white' }} transition">ID</a>
@@ -78,7 +77,6 @@
             <a href="/portofolio" class="block py-2 navlink">{{ __('site.nav_portfolio') }}</a>
             <a href="/about" class="block py-2 navlink">{{ __('site.nav_about') }}</a>
             <a href="/contact" class="block py-2 navlink">{{ __('site.nav_contact') }}</a>
-            <a href="https://affiliate.hamztech.my.id" class="block py-2 navlink font-semibold" style="color:#FF6A00">{{ __('site.nav_affiliate') }}</a>
             <div class="flex items-center gap-3 pt-2 border-t border-white/10">
                 <a href="{{ '/lang/id' }}" class="{{ app()->getLocale() === 'id' ? 'text-flame-400 font-bold' : 'text-slate-400' }}">ID</a>
                 <span class="text-slate-600">/</span>
