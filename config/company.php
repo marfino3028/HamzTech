@@ -31,14 +31,13 @@ return [
         ['name' => 'Kementerian Keuangan RI',    'logo' => 'kemenkeu.png'],
         ['name' => 'Pemda DIY',                  'logo' => 'diy.svg'],
         ['name' => 'Universitas Negeri Surabaya', 'logo' => 'unesa.png'],
-        ['name' => 'RS Brawijaya',               'logo' => null],
-        ['name' => 'Invesnow',                   'logo' => null],
+        ['name' => 'RS Brawijaya',               'logo' => 'rsbrawijaya.png'],
+        ['name' => 'Invesnow',                   'logo' => 'invesnow.svg'],
     ],
 
     'partners' => [
         ['name' => 'Technocare', 'logo' => 'technocare.png'],
-        ['name' => 'Wezata',     'logo' => 'wezata.png'],
-        ['name' => 'Jatrav',     'logo' => null],
+        ['name' => 'Liburania',  'logo' => 'liburania.png'],
     ],
 
 ];
