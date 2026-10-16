@@ -349,6 +349,18 @@ return [
         'type' => 'web',
     ],
 
+    'foftravellers-next-nest' => [
+        'title' => 'Freedoms of Travellers',
+        'slug' => 'foftravellers-next-nest',
+        'image' => 'fof1.png',
+        'images' => ['fof1.png', 'fof2.png', 'fof3.png'],
+        'desc' => 'Website operator tur privat berlisensi di Jawa Timur: Bromo sunrise, Kawah Ijen blue fire, Tumpak Sewu, Madakaripura, dan Pantai Papuma, dengan penjemputan dari Surabaya atau Bali. Menampilkan destinasi, daftar harga, panduan wisata, dan pemesanan, dalam beberapa bahasa.',
+        'desc_en' => 'A website for a licensed private tour operator in East Java: Mount Bromo sunrise, Ijen blue fire, Tumpak Sewu, Madakaripura and Papuma Beach, with pickup from Surabaya or Bali. It features destinations, a price list, travel guides and booking, in several languages.',
+        'tech' => 'Next.js + NestJS',
+        'url' => 'https://foftravellers.com',
+        'type' => 'web',
+    ],
+
     // ===== Aplikasi mobile (Play Store / App Store) =====
 
     'e-kemendag-flutter' => [

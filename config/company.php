@@ -46,6 +46,7 @@ return [
         ['name' => 'Technocare', 'logo' => 'technocare.png'],
         ['name' => 'Konvertin',  'logo' => 'konvertin.png'],
         ['name' => 'Liburania',  'logo' => 'liburania.png'],
+        ['name' => 'Freedoms of Travellers', 'logo' => 'foftravellers.png'],
     ],
 
 ];
