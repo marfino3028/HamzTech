@@ -91,7 +91,7 @@
     </main>
 
     <!-- Floating WhatsApp CTA -->
-    <a href="https://lynk.id/marfino3028" target="_blank"
+    <a href="https://affiliate.hamztech.my.id" target="_blank"
         class="no-print fixed bottom-5 right-5 btn btn-gold shadow-lg z-50 text-sm">
         {{ __('site.promo_button') }}
     </a>
@@ -108,7 +108,7 @@
             <div class="icon-chip gold mx-auto mb-4"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l2.4 7.4H22l-6 4.4 2.3 7.2L12 16.6 5.7 21l2.3-7.2-6-4.4h7.6z"/></svg></div>
             <h2 class="text-xl font-bold mb-2 text-navy-900">{{ __('site.promo_popup_heading') }}</h2>
             <p class="mb-5 text-slate-500 text-sm">{{ __('site.promo_popup_body') }}</p>
-            <a href="https://lynk.id/marfino3028" target="_blank" class="btn btn-gold w-full">{{ __('site.promo_popup_cta') }}</a>
+            <a href="https://affiliate.hamztech.my.id" target="_blank" class="btn btn-gold w-full">{{ __('site.promo_popup_cta') }}</a>
             <button @click="close()" class="block mt-3 text-sm text-slate-400 hover:underline mx-auto">{{ __('site.promo_popup_close') }}</button>
         </div>
     </div>
