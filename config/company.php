@@ -29,14 +29,22 @@ return [
     'clients' => [
         ['name' => 'Kementerian Perdagangan RI', 'logo' => 'kemendag.svg'],
         ['name' => 'Kementerian Keuangan RI',    'logo' => 'kemenkeu.png'],
+        ['name' => 'Kementerian Dalam Negeri RI', 'logo' => 'kemendagri.svg'],
+        ['name' => 'Kementerian Kesehatan RI',   'logo' => 'kemenkes.svg'],
         ['name' => 'Pemda DIY',                  'logo' => 'diy.svg'],
         ['name' => 'Universitas Negeri Surabaya', 'logo' => 'unesa.png'],
         ['name' => 'RS Brawijaya',               'logo' => 'rsbrawijaya.png'],
         ['name' => 'Invesnow',                   'logo' => 'invesnow.svg'],
+        ['name' => 'Pratama Tech',               'logo' => 'pratamatech.png'],
+        ['name' => 'Sirait & Co',                'logo' => 'sirait.png'],
+        ['name' => 'Fudao Scrunchie',            'logo' => 'fudao.png'],
+        ['name' => 'Pos Buku',                   'logo' => 'posbuku.png'],
+        ['name' => 'Zhafirah',                   'logo' => 'zhafirah.png'],
     ],
 
     'partners' => [
         ['name' => 'Technocare', 'logo' => 'technocare.png'],
+        ['name' => 'Konvertin',  'logo' => 'konvertin.png'],
         ['name' => 'Liburania',  'logo' => 'liburania.png'],
     ],
 

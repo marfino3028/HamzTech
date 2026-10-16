@@ -78,6 +78,24 @@
     @foreach (['clients' => __('site.home_clients_label'), 'partners' => __('site.home_partners_label')] as $group => $label)
     <div class="reveal {{ $loop->first ? '' : 'mt-10' }}">
         <p class="text-center text-xs font-bold uppercase tracking-[.2em] text-slate-400 mb-5">{{ $label }}</p>
+        @if ($group === 'clients')
+        {{-- Klien bergeser otomatis: daftar digandakan agar putaran mulus, salinan kedua disembunyikan dari pembaca layar --}}
+        <div class="logo-marquee">
+            <div class="logo-marquee__track">
+                @foreach ([false, true] as $copy)
+                @foreach (config('company.' . $group) as $c)
+                <div class="logo-tile" title="{{ $c['name'] }}" @if ($copy) aria-hidden="true" @endif>
+                    @if ($c['logo'])
+                        <img src="{{ asset('images/clients/' . $c['logo']) }}" alt="{{ $copy ? '' : $c['name'] }}">
+                    @else
+                        <span>{{ $c['name'] }}</span>
+                    @endif
+                </div>
+                @endforeach
+                @endforeach
+            </div>
+        </div>
+        @else
         <div class="flex flex-wrap justify-center gap-4">
             @foreach (config('company.' . $group) as $c)
             <div class="logo-tile" title="{{ $c['name'] }}">
@@ -89,6 +107,7 @@
             </div>
             @endforeach
         </div>
+        @endif
     </div>
     @endforeach
 </section>
