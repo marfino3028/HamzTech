@@ -277,6 +277,78 @@ return [
         'type' => 'web',
     ],
 
+    'rakcloud-nuxt-nest' => [
+        'title' => 'RakCloud',
+        'slug' => 'rakcloud-nuxt-nest',
+        'image' => 'rakcloud1.png',
+        'images' => ['rakcloud1.png', 'rakcloud2.png', 'rakcloud3.png'],
+        'desc' => 'Layanan server container yang terasa seperti VPS sendiri: akses root, port 443 dan nginx sendiri, Docker, paket bulanan maupun pay-as-you-go, serta pembayaran QRIS. Dilengkapi panel klien, panel admin, dan RakCloud AI, gateway API model AI dengan tagihan dalam Rupiah.',
+        'desc_en' => 'A container server service that feels like your own VPS: root access, your own port 443 and nginx, Docker, monthly or pay-as-you-go plans, and QRIS payments. It comes with a client panel, an admin panel, and RakCloud AI, an AI model API gateway billed in Rupiah.',
+        'tech' => 'Nuxt.js + NestJS',
+        'url' => 'https://rakcloud.hamztech.my.id',
+        'type' => 'web',
+    ],
+
+    'streamvideo-next-nest' => [
+        'title' => 'StreamVideo',
+        'slug' => 'streamvideo-next-nest',
+        'image' => 'streamvideo1.png',
+        'images' => ['streamvideo1.png'],
+        'desc' => 'Backend dan CMS untuk aplikasi drama pendek: kelola serial dan episode, unggah banyak episode sekaligus dengan kompresi FFmpeg ke HLS, streaming bertoken, buka episode lewat iklan atau langganan, serta pembayaran DOKU.',
+        'desc_en' => 'The backend and CMS for a short drama app: manage series and episodes, bulk upload episodes with FFmpeg compression to HLS, token-protected streaming, unlock episodes through ads or a subscription, and DOKU payments.',
+        'tech' => 'Next.js + NestJS',
+        'url' => null,
+        'type' => 'web',
+    ],
+
+    'rizqibarokah-nuxt-nest' => [
+        'title' => 'Grosir Rizqi Barokah',
+        'slug' => 'rizqibarokah-nuxt-nest',
+        'image' => 'rizqibarokah1.png',
+        'images' => ['rizqibarokah1.png', 'rizqibarokah2.png', 'rizqibarokah3.png'],
+        'desc' => 'Website katalog dan penjualan busana wanita dan busana adat dari Klaten, dengan harga grosir dan checkout lewat WhatsApp. Dilengkapi CMS untuk mengelola kategori, warna, ukuran, dan stok sendiri.',
+        'desc_en' => 'A catalogue and sales website for women\'s and traditional clothing from Klaten, with wholesale pricing and checkout via WhatsApp. It includes a CMS to manage categories, colours, sizes, and stock.',
+        'tech' => 'Nuxt.js + NestJS',
+        'url' => 'https://rizqibarokah.my.id',
+        'type' => 'web',
+    ],
+
+    'lif-reksadana-nuxt-laravel' => [
+        'title' => 'LiF Reksa Dana Online',
+        'slug' => 'lif-reksadana-nuxt-laravel',
+        'image' => 'lif1.png',
+        'images' => ['lif1.png', 'lif2.png', 'lif3.png'],
+        'desc' => 'Platform reksa dana online untuk PT LiF Manajemen Investasi: buka rekening dari ponsel dengan eKYC (e-KTP dan swafoto) berbasis AI, beli dan jual reksa dana, bandingkan produk, simulasi investasi, serta CMS untuk tim operasional dan keuangan.',
+        'desc_en' => 'An online mutual fund platform for PT LiF Manajemen Investasi: open an account from a phone with AI-based eKYC (e-KTP and selfie), buy and sell mutual funds, compare products, run investment simulations, plus a CMS for the operations and finance teams.',
+        'tech' => 'Nuxt.js + Laravel + Python AI',
+        'url' => 'https://demo.hamztech.my.id',
+        'type' => 'web',
+    ],
+
+    'danapathi-reksadana-nuxt-laravel' => [
+        'title' => 'Danapathi Reksa Dana Online',
+        'slug' => 'danapathi-reksadana-nuxt-laravel',
+        'image' => 'danapathi1.png',
+        'images' => ['danapathi1.png', 'danapathi2.png', 'danapathi3.png'],
+        'desc' => 'Platform reksa dana online untuk Danapathi Asset Management: buka rekening 100% online dengan verifikasi e-KTP, swafoto, dan tanda tangan digital, grafik NAV tiap produk, perbandingan reksa dana dan manajer investasi, serta CMS untuk transaksi dan KYC.',
+        'desc_en' => 'An online mutual fund platform for Danapathi Asset Management: open an account fully online with e-KTP, selfie, and digital signature verification, NAV charts for every product, mutual fund and investment manager comparison, plus a CMS for transactions and KYC.',
+        'tech' => 'Nuxt.js + Laravel + Python AI',
+        'url' => 'https://danapathidemo.hamztech.my.id',
+        'type' => 'web',
+    ],
+
+    'scalping-mantap-bot-python' => [
+        'title' => 'Scalping Mantap Bot',
+        'slug' => 'scalping-mantap-bot-python',
+        'image' => 'scalpingbot1.png',
+        'images' => ['scalpingbot1.png'],
+        'desc' => 'Bot Telegram sinyal trading kripto. Bot memindai Binance USDⓈ-M Futures dengan strategi EMA, Stochastic RSI, Supertrend, VWAP, dan ATR, lalu mengirim sinyal BUY/SELL lengkap dengan entry, stop loss, dan take profit. Pengguna berlangganan lewat QRIS.',
+        'desc_en' => 'A Telegram bot for crypto trading signals. It scans Binance USDⓈ-M Futures with an EMA, Stochastic RSI, Supertrend, VWAP, and ATR strategy, then sends BUY/SELL signals with entry, stop loss, and take profit. Users subscribe via QRIS.',
+        'tech' => 'Python + Telegram Bot',
+        'url' => 'https://t.me/scalping_mantap_bot',
+        'type' => 'web',
+    ],
+
     // ===== Aplikasi mobile (Play Store / App Store) =====
 
     'e-kemendag-flutter' => [
