@@ -55,6 +55,7 @@
                 <a href="/portofolio" class="navlink">{{ __('site.nav_portfolio') }}</a>
                 <a href="/about" class="navlink">{{ __('site.nav_about') }}</a>
                 <a href="/contact" class="navlink">{{ __('site.nav_contact') }}</a>
+                <a href="https://affiliate.hamztech.my.id" class="navlink font-semibold hidden lg:inline whitespace-nowrap" style="color:#FF6A00">{{ __('site.nav_affiliate') }}</a>
 
                 <div class="flex items-center gap-2 text-sm">
                     <a href="{{ '/lang/id' }}" class="{{ app()->getLocale() === 'id' ? 'text-flame-400 font-bold' : 'text-slate-400 hover:text-white' }} transition">ID</a>
@@ -77,6 +78,7 @@
             <a href="/portofolio" class="block py-2 navlink">{{ __('site.nav_portfolio') }}</a>
             <a href="/about" class="block py-2 navlink">{{ __('site.nav_about') }}</a>
             <a href="/contact" class="block py-2 navlink">{{ __('site.nav_contact') }}</a>
+            <a href="https://affiliate.hamztech.my.id" class="block py-2 navlink font-semibold" style="color:#FF6A00">{{ __('site.nav_affiliate') }}</a>
             <div class="flex items-center gap-3 pt-2 border-t border-white/10">
                 <a href="{{ '/lang/id' }}" class="{{ app()->getLocale() === 'id' ? 'text-flame-400 font-bold' : 'text-slate-400' }}">ID</a>
                 <span class="text-slate-600">/</span>
@@ -91,7 +93,7 @@
     </main>
 
     <!-- Floating WhatsApp CTA -->
-    <a href="https://affiliate.hamztech.my.id" target="_blank"
+    <a href="https://affiliate.hamztech.my.id"
         class="no-print fixed bottom-5 right-5 btn btn-gold shadow-lg z-50 text-sm">
         {{ __('site.promo_button') }}
     </a>
@@ -108,7 +110,7 @@
             <div class="icon-chip gold mx-auto mb-4"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l2.4 7.4H22l-6 4.4 2.3 7.2L12 16.6 5.7 21l2.3-7.2-6-4.4h7.6z"/></svg></div>
             <h2 class="text-xl font-bold mb-2 text-navy-900">{{ __('site.promo_popup_heading') }}</h2>
             <p class="mb-5 text-slate-500 text-sm">{{ __('site.promo_popup_body') }}</p>
-            <a href="https://affiliate.hamztech.my.id" target="_blank" class="btn btn-gold w-full">{{ __('site.promo_popup_cta') }}</a>
+            <a href="https://affiliate.hamztech.my.id" class="btn btn-gold w-full">{{ __('site.promo_popup_cta') }}</a>
             <button @click="close()" class="block mt-3 text-sm text-slate-400 hover:underline mx-auto">{{ __('site.promo_popup_close') }}</button>
         </div>
     </div>

@@ -32,6 +32,9 @@
                     <a href="#portofolio" class="btn btn-outline-light">{{ __('site.home_hero_cta_portfolio', ['count' => count($projects)]) }}</a>
                 </div>
                 <p class="text-xs mt-3" style="color:var(--slate-400)">{{ __('site.home_hero_cta_note') }}</p>
+                <a href="https://affiliate.hamztech.my.id" class="btn mt-5 text-sm py-2 px-4 max-w-full flex-wrap text-center" style="white-space:normal; border:1px solid rgba(255,106,0,.65); color:#FF8A3D; background:rgba(255,106,0,.08)">
+                    {{ __('site.nav_affiliate') }} <span class="font-normal" style="color:var(--slate-300)">· {{ __('site.home_hero_affiliate_note') }}</span>
+                </a>
             </div>
 
             <div class="lg:col-span-5 reveal reveal-d2">

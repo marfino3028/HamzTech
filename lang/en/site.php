@@ -15,6 +15,8 @@ return [
 
     // ===== Layout: title, promo button, popup, WA helper, footer =====
     'default_title' => 'HamzTech Portfolio',
+    'nav_affiliate' => 'Promo & Affiliate',
+    'home_hero_affiliate_note' => 'Selected digital products at promo prices',
     'promo_button' => '🎁 Promo & Affiliate',
     'promo_popup_heading' => '🎉 Special Promo & Affiliate!',
     'promo_popup_body' => 'Check out my best products and services that can help you upgrade your business!',
@@ -151,7 +153,7 @@ return [
     // ===== Affiliate page =====
     'affiliate_heading' => 'Affiliate & Product Recommendations',
     'affiliate_intro' => 'I have curated a range of the best products around technology, laptops, and digital gear. You can see them all at:',
-    'affiliate_cta' => 'Visit My Lynk.id',
+    'affiliate_cta' => 'Browse the Affiliate Store',
 
     // ===== Portfolio index / show / detail =====
     'portfolio_heading' => 'Portfolio',

@@ -15,6 +15,8 @@ return [
 
     // ===== Layout: title, promo button, popup, WA helper, footer =====
     'default_title' => 'Portofolio HamzTech',
+    'nav_affiliate' => 'Promo & Afiliasi',
+    'home_hero_affiliate_note' => 'Produk digital pilihan dengan harga promo',
     'promo_button' => '🎁 Promo & Afiliasi',
     'promo_popup_heading' => '🎉 Promo & Afiliasi Spesial!',
     'promo_popup_body' => 'Lihat produk dan jasa terbaik dari saya, bisa bantu kamu upgrade bisnis!',
@@ -151,7 +153,7 @@ return [
     // ===== Affiliate page =====
     'affiliate_heading' => 'Afiliasi dan Rekomendasi Produk',
     'affiliate_intro' => 'Saya telah mengkurasi berbagai produk terbaik seputar teknologi, laptop, dan perlengkapan digital. Kamu bisa lihat semuanya di:',
-    'affiliate_cta' => 'Kunjungi Lynk.id Saya',
+    'affiliate_cta' => 'Lihat Etalase Afiliasi',
 
     // ===== Portfolio index / show / detail =====
     'portfolio_heading' => 'Portofolio',
