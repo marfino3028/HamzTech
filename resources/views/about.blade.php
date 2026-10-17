@@ -23,7 +23,7 @@
             </div>
         </div>
         <div class="card p-7 lg:col-span-4 reveal reveal-d1 flex flex-col items-center text-center">
-            <img src="{{ asset('images/founder.jpg') }}" alt="Marfino Hamzah" class="w-24 h-24 rounded-3xl object-cover" style="object-position:center 15%">
+            <img src="{{ asset('images/founder.jpg') }}?v={{ filemtime(public_path('images/founder.jpg')) }}" alt="Marfino Hamzah" class="w-24 h-24 rounded-3xl object-cover" style="object-position:center 15%">
             <div class="font-bold text-lg text-navy-900 mt-4">Marfino Hamzah</div>
             <div class="text-sm text-slate-500">Founder &amp; Lead Fullstack Engineer</div>
             <div class="flex flex-wrap justify-center gap-1.5 mt-4">

@@ -46,7 +46,7 @@
             <div class="lg:col-span-5 reveal reveal-d2">
                 <div class="glass-dark rounded-[26px] p-7">
                     <div class="flex items-center gap-4">
-                        <img src="{{ asset('images/founder.jpg') }}" alt="Marfino Hamzah" class="w-16 h-16 rounded-2xl object-cover" style="object-position:center 15%">
+                        <img src="{{ asset('images/founder.jpg') }}?v={{ filemtime(public_path('images/founder.jpg')) }}" alt="Marfino Hamzah" class="w-16 h-16 rounded-2xl object-cover" style="object-position:center 15%">
                         <div>
                             <div class="text-white font-bold text-lg leading-tight">Marfino Hamzah</div>
                             <div class="text-slate-300 text-sm">{{ __('site.home_founder_role') }}</div>
@@ -241,7 +241,7 @@
 <section id="founder" class="max-w-6xl mx-auto px-6 pt-20">
     <div class="card p-6 sm:p-10 grid md:grid-cols-12 gap-8 items-center reveal">
         <div class="md:col-span-4">
-            <img src="{{ asset('images/founder.jpg') }}" alt="Marfino Hamzah" class="w-full max-w-xs mx-auto aspect-[4/5] object-cover rounded-3xl" style="object-position:center 15%">
+            <img src="{{ asset('images/founder.jpg') }}?v={{ filemtime(public_path('images/founder.jpg')) }}" alt="Marfino Hamzah" class="w-full max-w-xs mx-auto aspect-[4/5] object-cover rounded-3xl" style="object-position:center 15%">
         </div>
         <div class="md:col-span-8">
             <span class="eyebrow mb-3">{{ __('site.home_about_eyebrow') }}</span>
