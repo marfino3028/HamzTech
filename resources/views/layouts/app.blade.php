@@ -162,6 +162,8 @@
                 <div class="flex items-center gap-5">
                     <a href="https://github.com/marfino3028" target="_blank" class="hover:text-white transition">GitHub</a>
                     <a href="https://gitlab.com/marfinohamzah455" target="_blank" class="hover:text-white transition">GitLab</a>
+                    <a href="{{ config('profile.linkedin') }}" target="_blank" rel="noopener" class="hover:text-white transition">LinkedIn</a>
+                    <a href="{{ config('profile.upwork') }}" target="_blank" rel="noopener" class="hover:text-white transition">Upwork</a>
                     <a href="https://wa.me/6289626312680" target="_blank" class="hover:text-white transition">WhatsApp</a>
                 </div>
             </div>

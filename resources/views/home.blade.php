@@ -39,6 +39,7 @@
                     <a href="{{ config('profile.github') }}" target="_blank" rel="noopener">GitHub</a>
                     <a href="{{ config('profile.gitlab') }}" target="_blank" rel="noopener">GitLab</a>
                     @if (config('profile.linkedin'))<a href="{{ config('profile.linkedin') }}" target="_blank" rel="noopener">LinkedIn</a>@endif
+                    @if (config('profile.upwork'))<a href="{{ config('profile.upwork') }}" target="_blank" rel="noopener">Upwork</a>@endif
                     @if (config('profile.cv'))<a href="{{ str_starts_with(config('profile.cv'), 'http') ? config('profile.cv') : asset(config('profile.cv')) }}" download>{{ __('site.home_hero_cv') }} ↓</a>@endif
                 </div>
             </div>
@@ -254,6 +255,7 @@
                 <a href="mailto:{{ config('profile.email') }}" class="btn btn-gold text-sm">{{ config('profile.email') }}</a>
                 <a href="{{ config('profile.github') }}" target="_blank" rel="noopener" class="btn btn-ghost text-sm">GitHub</a>
                 @if (config('profile.linkedin'))<a href="{{ config('profile.linkedin') }}" target="_blank" rel="noopener" class="btn btn-ghost text-sm">LinkedIn</a>@endif
+                @if (config('profile.upwork'))<a href="{{ config('profile.upwork') }}" target="_blank" rel="noopener" class="btn btn-ghost text-sm">Upwork</a>@endif
                 @if (config('profile.cv'))<a href="{{ str_starts_with(config('profile.cv'), 'http') ? config('profile.cv') : asset(config('profile.cv')) }}" download class="btn btn-ghost text-sm">{{ __('site.home_hero_cv') }} ↓</a>@endif
             </div>
         </div>

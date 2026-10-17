@@ -9,8 +9,9 @@ return [
     'email'    => 'marfinohamzah455@gmail.com',
     'github'   => 'https://github.com/marfino3028',
     'gitlab'   => 'https://gitlab.com/marfinohamzah455',
-    'linkedin' => null,
-    'cv'       => null,
+    'linkedin' => 'https://www.linkedin.com/in/marfino-hamzah/',
+    'upwork'   => 'https://www.upwork.com/freelancers/~013e793885f413bb1b',
+    'cv'       => 'files/CV-Marfino-Hamzah.pdf',
 
     // Studi kasus unggulan: slug dari config/portfolios.php + ringkasan masalah, peran, hasil.
     'featured' => [
