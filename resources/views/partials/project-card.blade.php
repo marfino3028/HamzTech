@@ -9,7 +9,7 @@
             <h3 class="font-bold text-lg text-navy-900">{{ $project['title'] }}</h3>
             <span class="badge badge-blue shrink-0">{{ ucfirst($project['type'] ?? 'web') }}</span>
         </div>
-        <p class="text-sm text-slate-500 line-clamp-2 mb-4">{{ app()->getLocale() === 'en' ? ($project['desc_en'] ?? $project['desc']) : $project['desc'] }}</p>
+        <p class="text-sm text-slate-500 line-clamp-2 mb-4">{{ app()->getLocale() === 'id' ? $project['desc'] : ($project['desc_en'] ?? $project['desc']) }}</p>
         @if(!empty($project['tech']))
         <div class="flex flex-wrap gap-1.5">
             @foreach(explode('+', $project['tech']) as $t)

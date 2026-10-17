@@ -56,10 +56,17 @@
                 <a href="/about" class="navlink">{{ __('site.nav_about') }}</a>
                 <a href="/contact" class="navlink">{{ __('site.nav_contact') }}</a>
 
-                <div class="flex items-center gap-2 text-sm">
-                    <a href="{{ '/lang/id' }}" class="{{ app()->getLocale() === 'id' ? 'text-flame-400 font-bold' : 'text-slate-400 hover:text-white' }} transition">ID</a>
-                    <span class="text-slate-600">/</span>
-                    <a href="{{ '/lang/en' }}" class="{{ app()->getLocale() === 'en' ? 'text-flame-400 font-bold' : 'text-slate-400 hover:text-white' }} transition">EN</a>
+                <div class="relative" x-data="{ l:false }" @click.outside="l=false">
+                    <button @click="l=!l" class="lang-btn" aria-haspopup="true" :aria-expanded="l">
+                        <svg viewBox="0 0 24 24" class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 010 18M12 3a14 14 0 000 18"/></svg>
+                        {{ strtoupper(app()->getLocale()) }}
+                        <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 20 20"><path d="M5.5 7l4.5 4 4.5-4z"/></svg>
+                    </button>
+                    <div x-show="l" x-transition class="nav-dropdown absolute right-0 mt-3 w-44 z-50" style="display:none">
+                        @foreach (config('site_locales') as $code => $label)
+                        <a href="/lang/{{ $code }}" class="nav-dropdown__item {{ app()->getLocale() === $code ? 'is-active' : '' }}">{{ $label }}</a>
+                        @endforeach
+                    </div>
                 </div>
                 <a href="https://wa.me/6289626312680" target="_blank" class="btn btn-gold py-2 px-4 text-sm">{{ __('site.nav_contact') }}</a>
             </div>
@@ -77,10 +84,10 @@
             <a href="/portofolio" class="block py-2 navlink">{{ __('site.nav_portfolio') }}</a>
             <a href="/about" class="block py-2 navlink">{{ __('site.nav_about') }}</a>
             <a href="/contact" class="block py-2 navlink">{{ __('site.nav_contact') }}</a>
-            <div class="flex items-center gap-3 pt-2 border-t border-white/10">
-                <a href="{{ '/lang/id' }}" class="{{ app()->getLocale() === 'id' ? 'text-flame-400 font-bold' : 'text-slate-400' }}">ID</a>
-                <span class="text-slate-600">/</span>
-                <a href="{{ '/lang/en' }}" class="{{ app()->getLocale() === 'en' ? 'text-flame-400 font-bold' : 'text-slate-400' }}">EN</a>
+            <div class="flex flex-wrap items-center gap-2 pt-3 border-t border-white/10">
+                @foreach (config('site_locales') as $code => $label)
+                <a href="/lang/{{ $code }}" class="lang-pill {{ app()->getLocale() === $code ? 'is-active' : '' }}">{{ $label }}</a>
+                @endforeach
             </div>
         </div>
     </nav>

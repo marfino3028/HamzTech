@@ -14,5 +14,6 @@
             <a href="mailto:marfinohamzah455@gmail.com" class="btn btn-outline-light">marfinohamzah455@gmail.com</a>
         </div>
         <p class="text-xs mt-4" style="color:var(--slate-400)">{{ __('site.home_hero_cta_note') }}</p>
+        <p class="text-sm mt-5 font-semibold" style="color:#86EFAC">● {{ __('site.cta_availability') }}</p>
     </div>
 </section>

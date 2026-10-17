@@ -12,8 +12,10 @@
         <div class="grid lg:grid-cols-12 gap-12 items-center">
             <div class="lg:col-span-7 reveal">
                 <span class="badge-hero mb-6"><span class="badge-hero__dot" aria-hidden="true"></span>{{ __('site.home_hero_hook') }}</span>
+                <p class="eyebrow on-dark mb-4">{{ __('site.home_hero_eyebrow') }}</p>
                 <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-white leading-[1.05]">
-                    {{ __('site.home_hero_title_pre') }} <span class="text-gradient-gold">{{ __('site.home_hero_title_hl') }}</span> {{ __('site.home_hero_title_post') }}
+                    @php $sp = in_array(app()->getLocale(), ['ja', 'zh'], true) ? '' : ' '; @endphp
+                    {{ __('site.home_hero_title_pre') }}{{ $sp }}<span class="text-gradient-gold">{{ __('site.home_hero_title_hl') }}</span>{{ $sp }}{{ __('site.home_hero_title_post') }}
                 </h1>
                 <p class="lede mt-6 max-w-xl" style="color:var(--slate-300)">
                     {{ __('site.home_hero_lede') }}
@@ -32,21 +34,28 @@
                     <a href="#portofolio" class="btn btn-outline-light">{{ __('site.home_hero_cta_portfolio', ['count' => count($projects)]) }}</a>
                 </div>
                 <p class="text-xs mt-3" style="color:var(--slate-400)">{{ __('site.home_hero_cta_note') }}</p>
+                <div class="hero-links mt-6">
+                    <a href="/contact">{{ __('site.home_hero_contact') }}</a>
+                    <a href="{{ config('profile.github') }}" target="_blank" rel="noopener">GitHub</a>
+                    <a href="{{ config('profile.gitlab') }}" target="_blank" rel="noopener">GitLab</a>
+                    @if (config('profile.linkedin'))<a href="{{ config('profile.linkedin') }}" target="_blank" rel="noopener">LinkedIn</a>@endif
+                    @if (config('profile.cv'))<a href="{{ str_starts_with(config('profile.cv'), 'http') ? config('profile.cv') : asset(config('profile.cv')) }}" download>{{ __('site.home_hero_cv') }} ↓</a>@endif
+                </div>
             </div>
 
             <div class="lg:col-span-5 reveal reveal-d2">
                 <div class="glass-dark rounded-[26px] p-7">
                     <div class="flex items-center gap-4">
-                        <img src="{{ asset('images/founder.jpg') }}" alt="Marfino Hamzah" class="w-16 h-16 rounded-2xl object-cover" style="object-position:center top">
+                        <img src="{{ asset('images/founder.jpg') }}" alt="Marfino Hamzah" class="w-16 h-16 rounded-2xl object-cover" style="object-position:center 15%">
                         <div>
                             <div class="text-white font-bold text-lg leading-tight">Marfino Hamzah</div>
-                            <div class="text-slate-300 text-sm">Founder &amp; Lead Fullstack Engineer</div>
+                            <div class="text-slate-300 text-sm">{{ __('site.home_founder_role') }}</div>
                         </div>
                     </div>
                     <div class="my-6 h-px" style="background:linear-gradient(90deg,transparent,rgba(255,255,255,.2),transparent)"></div>
                     <div class="grid grid-cols-3 gap-4 text-center">
                         <div><div class="text-2xl font-extrabold text-white">7<span class="text-flame-400">+</span></div><div class="text-[11px] uppercase tracking-wider text-slate-400 mt-1">Tahun</div></div>
-                        <div><div class="text-2xl font-extrabold text-white">24<span class="text-flame-400">+</span></div><div class="text-[11px] uppercase tracking-wider text-slate-400 mt-1">Proyek</div></div>
+                        <div><div class="text-2xl font-extrabold text-white">{{ count($projects) }}<span class="text-flame-400">+</span></div><div class="text-[11px] uppercase tracking-wider text-slate-400 mt-1">Proyek</div></div>
                         <div><div class="text-2xl font-extrabold text-white">10<span class="text-flame-400">+</span></div><div class="text-[11px] uppercase tracking-wider text-slate-400 mt-1">Gov App</div></div>
                     </div>
                     <div class="mt-6 flex flex-wrap gap-2">
@@ -65,97 +74,7 @@
         <div class="card p-6 text-center reveal"><div class="stat-num"><span data-count="7" data-suffix="+">7+</span></div><div class="text-sm font-semibold text-navy-800 mt-2">Tahun Pengalaman</div></div>
         <div class="card p-6 text-center reveal reveal-d1"><div class="stat-num"><span data-count="{{ count($projects) }}" data-suffix="+">{{ count($projects) }}+</span></div><div class="text-sm font-semibold text-navy-800 mt-2">Proyek Selesai</div></div>
         <div class="card p-6 text-center reveal reveal-d2"><div class="stat-num gold"><span data-count="10" data-suffix="+">10+</span></div><div class="text-sm font-semibold text-navy-800 mt-2">Proyek Pemerintah</div></div>
-        <div class="card p-6 text-center reveal reveal-d3"><div class="stat-num gold"><span data-count="100" data-suffix="%">100%</span></div><div class="text-sm font-semibold text-navy-800 mt-2">Custom Development</div></div>
-    </div>
-</section>
-
-{{-- ======================= TRUSTED BY & PARTNERS ======================= --}}
-<section class="max-w-6xl mx-auto px-6 pt-20">
-    <div class="text-center max-w-2xl mx-auto mb-10 reveal">
-        <span class="eyebrow mb-4" style="display:inline-flex">{{ __('site.home_trusted_eyebrow') }}</span>
-        <h2 class="section-title">{{ __('site.home_trusted_heading') }}</h2>
-    </div>
-    @foreach (['clients' => __('site.home_clients_label'), 'partners' => __('site.home_partners_label')] as $group => $label)
-    <div class="reveal {{ $loop->first ? '' : 'mt-10' }}">
-        <p class="text-center text-xs font-bold uppercase tracking-[.2em] text-slate-400 mb-5">{{ $label }}</p>
-        @if ($group === 'clients')
-        {{-- Klien bergeser otomatis: daftar digandakan agar putaran mulus, salinan kedua disembunyikan dari pembaca layar --}}
-        <div class="logo-marquee">
-            <div class="logo-marquee__track">
-                @foreach ([false, true] as $copy)
-                @foreach (config('company.' . $group) as $c)
-                <div class="logo-tile" title="{{ $c['name'] }}" @if ($copy) aria-hidden="true" @endif>
-                    @if ($c['logo'])
-                        <img src="{{ asset('images/clients/' . $c['logo']) }}" alt="{{ $copy ? '' : $c['name'] }}">
-                    @else
-                        <span>{{ $c['name'] }}</span>
-                    @endif
-                </div>
-                @endforeach
-                @endforeach
-            </div>
-        </div>
-        @else
-        <div class="flex flex-wrap justify-center gap-4">
-            @foreach (config('company.' . $group) as $c)
-            <div class="logo-tile" title="{{ $c['name'] }}">
-                @if ($c['logo'])
-                    <img src="{{ asset('images/clients/' . $c['logo']) }}" alt="{{ $c['name'] }}" loading="lazy">
-                @else
-                    <span>{{ $c['name'] }}</span>
-                @endif
-            </div>
-            @endforeach
-        </div>
-        @endif
-    </div>
-    @endforeach
-</section>
-
-{{-- ======================= SERVICES ======================= --}}
-<section class="max-w-6xl mx-auto px-6 py-16">
-    <div class="max-w-2xl mb-12 reveal">
-        <span class="eyebrow mb-4">Layanan</span>
-        <h2 class="section-title mb-4">{{ __('site.home_services_heading') }}</h2>
-        <p class="lede">{{ __('site.home_services_intro') }}</p>
-    </div>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
-        {{-- Card 1 --}}
-        <div class="card card-hover p-7 reveal">
-            <span class="icon-chip mb-5"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="15" rx="2"/><path d="M2 9h20"/></svg></span>
-            <h3 class="font-bold text-lg mb-3 text-navy-900">{{ __('site.home_card_profile_title') }}</h3>
-            <ul class="text-sm text-slate-500 space-y-2 mb-5">
-                <li class="flex gap-2"><span class="text-flame-500">➝</span>{{ __('site.home_card_profile_item1') }}</li>
-                <li class="flex gap-2"><span class="text-flame-500">➝</span>{{ __('site.home_card_profile_item2') }}</li>
-                <li class="flex gap-2"><span class="text-flame-500">➝</span>{{ __('site.home_card_profile_item3') }}</li>
-                <li class="flex gap-2"><span class="text-flame-500">➝</span>{{ __('site.home_card_profile_item4') }}</li>
-            </ul>
-            <a href="https://wa.me/6289626312680" target="_blank" class="btn btn-wa w-full text-sm">{{ __('site.home_contact_wa') }}</a>
-        </div>
-        {{-- Card 2 --}}
-        <div class="card card-hover p-7 reveal reveal-d1">
-            <span class="icon-chip gold mb-5"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7h18M3 12h18M3 17h18"/><rect x="3" y="3" width="18" height="18" rx="2"/></svg></span>
-            <h3 class="font-bold text-lg mb-3 text-navy-900">{{ __('site.home_card_booking_title') }}</h3>
-            <ul class="text-sm text-slate-500 space-y-2 mb-5">
-                <li class="flex gap-2"><span class="text-flame-500">➝</span>{{ __('site.home_card_booking_item1') }}</li>
-                <li class="flex gap-2"><span class="text-flame-500">➝</span>{{ __('site.home_card_booking_item2') }}</li>
-                <li class="flex gap-2"><span class="text-flame-500">➝</span>{{ __('site.home_card_booking_item3') }}</li>
-                <li class="flex gap-2"><span class="text-flame-500">➝</span>{{ __('site.home_card_booking_item4') }}</li>
-            </ul>
-            <a href="https://wa.me/6289626312680" target="_blank" class="btn btn-wa w-full text-sm">{{ __('site.home_contact_wa') }}</a>
-        </div>
-        {{-- Card 3 --}}
-        <div class="card card-hover p-7 reveal reveal-d2">
-            <span class="icon-chip mb-5"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><rect x="7" y="12" width="3" height="6"/><rect x="12" y="8" width="3" height="10"/><rect x="17" y="4" width="3" height="14"/></svg></span>
-            <h3 class="font-bold text-lg mb-3 text-navy-900">{{ __('site.home_card_store_title') }}</h3>
-            <ul class="text-sm text-slate-500 space-y-2 mb-5">
-                <li class="flex gap-2"><span class="text-flame-500">➝</span>{{ __('site.home_card_store_item1') }}</li>
-                <li class="flex gap-2"><span class="text-flame-500">➝</span>{{ __('site.home_card_store_item2') }}</li>
-                <li class="flex gap-2"><span class="text-flame-500">➝</span>{{ __('site.home_card_store_item3') }}</li>
-                <li class="flex gap-2"><span class="text-flame-500">➝</span>{{ __('site.home_card_store_item4') }}</li>
-            </ul>
-            <a href="https://wa.me/6289626312680" target="_blank" class="btn btn-wa w-full text-sm">{{ __('site.home_contact_wa') }}</a>
-        </div>
+        <div class="card p-6 text-center reveal reveal-d3"><div class="stat-num gold"><span data-count="{{ count(config('profile.expertise')) }}" data-suffix="">{{ count(config('profile.expertise')) }}</span></div><div class="text-sm font-semibold text-navy-800 mt-2">{{ __('site.home_stat_areas') }}</div></div>
     </div>
 </section>
 
@@ -218,6 +137,170 @@
         <p class="text-slate-500 mb-4">{{ __('site.home_price_footer') }}</p>
         <a href="https://wa.me/6289626312680" target="_blank" class="btn btn-wa">{{ __('site.home_price_agent') }}</a>
     </div>
+</section>
+
+{{-- ======================= SERVICES ======================= --}}
+<section class="max-w-6xl mx-auto px-6 py-16">
+    <div class="max-w-2xl mb-12 reveal">
+        <span class="eyebrow mb-4">Layanan</span>
+        <h2 class="section-title mb-4">{{ __('site.home_services_heading') }}</h2>
+        <p class="lede">{{ __('site.home_services_intro') }}</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+        {{-- Card 1 --}}
+        <div class="card card-hover p-7 reveal">
+            <span class="icon-chip mb-5"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="15" rx="2"/><path d="M2 9h20"/></svg></span>
+            <h3 class="font-bold text-lg mb-3 text-navy-900">{{ __('site.home_card_profile_title') }}</h3>
+            <ul class="text-sm text-slate-500 space-y-2 mb-5">
+                <li class="flex gap-2"><span class="text-flame-500">➝</span>{{ __('site.home_card_profile_item1') }}</li>
+                <li class="flex gap-2"><span class="text-flame-500">➝</span>{{ __('site.home_card_profile_item2') }}</li>
+                <li class="flex gap-2"><span class="text-flame-500">➝</span>{{ __('site.home_card_profile_item3') }}</li>
+                <li class="flex gap-2"><span class="text-flame-500">➝</span>{{ __('site.home_card_profile_item4') }}</li>
+            </ul>
+            <a href="https://wa.me/6289626312680" target="_blank" class="btn btn-wa w-full text-sm">{{ __('site.home_contact_wa') }}</a>
+        </div>
+        {{-- Card 2 --}}
+        <div class="card card-hover p-7 reveal reveal-d1">
+            <span class="icon-chip gold mb-5"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7h18M3 12h18M3 17h18"/><rect x="3" y="3" width="18" height="18" rx="2"/></svg></span>
+            <h3 class="font-bold text-lg mb-3 text-navy-900">{{ __('site.home_card_booking_title') }}</h3>
+            <ul class="text-sm text-slate-500 space-y-2 mb-5">
+                <li class="flex gap-2"><span class="text-flame-500">➝</span>{{ __('site.home_card_booking_item1') }}</li>
+                <li class="flex gap-2"><span class="text-flame-500">➝</span>{{ __('site.home_card_booking_item2') }}</li>
+                <li class="flex gap-2"><span class="text-flame-500">➝</span>{{ __('site.home_card_booking_item3') }}</li>
+                <li class="flex gap-2"><span class="text-flame-500">➝</span>{{ __('site.home_card_booking_item4') }}</li>
+            </ul>
+            <a href="https://wa.me/6289626312680" target="_blank" class="btn btn-wa w-full text-sm">{{ __('site.home_contact_wa') }}</a>
+        </div>
+        {{-- Card 3 --}}
+        <div class="card card-hover p-7 reveal reveal-d2">
+            <span class="icon-chip mb-5"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><rect x="7" y="12" width="3" height="6"/><rect x="12" y="8" width="3" height="10"/><rect x="17" y="4" width="3" height="14"/></svg></span>
+            <h3 class="font-bold text-lg mb-3 text-navy-900">{{ __('site.home_card_store_title') }}</h3>
+            <ul class="text-sm text-slate-500 space-y-2 mb-5">
+                <li class="flex gap-2"><span class="text-flame-500">➝</span>{{ __('site.home_card_store_item1') }}</li>
+                <li class="flex gap-2"><span class="text-flame-500">➝</span>{{ __('site.home_card_store_item2') }}</li>
+                <li class="flex gap-2"><span class="text-flame-500">➝</span>{{ __('site.home_card_store_item3') }}</li>
+                <li class="flex gap-2"><span class="text-flame-500">➝</span>{{ __('site.home_card_store_item4') }}</li>
+            </ul>
+            <a href="https://wa.me/6289626312680" target="_blank" class="btn btn-wa w-full text-sm">{{ __('site.home_contact_wa') }}</a>
+        </div>
+    </div>
+</section>
+
+{{-- ======================= CASE STUDIES ======================= --}}
+@php $allProjects = config('portfolios'); @endphp
+<section id="studi-kasus" class="max-w-6xl mx-auto px-6 pt-20">
+    <div class="max-w-2xl mb-10 reveal">
+        <span class="eyebrow mb-4">{{ __('site.home_cases_eyebrow') }}</span>
+        <h2 class="section-title mb-4">{{ __('site.home_cases_heading') }}</h2>
+        <p class="lede">{{ __('site.home_cases_lede') }}</p>
+    </div>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        @foreach (config('profile.featured') as $slug => $case)
+            @php $p = $allProjects[$slug] ?? null; @endphp
+            @continue(! $p)
+            @php $L = app()->getLocale(); @endphp
+            <article class="case-card reveal">
+                <a href="/portofolio/{{ $p['slug'] }}" class="case-card__img"><img src="{{ asset('images/portfolio/' . $p['image']) }}" alt="{{ $p['title'] }}" loading="lazy"></a>
+                <div class="p-6 flex flex-col flex-1">
+                    <p class="text-[11px] font-bold uppercase tracking-wider text-blue-600 mb-1">{{ $case['area'][$L] ?? $case['area']['en'] }}</p>
+                    <h3 class="text-lg font-extrabold text-navy-900 mb-3">{{ $p['title'] }}</h3>
+                    <dl class="case-card__dl">
+                        <dt>{{ __('site.home_cases_problem') }}</dt><dd>{{ $case['problem'][$L] ?? $case['problem']['en'] }}</dd>
+                        <dt>{{ __('site.home_cases_role') }}</dt><dd>{{ $case['role'][$L] ?? $case['role']['en'] }}</dd>
+                        <dt>{{ __('site.home_cases_result') }}</dt><dd>{{ $case['result'][$L] ?? $case['result']['en'] }}</dd>
+                    </dl>
+                    <div class="flex flex-wrap gap-1.5 mt-4">
+                        @foreach (preg_split('/\s*\+\s*/', $p['tech']) as $t)<span class="badge badge-blue">{{ $t }}</span>@endforeach
+                    </div>
+                    <a href="/portofolio/{{ $p['slug'] }}" class="case-card__link mt-auto pt-5">{{ __('site.home_cases_open') }} →</a>
+                </div>
+            </article>
+        @endforeach
+    </div>
+</section>
+
+{{-- ======================= TECHNICAL EXPERTISE ======================= --}}
+<section id="keahlian" class="max-w-6xl mx-auto px-6 pt-20">
+    <div class="max-w-2xl mb-10 reveal">
+        <span class="eyebrow mb-4">{{ __('site.home_expertise_eyebrow') }}</span>
+        <h2 class="section-title">{{ __('site.home_expertise_heading') }}</h2>
+    </div>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-5 gap-4">
+        @foreach (config('profile.expertise') as $g)
+            <div class="card p-5 reveal">
+                <p class="text-sm font-extrabold text-navy-900 mb-3">{{ __('site.home_expertise_' . $g['key']) }}</p>
+                <ul class="space-y-1.5">
+                    @foreach ($g['items'] as $it)<li class="text-sm text-slate-600 flex gap-2"><span class="text-flame-500">▸</span>{{ $it }}</li>@endforeach
+                </ul>
+            </div>
+        @endforeach
+    </div>
+</section>
+
+{{-- ======================= ABOUT FOUNDER ======================= --}}
+<section id="founder" class="max-w-6xl mx-auto px-6 pt-20">
+    <div class="card p-6 sm:p-10 grid md:grid-cols-12 gap-8 items-center reveal">
+        <div class="md:col-span-4">
+            <img src="{{ asset('images/founder.jpg') }}" alt="Marfino Hamzah" class="w-full max-w-xs mx-auto aspect-[4/5] object-cover rounded-3xl" style="object-position:center 15%">
+        </div>
+        <div class="md:col-span-8">
+            <span class="eyebrow mb-3">{{ __('site.home_about_eyebrow') }}</span>
+            <h2 class="section-title mb-1">{{ __('site.home_about_heading') }}</h2>
+            <p class="text-sm font-semibold text-blue-600 mb-5">{{ __('site.home_founder_role') }}</p>
+            <p class="lede mb-4">{{ __('site.home_about_p1') }}</p>
+            <p class="lede mb-6">{{ __('site.home_about_p2') }}</p>
+            <p class="availability mb-6"><span class="availability__dot"></span>{{ __('site.home_about_availability') }}</p>
+            <div class="flex flex-wrap gap-3">
+                <a href="mailto:{{ config('profile.email') }}" class="btn btn-gold text-sm">{{ config('profile.email') }}</a>
+                <a href="{{ config('profile.github') }}" target="_blank" rel="noopener" class="btn btn-ghost text-sm">GitHub</a>
+                @if (config('profile.linkedin'))<a href="{{ config('profile.linkedin') }}" target="_blank" rel="noopener" class="btn btn-ghost text-sm">LinkedIn</a>@endif
+                @if (config('profile.cv'))<a href="{{ str_starts_with(config('profile.cv'), 'http') ? config('profile.cv') : asset(config('profile.cv')) }}" download class="btn btn-ghost text-sm">{{ __('site.home_hero_cv') }} ↓</a>@endif
+            </div>
+        </div>
+    </div>
+</section>
+
+{{-- ======================= TRUSTED BY & PARTNERS ======================= --}}
+<section class="max-w-6xl mx-auto px-6 pt-20">
+    <div class="text-center max-w-2xl mx-auto mb-10 reveal">
+        <span class="eyebrow mb-4" style="display:inline-flex">{{ __('site.home_trusted_eyebrow') }}</span>
+        <h2 class="section-title">{{ __('site.home_trusted_heading') }}</h2>
+    </div>
+    @foreach (['clients' => __('site.home_clients_label'), 'partners' => __('site.home_partners_label')] as $group => $label)
+    <div class="reveal {{ $loop->first ? '' : 'mt-10' }}">
+        <p class="text-center text-xs font-bold uppercase tracking-[.2em] text-slate-400 mb-5">{{ $label }}</p>
+        @if ($group === 'clients')
+        {{-- Klien bergeser otomatis: daftar digandakan agar putaran mulus, salinan kedua disembunyikan dari pembaca layar --}}
+        <div class="logo-marquee">
+            <div class="logo-marquee__track">
+                @foreach ([false, true] as $copy)
+                @foreach (config('company.' . $group) as $c)
+                <div class="logo-tile" title="{{ $c['name'] }}" @if ($copy) aria-hidden="true" @endif>
+                    @if ($c['logo'])
+                        <img src="{{ asset('images/clients/' . $c['logo']) }}" alt="{{ $copy ? '' : $c['name'] }}">
+                    @else
+                        <span>{{ $c['name'] }}</span>
+                    @endif
+                </div>
+                @endforeach
+                @endforeach
+            </div>
+        </div>
+        @else
+        <div class="flex flex-wrap justify-center gap-4">
+            @foreach (config('company.' . $group) as $c)
+            <div class="logo-tile" title="{{ $c['name'] }}">
+                @if ($c['logo'])
+                    <img src="{{ asset('images/clients/' . $c['logo']) }}" alt="{{ $c['name'] }}" loading="lazy">
+                @else
+                    <span>{{ $c['name'] }}</span>
+                @endif
+            </div>
+            @endforeach
+        </div>
+        @endif
+    </div>
+    @endforeach
 </section>
 
 {{-- ======================= PORTFOLIO ======================= --}}

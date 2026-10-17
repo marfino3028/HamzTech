@@ -22,7 +22,7 @@
 
 <section class="max-w-6xl mx-auto px-6 -mt-10 relative z-10" x-data="{ showModal: false, modalImg: '' }">
     <div class="card p-7 reveal">
-        <p class="text-slate-600 leading-relaxed whitespace-pre-line">{{ app()->getLocale() === 'en' ? ($item['desc_en'] ?? $item['desc']) : $item['desc'] }}</p>
+        <p class="text-slate-600 leading-relaxed whitespace-pre-line">{{ app()->getLocale() === 'id' ? $item['desc'] : ($item['desc_en'] ?? $item['desc']) }}</p>
     </div>
 
     <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 mt-8">

@@ -3,9 +3,9 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PortofolioController;
 
-// Ganti bahasa (id|en), simpan di session, balik ke halaman sebelumnya
+// Ganti bahasa (id|en|ja|ko|zh, lihat config site_locales), simpan di session, balik ke halaman sebelumnya
 Route::get('/lang/{locale}', function (string $locale) {
-    if (in_array($locale, ['id', 'en'], true)) {
+    if (array_key_exists($locale, config('site_locales'))) {
         session(['locale' => $locale]);
     }
     return redirect()->back();

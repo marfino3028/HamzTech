@@ -30,7 +30,7 @@
             <div class="lg:col-span-5 reveal reveal-d2">
                 <div class="glass-dark rounded-[26px] p-7">
                     <div class="flex items-center gap-4">
-                        <img src="{{ asset('images/founder.jpg') }}" alt="Marfino Hamzah" class="w-16 h-16 rounded-2xl object-cover" style="object-position:center top">
+                        <img src="{{ asset('images/founder.jpg') }}" alt="Marfino Hamzah" class="w-16 h-16 rounded-2xl object-cover" style="object-position:center 15%">
                         <div>
                             <div class="text-white font-bold text-lg leading-tight">Marfino Hamzah</div>
                             <div class="text-slate-300 text-sm">Founder &amp; Lead Fullstack Engineer</div>

@@ -14,7 +14,7 @@ class SetLocale
     {
         // default Indonesia (abaikan APP_LOCALE .env yang sering 'en')
         $locale = session('locale', 'id');
-        if (! in_array($locale, ['id', 'en'], true)) {
+        if (! array_key_exists($locale, config('site_locales'))) {
             $locale = 'id';
         }
         App::setLocale($locale);
