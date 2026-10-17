@@ -261,4 +261,11 @@ return [
     'hx_workflow' => '開発フロー',
     'hx_workflow_heading' => '透明で測定可能なプロセス。',
     'hx_step' => 'STEP',
+    'home_two_heading' => '2つの協業スタイル',
+    'home_two_sh_title' => 'HamzTech ソフトウェアハウス',
+    'home_two_sh_desc' => 'ソフトウェア開発、システム連携、専任プロジェクトチームが必要な企業向け。',
+    'home_two_sh_cta' => 'サービスと料金を見る',
+    'home_two_me_title' => 'Marfino Hamzah — ソフトウェアエンジニア',
+    'home_two_me_desc' => 'リモート・契約・正社員の経験豊富な開発者をお探しのリクルーター／開発チーム向け。',
+    'home_two_me_cta' => 'エンジニアプロフィールを見る',
 ];

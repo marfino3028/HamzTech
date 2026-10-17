@@ -261,4 +261,11 @@ return [
     'hx_workflow' => '작업 절차',
     'hx_workflow_heading' => '투명하고 측정 가능한 프로세스.',
     'hx_step' => 'STEP',
+    'home_two_heading' => '함께 일하는 두 가지 방법',
+    'home_two_sh_title' => 'HamzTech 소프트웨어 하우스',
+    'home_two_sh_desc' => '소프트웨어 개발, 시스템 연동, 전담 프로젝트 팀이 필요한 기업을 위한 서비스입니다.',
+    'home_two_sh_cta' => '서비스 및 요금 보기',
+    'home_two_me_title' => 'Marfino Hamzah — 소프트웨어 엔지니어',
+    'home_two_me_desc' => '원격, 계약직, 정규직 경력 개발자를 찾는 채용 담당자와 엔지니어링 팀을 위한 프로필입니다.',
+    'home_two_me_cta' => '엔지니어 프로필 보기',
 ];

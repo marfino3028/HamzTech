@@ -31,6 +31,12 @@
                         {{ __('site.home_hero_cta') }}
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
                     </a>
+                    @if (config('profile.cv'))
+                    <a href="{{ asset(config('profile.cv')) }}" download class="btn btn-cv">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>
+                        {{ __('site.home_hero_cv') }}
+                    </a>
+                    @endif
                     <a href="#portofolio" class="btn btn-outline-light">{{ __('site.home_hero_cta_portfolio', ['count' => count($projects)]) }}</a>
                 </div>
                 <p class="text-xs mt-3" style="color:var(--slate-400)">{{ __('site.home_hero_cta_note') }}</p>
@@ -41,7 +47,6 @@
                     @if (config('profile.linkedin'))<a href="{{ config('profile.linkedin') }}" target="_blank" rel="noopener">LinkedIn</a>@endif
                     @if (config('profile.upwork'))<a href="{{ config('profile.upwork') }}" target="_blank" rel="noopener">Upwork</a>@endif
                     @if (config('profile.fastwork'))<a href="{{ config('profile.fastwork') }}" target="_blank" rel="noopener">Fastwork</a>@endif
-                    @if (config('profile.cv'))<a href="{{ str_starts_with(config('profile.cv'), 'http') ? config('profile.cv') : asset(config('profile.cv')) }}" download>{{ __('site.home_hero_cv') }} ↓</a>@endif
                 </div>
             </div>
 
@@ -80,8 +85,30 @@
     </div>
 </section>
 
+{{-- ======================= TWO WAYS TO WORK ======================= --}}
+<section class="max-w-6xl mx-auto px-6 pt-12">
+    <h2 class="text-center text-xl sm:text-2xl font-extrabold text-navy-900 mb-6 reveal">{{ __('site.home_two_heading') }}</h2>
+    <div class="grid md:grid-cols-2 gap-5">
+        <div class="two-card reveal">
+            <span class="two-card__icon">🏢</span>
+            <h3>{{ __('site.home_two_sh_title') }}</h3>
+            <p>{{ __('site.home_two_sh_desc') }}</p>
+            <a href="#harga" class="btn btn-ghost text-sm mt-auto self-start">{{ __('site.home_two_sh_cta') }} →</a>
+        </div>
+        <div class="two-card two-card--me reveal reveal-d1">
+            <span class="two-card__icon">👨‍💻</span>
+            <h3>{{ __('site.home_two_me_title') }}</h3>
+            <p>{{ __('site.home_two_me_desc') }}</p>
+            <div class="flex flex-wrap gap-3 mt-auto">
+                @if (config('profile.cv'))<a href="{{ asset(config('profile.cv')) }}" download class="btn btn-gold text-sm">{{ __('site.home_hero_cv') }} ↓</a>@endif
+                <a href="#founder" class="btn btn-ghost text-sm">{{ __('site.home_two_me_cta') }} →</a>
+            </div>
+        </div>
+    </div>
+</section>
+
 {{-- ======================= PRICING ======================= --}}
-<section class="max-w-6xl mx-auto px-6 py-16">
+<section id="harga" class="max-w-6xl mx-auto px-6 py-16 scroll-mt-24">
     <div class="max-w-2xl mb-12 reveal">
         <span class="eyebrow mb-4">{{ __('site.hx_pricing') }}</span>
         <h2 class="section-title mb-4">{{ __('site.home_price_heading') }}</h2>
@@ -253,12 +280,12 @@
             <p class="lede mb-6">{{ __('site.home_about_p2') }}</p>
             <p class="availability mb-6"><span class="availability__dot"></span>{{ __('site.home_about_availability') }}</p>
             <div class="flex flex-wrap gap-3">
-                <a href="mailto:{{ config('profile.email') }}" class="btn btn-gold text-sm">{{ config('profile.email') }}</a>
+                @if (config('profile.cv'))<a href="{{ asset(config('profile.cv')) }}" download class="btn btn-gold text-sm">{{ __('site.home_hero_cv') }} ↓</a>@endif
+                <a href="mailto:{{ config('profile.email') }}" class="btn btn-ghost text-sm">{{ config('profile.email') }}</a>
                 <a href="{{ config('profile.github') }}" target="_blank" rel="noopener" class="btn btn-ghost text-sm">GitHub</a>
                 @if (config('profile.linkedin'))<a href="{{ config('profile.linkedin') }}" target="_blank" rel="noopener" class="btn btn-ghost text-sm">LinkedIn</a>@endif
                 @if (config('profile.upwork'))<a href="{{ config('profile.upwork') }}" target="_blank" rel="noopener" class="btn btn-ghost text-sm">Upwork</a>@endif
                 @if (config('profile.fastwork'))<a href="{{ config('profile.fastwork') }}" target="_blank" rel="noopener" class="btn btn-ghost text-sm">Fastwork</a>@endif
-                @if (config('profile.cv'))<a href="{{ str_starts_with(config('profile.cv'), 'http') ? config('profile.cv') : asset(config('profile.cv')) }}" download class="btn btn-ghost text-sm">{{ __('site.home_hero_cv') }} ↓</a>@endif
             </div>
         </div>
     </div>

@@ -261,4 +261,11 @@ return [
     'hx_workflow' => 'Workflow',
     'hx_workflow_heading' => 'A transparent, measurable process.',
     'hx_step' => 'STEP',
+    'home_two_heading' => 'Two ways to work with us',
+    'home_two_sh_title' => 'HamzTech Software House',
+    'home_two_sh_desc' => 'For businesses that need software development, system integration, or a dedicated project team.',
+    'home_two_sh_cta' => 'Explore services & pricing',
+    'home_two_me_title' => 'Marfino Hamzah — Software Engineer',
+    'home_two_me_desc' => 'For recruiters and engineering teams looking for an experienced developer for remote, contract, or full-time roles.',
+    'home_two_me_cta' => 'View engineering profile',
 ];

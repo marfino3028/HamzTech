@@ -261,4 +261,11 @@ return [
     'hx_workflow' => 'Alur Kerja',
     'hx_workflow_heading' => 'Proses yang transparan & terukur.',
     'hx_step' => 'LANGKAH',
+    'home_two_heading' => 'Dua cara bekerja sama dengan kami',
+    'home_two_sh_title' => 'HamzTech Software House',
+    'home_two_sh_desc' => 'Untuk bisnis yang butuh pengembangan software, integrasi sistem, atau tim proyek khusus.',
+    'home_two_sh_cta' => 'Lihat layanan & harga',
+    'home_two_me_title' => 'Marfino Hamzah — Software Engineer',
+    'home_two_me_desc' => 'Untuk recruiter dan tim engineering yang mencari developer berpengalaman untuk posisi remote, kontrak, atau full-time.',
+    'home_two_me_cta' => 'Lihat profil engineer',
 ];

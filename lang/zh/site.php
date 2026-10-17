@@ -261,4 +261,11 @@ return [
     'hx_workflow' => '工作流程',
     'hx_workflow_heading' => '透明、可衡量的流程。',
     'hx_step' => '步骤',
+    'home_two_heading' => '两种合作方式',
+    'home_two_sh_title' => 'HamzTech 软件公司',
+    'home_two_sh_desc' => '面向需要软件开发、系统集成或专属项目团队的企业。',
+    'home_two_sh_cta' => '查看服务与价格',
+    'home_two_me_title' => 'Marfino Hamzah — 软件工程师',
+    'home_two_me_desc' => '面向寻找资深开发者（远程、合同或全职）的招聘方与工程团队。',
+    'home_two_me_cta' => '查看工程师简介',
 ];

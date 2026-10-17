@@ -252,6 +252,17 @@ h1,h2,h3,h4 { letter-spacing:-.028em; line-height:1.1; }
 .nav-dropdown__item.is-active { color:#FF8A3D; background:rgba(255,106,0,.12); }
 .lang-pill { padding:.35rem .75rem; border-radius:999px; font-size:.82rem; font-weight:600; color:#CBD5E1; border:1px solid rgba(255,255,255,.15); }
 .lang-pill.is-active { color:#071A3D; background:var(--grad-gold); border-color:transparent; }
+.btn-cv { color:#071A3D; background:#fff; font-weight:800; box-shadow:0 0 0 3px rgba(255,255,255,.18), 0 18px 40px -16px rgba(255,255,255,.55); }
+.btn-cv:hover { transform:translateY(-2px); box-shadow:0 0 0 4px rgba(255,176,0,.45), 0 18px 40px -14px rgba(255,255,255,.6); }
+.two-card { display:flex; flex-direction:column; gap:.6rem; padding:1.6rem; border-radius:var(--radius-lg); background:#fff; border:1px solid var(--slate-200); box-shadow:var(--shadow-sm); min-height:100%; }
+.two-card h3 { font-size:1.15rem; font-weight:800; color:var(--navy-900); }
+.two-card p { color:var(--slate-500); font-size:.95rem; margin-bottom:.6rem; }
+.two-card--me { background:linear-gradient(135deg,#0B1830,#0B3D91); border-color:transparent; }
+.two-card--me h3 { color:#fff; } .two-card--me p { color:#CBD5E1; }
+.two-card--me .btn-ghost { color:#fff; background:rgba(255,255,255,.1); border-color:rgba(255,255,255,.25); }
+.two-card__icon { display:grid; place-items:center; width:46px; height:46px; border-radius:14px; background:#EFF6FF; font-size:1.35rem; }
+.two-card--me .two-card__icon { background:rgba(255,255,255,.12); }
+@media (max-width:640px) { .hero .btn { width:100%; justify-content:center; } }
 .brand-logo { width:40px; height:40px; object-fit:contain; display:block; }
 .navlink { font-size:.9rem; font-weight:500; color:var(--slate-300); transition:color .2s; }
 .navlink:hover { color:#fff; }

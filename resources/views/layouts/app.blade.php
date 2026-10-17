@@ -133,7 +133,7 @@
 
     <!-- ============================ FOOTER ============================ -->
     <footer class="bg-navy-950 text-slate-400 @yield('footerGap', 'mt-16')">
-        <div class="max-w-6xl mx-auto px-6 py-12">
+        <div class="max-w-6xl mx-auto px-6 pt-12 pb-32 sm:pb-12">
             <div class="flex flex-col md:flex-row md:items-center justify-between gap-6">
                 <div>
                     <a href="/" class="flex items-center gap-2.5 mb-3">
@@ -157,9 +157,9 @@
                 </div>
             </div>
             <div class="my-8 h-px" style="background:linear-gradient(90deg,transparent,rgba(255,255,255,.12),transparent)"></div>
-            <div class="flex flex-col sm:flex-row justify-between items-center gap-4 text-sm">
+            <div class="flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-center">
                 <p>{{ __('site.footer_copyright') }}</p>
-                <div class="flex items-center gap-5">
+                <div class="flex flex-wrap justify-center items-center gap-x-5 gap-y-2">
                     <a href="https://github.com/marfino3028" target="_blank" class="hover:text-white transition">GitHub</a>
                     <a href="https://gitlab.com/marfinohamzah455" target="_blank" class="hover:text-white transition">GitLab</a>
                     <a href="{{ config('profile.linkedin') }}" target="_blank" rel="noopener" class="hover:text-white transition">LinkedIn</a>
