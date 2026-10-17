@@ -98,7 +98,7 @@
                 </a>
                 <a href="{{ config('profile.linkedin') }}" target="_blank" rel="noopener" class="flex items-center gap-4 p-3 rounded-xl hover:bg-slate-50 transition">
                     <span class="icon-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-4 0v7h-4v-7a6 6 0 016-6zM2 9h4v12H2zM4 6a2 2 0 100-4 2 2 0 000 4z"/></svg></span>
-                    <span><span class="block text-xs uppercase tracking-wider text-slate-400">LinkedIn · Upwork</span><span class="font-semibold text-navy-900">marfino-hamzah</span></span>
+                    <span><span class="block text-xs uppercase tracking-wider text-slate-400">LinkedIn · Upwork · Fastwork</span><span class="font-semibold text-navy-900">marfino-hamzah</span></span>
                 </a>
                 <a href="{{ asset(config('profile.cv')) }}" download class="flex items-center gap-4 p-3 rounded-xl hover:bg-slate-50 transition">
                     <span class="icon-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg></span>

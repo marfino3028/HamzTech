@@ -164,6 +164,7 @@
                     <a href="https://gitlab.com/marfinohamzah455" target="_blank" class="hover:text-white transition">GitLab</a>
                     <a href="{{ config('profile.linkedin') }}" target="_blank" rel="noopener" class="hover:text-white transition">LinkedIn</a>
                     <a href="{{ config('profile.upwork') }}" target="_blank" rel="noopener" class="hover:text-white transition">Upwork</a>
+                    <a href="{{ config('profile.fastwork') }}" target="_blank" rel="noopener" class="hover:text-white transition">Fastwork</a>
                     <a href="https://wa.me/6289626312680" target="_blank" class="hover:text-white transition">WhatsApp</a>
                 </div>
             </div>
