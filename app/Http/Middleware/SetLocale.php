@@ -9,13 +9,13 @@ use Symfony\Component\HttpFoundation\Response;
 
 class SetLocale
 {
-    /** Terapkan bahasa dari session (default: id). */
+    /** Terapkan bahasa dari session (default: en). */
     public function handle(Request $request, Closure $next): Response
     {
-        // default Indonesia (abaikan APP_LOCALE .env yang sering 'en')
-        $locale = session('locale', 'id');
+        // default English (sesuai permintaan pemilik; pilihan pengunjung disimpan di session)
+        $locale = session('locale', 'en');
         if (! array_key_exists($locale, config('site_locales'))) {
-            $locale = 'id';
+            $locale = 'en';
         }
         App::setLocale($locale);
 
