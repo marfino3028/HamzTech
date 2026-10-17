@@ -33,7 +33,7 @@
                         <img src="{{ asset('images/founder.jpg') }}?v={{ filemtime(public_path('images/founder.jpg')) }}" alt="Marfino Hamzah" class="w-16 h-16 rounded-2xl object-cover" style="object-position:center 15%">
                         <div>
                             <div class="text-white font-bold text-lg leading-tight">Marfino Hamzah</div>
-                            <div class="text-slate-300 text-sm">Founder &amp; Lead Fullstack Engineer</div>
+                            <div class="text-slate-300 text-sm">{{ __('site.home_founder_role') }}</div>
                         </div>
                     </div>
                     <div class="my-6 h-px" style="background:linear-gradient(90deg,transparent,rgba(255,255,255,.2),transparent)"></div>

@@ -54,9 +54,9 @@
                     </div>
                     <div class="my-6 h-px" style="background:linear-gradient(90deg,transparent,rgba(255,255,255,.2),transparent)"></div>
                     <div class="grid grid-cols-3 gap-4 text-center">
-                        <div><div class="text-2xl font-extrabold text-white">7<span class="text-flame-400">+</span></div><div class="text-[11px] uppercase tracking-wider text-slate-400 mt-1">Tahun</div></div>
-                        <div><div class="text-2xl font-extrabold text-white">{{ count($projects) }}<span class="text-flame-400">+</span></div><div class="text-[11px] uppercase tracking-wider text-slate-400 mt-1">Proyek</div></div>
-                        <div><div class="text-2xl font-extrabold text-white">10<span class="text-flame-400">+</span></div><div class="text-[11px] uppercase tracking-wider text-slate-400 mt-1">Gov App</div></div>
+                        <div><div class="text-2xl font-extrabold text-white">7<span class="text-flame-400">+</span></div><div class="text-[11px] uppercase tracking-wider text-slate-400 mt-1">{{ __('site.hx_years_short') }}</div></div>
+                        <div><div class="text-2xl font-extrabold text-white">{{ count($projects) }}<span class="text-flame-400">+</span></div><div class="text-[11px] uppercase tracking-wider text-slate-400 mt-1">{{ __('site.hx_projects_short') }}</div></div>
+                        <div><div class="text-2xl font-extrabold text-white">10<span class="text-flame-400">+</span></div><div class="text-[11px] uppercase tracking-wider text-slate-400 mt-1">{{ __('site.hx_gov_short') }}</div></div>
                     </div>
                     <div class="mt-6 flex flex-wrap gap-2">
                         <span class="badge badge-ondark">Laravel</span><span class="badge badge-ondark">Flutter</span>
@@ -71,9 +71,9 @@
 {{-- ======================= STATISTICS ======================= --}}
 <section class="max-w-6xl mx-auto px-6 -mt-10 relative z-10">
     <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
-        <div class="card p-6 text-center reveal"><div class="stat-num"><span data-count="7" data-suffix="+">7+</span></div><div class="text-sm font-semibold text-navy-800 mt-2">Tahun Pengalaman</div></div>
-        <div class="card p-6 text-center reveal reveal-d1"><div class="stat-num"><span data-count="{{ count($projects) }}" data-suffix="+">{{ count($projects) }}+</span></div><div class="text-sm font-semibold text-navy-800 mt-2">Proyek Selesai</div></div>
-        <div class="card p-6 text-center reveal reveal-d2"><div class="stat-num gold"><span data-count="10" data-suffix="+">10+</span></div><div class="text-sm font-semibold text-navy-800 mt-2">Proyek Pemerintah</div></div>
+        <div class="card p-6 text-center reveal"><div class="stat-num"><span data-count="7" data-suffix="+">7+</span></div><div class="text-sm font-semibold text-navy-800 mt-2">{{ __('site.hx_years') }}</div></div>
+        <div class="card p-6 text-center reveal reveal-d1"><div class="stat-num"><span data-count="{{ count($projects) }}" data-suffix="+">{{ count($projects) }}+</span></div><div class="text-sm font-semibold text-navy-800 mt-2">{{ __('site.hx_projects') }}</div></div>
+        <div class="card p-6 text-center reveal reveal-d2"><div class="stat-num gold"><span data-count="10" data-suffix="+">10+</span></div><div class="text-sm font-semibold text-navy-800 mt-2">{{ __('site.hx_gov') }}</div></div>
         <div class="card p-6 text-center reveal reveal-d3"><div class="stat-num gold"><span data-count="{{ count(config('profile.expertise')) }}" data-suffix="">{{ count(config('profile.expertise')) }}</span></div><div class="text-sm font-semibold text-navy-800 mt-2">{{ __('site.home_stat_areas') }}</div></div>
     </div>
 </section>
@@ -81,7 +81,7 @@
 {{-- ======================= PRICING ======================= --}}
 <section class="max-w-6xl mx-auto px-6 py-16">
     <div class="max-w-2xl mb-12 reveal">
-        <span class="eyebrow mb-4">Harga</span>
+        <span class="eyebrow mb-4">{{ __('site.hx_pricing') }}</span>
         <h2 class="section-title mb-4">{{ __('site.home_price_heading') }}</h2>
         <p class="lede">{{ __('site.home_price_intro') }}</p>
     </div>
@@ -103,7 +103,7 @@
         </div>
         {{-- Premium (featured) --}}
         <div class="card price-featured p-7 flex flex-col reveal reveal-d1 relative overflow-hidden">
-            <span class="badge badge-gold absolute top-5 right-5">Popular</span>
+            <span class="badge badge-gold absolute top-5 right-5">{{ __('site.hx_popular') }}</span>
             <h3 class="text-lg font-bold mb-1">{{ __('site.home_price_premium_title') }}</h3>
             <p class="price-amount text-2xl font-extrabold mb-1">Rp 1.499.999</p>
             <p class="text-slate-300 text-sm mb-5">{{ __('site.home_price_premium_desc') }}</p>
@@ -142,7 +142,7 @@
 {{-- ======================= SERVICES ======================= --}}
 <section class="max-w-6xl mx-auto px-6 py-16">
     <div class="max-w-2xl mb-12 reveal">
-        <span class="eyebrow mb-4">Layanan</span>
+        <span class="eyebrow mb-4">{{ __('site.hx_services') }}</span>
         <h2 class="section-title mb-4">{{ __('site.home_services_heading') }}</h2>
         <p class="lede">{{ __('site.home_services_intro') }}</p>
     </div>
@@ -306,9 +306,9 @@
 {{-- ======================= PORTFOLIO ======================= --}}
 <section id="portofolio" class="max-w-6xl mx-auto px-6 py-20">
     <div class="max-w-2xl mb-12 reveal">
-        <span class="eyebrow mb-4">Portofolio</span>
+        <span class="eyebrow mb-4">{{ __('site.hx_portfolio') }}</span>
         <h2 class="section-title mb-4">{{ __('site.home_portfolio_heading') }}</h2>
-        <p class="lede">Sistem produksi untuk kementerian, universitas, dan bisnis — web &amp; mobile.</p>
+        <p class="lede">{{ __('site.hx_portfolio_lede') }}</p>
     </div>
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         @foreach ($projects as $project)
@@ -322,7 +322,7 @@
     <div class="hero-glow a" style="opacity:.4"></div>
     <div class="max-w-6xl mx-auto px-6 relative">
         <div class="max-w-2xl mb-12 reveal">
-            <span class="eyebrow on-dark mb-4">Keunggulan</span>
+            <span class="eyebrow on-dark mb-4">{{ __('site.hx_why') }}</span>
             <h2 class="section-title mb-4 text-white">{{ __('site.home_why_heading') }}</h2>
             <p class="lede" style="color:var(--slate-300)">{{ __('site.home_why_intro') }}</p>
         </div>
@@ -351,8 +351,8 @@
 {{-- ======================= WORKFLOW ======================= --}}
 <section class="max-w-6xl mx-auto px-6 py-20">
     <div class="max-w-2xl mb-12 reveal">
-        <span class="eyebrow mb-4">Alur Kerja</span>
-        <h2 class="section-title mb-4">Proses yang transparan &amp; terukur.</h2>
+        <span class="eyebrow mb-4">{{ __('site.hx_workflow') }}</span>
+        <h2 class="section-title mb-4">{{ __('site.hx_workflow_heading') }}</h2>
     </div>
     <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-y-8 gap-x-4">
         @php
@@ -368,7 +368,7 @@
         @foreach($steps as $i => $s)
         <div class="flex flex-col items-center text-center reveal {{ 'reveal-d'.($i % 4) }}">
             <div class="tl-node {{ $i == 5 ? 'text-flame-600' : '' }}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="{{ $s[1] }}"/></svg></div>
-            <div class="text-[11px] font-bold tracking-widest text-slate-400 mt-3">STEP 0{{ $i+1 }}</div>
+            <div class="text-[11px] font-bold tracking-widest text-slate-400 mt-3">{{ __('site.hx_step') }} 0{{ $i+1 }}</div>
             <div class="font-semibold text-sm mt-1 text-navy-900">{{ $s[0] }}</div>
         </div>
         @endforeach
