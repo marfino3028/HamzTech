@@ -268,4 +268,5 @@ return [
     'home_two_me_title' => 'Marfino Hamzah — ソフトウェアエンジニア',
     'home_two_me_desc' => 'リモート・契約・正社員の経験豊富な開発者をお探しのリクルーター／開発チーム向け。',
     'home_two_me_cta' => 'エンジニアプロフィールを見る',
+    'home_cv_backend' => 'バックエンド版CV',
 ];

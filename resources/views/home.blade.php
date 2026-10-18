@@ -101,6 +101,7 @@
             <p>{{ __('site.home_two_me_desc') }}</p>
             <div class="flex flex-wrap gap-3 mt-auto">
                 @if (config('profile.cv'))<a href="{{ asset(config('profile.cv')) }}" download class="btn btn-gold text-sm">{{ __('site.home_hero_cv') }} ↓</a>@endif
+                @if (config('profile.cv_backend'))<a href="{{ asset(config('profile.cv_backend')) }}" download class="btn btn-ghost text-sm">{{ __('site.home_cv_backend') }} ↓</a>@endif
                 <a href="#founder" class="btn btn-ghost text-sm">{{ __('site.home_two_me_cta') }} →</a>
             </div>
         </div>
@@ -281,6 +282,7 @@
             <p class="availability mb-6"><span class="availability__dot"></span>{{ __('site.home_about_availability') }}</p>
             <div class="flex flex-wrap gap-3">
                 @if (config('profile.cv'))<a href="{{ asset(config('profile.cv')) }}" download class="btn btn-gold text-sm">{{ __('site.home_hero_cv') }} ↓</a>@endif
+                @if (config('profile.cv_backend'))<a href="{{ asset(config('profile.cv_backend')) }}" download class="btn btn-ghost text-sm">{{ __('site.home_cv_backend') }} ↓</a>@endif
                 <a href="mailto:{{ config('profile.email') }}" class="btn btn-ghost text-sm">{{ config('profile.email') }}</a>
                 <a href="{{ config('profile.github') }}" target="_blank" rel="noopener" class="btn btn-ghost text-sm">GitHub</a>
                 @if (config('profile.linkedin'))<a href="{{ config('profile.linkedin') }}" target="_blank" rel="noopener" class="btn btn-ghost text-sm">LinkedIn</a>@endif

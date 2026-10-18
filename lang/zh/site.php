@@ -268,4 +268,5 @@ return [
     'home_two_me_title' => 'Marfino Hamzah — 软件工程师',
     'home_two_me_desc' => '面向寻找资深开发者（远程、合同或全职）的招聘方与工程团队。',
     'home_two_me_cta' => '查看工程师简介',
+    'home_cv_backend' => '后端简历',
 ];

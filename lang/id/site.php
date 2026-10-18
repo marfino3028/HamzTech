@@ -268,4 +268,5 @@ return [
     'home_two_me_title' => 'Marfino Hamzah — Software Engineer',
     'home_two_me_desc' => 'Untuk recruiter dan tim engineering yang mencari developer berpengalaman untuk posisi remote, kontrak, atau full-time.',
     'home_two_me_cta' => 'Lihat profil engineer',
+    'home_cv_backend' => 'CV Backend',
 ];

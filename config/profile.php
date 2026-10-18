@@ -12,7 +12,8 @@ return [
     'linkedin' => 'https://www.linkedin.com/in/marfino-hamzah/',
     'upwork'   => 'https://www.upwork.com/freelancers/~013e793885f413bb1b',
     'fastwork' => 'https://fastwork.id/user/marfino3028',
-    'cv'       => 'files/CV-Marfino-Hamzah.pdf',
+    'cv'       => 'files/CV-Marfino-Hamzah-Senior-Full-Stack-Engineer.pdf',
+    'cv_backend' => 'files/CV-Marfino-Hamzah-Senior-Backend-Engineer.pdf',
 
     // Studi kasus unggulan: slug dari config/portfolios.php + ringkasan masalah, peran, hasil.
     'featured' => [

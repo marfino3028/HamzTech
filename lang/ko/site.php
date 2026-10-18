@@ -268,4 +268,5 @@ return [
     'home_two_me_title' => 'Marfino Hamzah — 소프트웨어 엔지니어',
     'home_two_me_desc' => '원격, 계약직, 정규직 경력 개발자를 찾는 채용 담당자와 엔지니어링 팀을 위한 프로필입니다.',
     'home_two_me_cta' => '엔지니어 프로필 보기',
+    'home_cv_backend' => '백엔드 CV',
 ];
