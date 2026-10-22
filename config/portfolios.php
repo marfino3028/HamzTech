@@ -361,6 +361,18 @@ return [
         'type' => 'web',
     ],
 
+    'lensawarga-next-ai' => [
+        'title' => 'Lensa Warga',
+        'slug' => 'lensawarga-next-ai',
+        'image' => 'lensawarga1.png',
+        'images' => ['lensawarga1.png', 'lensawarga2.png', 'lensawarga3.png'],
+        'desc' => 'Platform pengetahuan keuangan publik Indonesia berbasis AI. Warga bertanya dalam bahasa sehari-hari tentang APBD, program, dan kebijakan, lalu AI menjawab dari 436 ribu lebih dokumen resmi 552 pemerintah daerah, 14 kementerian/lembaga, dan JDIH, lengkap dengan sumber yang bisa ditelusuri. Sudah menerima lebih dari 32 ribu pertanyaan, tersedia dalam bahasa Indonesia dan Inggris.',
+        'desc_en' => 'An AI-powered public finance knowledge platform for Indonesia. Citizens ask in everyday language about regional budgets, programs and policies, and the AI answers from more than 436,000 official documents from 552 local governments, 14 ministries and agencies, and JDIH legal databases, with traceable sources. It has received over 32,000 questions and is available in Indonesian and English.',
+        'tech' => 'Next.js + AI (RAG)',
+        'url' => 'https://lensawarga.org',
+        'type' => 'web',
+    ],
+
     // ===== Aplikasi mobile (Play Store / App Store) =====
 
     'e-kemendag-flutter' => [
