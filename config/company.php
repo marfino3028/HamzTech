@@ -3,6 +3,7 @@
 /*
  * Data perusahaan tunggal: alamat kantor, klien (trusted by) & partner.
  * Logo di public/images/clients/. 'logo' => null = tampil sebagai wordmark teks.
+ * 'url' = situs resmi; logo menjadi tautan ke situs itu (tab baru).
  */
 
 return [
@@ -43,26 +44,28 @@ return [
     ],
 
     'clients' => [
-        ['name' => 'Kementerian Perdagangan RI', 'logo' => 'kemendag.svg'],
-        ['name' => 'Kementerian Keuangan RI',    'logo' => 'kemenkeu.png'],
-        ['name' => 'Kementerian Dalam Negeri RI', 'logo' => 'kemendagri.svg'],
-        ['name' => 'Kementerian Kesehatan RI',   'logo' => 'kemenkes.svg'],
-        ['name' => 'Pemda DIY',                  'logo' => 'diy.svg'],
-        ['name' => 'Universitas Negeri Surabaya', 'logo' => 'unesa.png'],
-        ['name' => 'RS Brawijaya',               'logo' => 'rsbrawijaya.png'],
-        ['name' => 'Invesnow',                   'logo' => 'invesnow.svg'],
-        ['name' => 'Pratama Tech',               'logo' => 'pratamatech.png'],
-        ['name' => 'Sirait & Co',                'logo' => 'sirait.png'],
-        ['name' => 'Fudao Scrunchie',            'logo' => 'fudao.png'],
-        ['name' => 'Pos Buku',                   'logo' => 'posbuku.png'],
-        ['name' => 'Zhafirah',                   'logo' => 'zhafirah.png'],
+        ['name' => 'Kementerian Perdagangan RI', 'logo' => 'kemendag.svg', 'url' => 'https://www.kemendag.go.id'],
+        ['name' => 'Kementerian Keuangan RI',    'logo' => 'kemenkeu.png', 'url' => 'https://www.kemenkeu.go.id'],
+        ['name' => 'Kementerian Dalam Negeri RI', 'logo' => 'kemendagri.svg', 'url' => 'https://www.kemendagri.go.id'],
+        ['name' => 'Ditjen Otonomi Daerah Kemendagri', 'logo' => 'otda.png', 'url' => 'https://otda.kemendagri.go.id'],
+        ['name' => 'Kementerian Kesehatan RI',   'logo' => 'kemenkes.svg', 'url' => 'https://kemkes.go.id'],
+        ['name' => 'Pemda DIY',                  'logo' => 'diy.svg', 'url' => 'https://jogjaprov.go.id'],
+        ['name' => 'Universitas Negeri Surabaya', 'logo' => 'unesa.png', 'url' => 'https://www.unesa.ac.id'],
+        ['name' => 'RS Brawijaya',               'logo' => 'rsbrawijaya.png', 'url' => 'https://brawijayahospital.com'],
+        ['name' => 'Invesnow',                   'logo' => 'invesnow.svg', 'url' => 'https://invesnow.id'],
+        ['name' => 'Pratama Tech',               'logo' => 'pratamatech.png', 'url' => 'https://pratamainnovation.com'],
+        ['name' => 'Sirait & Co',                'logo' => 'sirait.png', 'url' => 'https://sirait.co'],
+        ['name' => 'Fudao Scrunchie',            'logo' => 'fudao.png', 'url' => 'https://rossieannacraft.com'],
+        ['name' => 'Pos Buku',                   'logo' => 'posbuku.png', 'url' => 'https://posbuku.com'],
+        ['name' => 'Zhafirah',                   'logo' => 'zhafirah.png', 'url' => 'https://www.zhafirah.co.id'],
     ],
 
     'partners' => [
-        ['name' => 'Technocare', 'logo' => 'technocare.png'],
-        ['name' => 'Konvertin',  'logo' => 'konvertin.png'],
-        ['name' => 'Liburania',  'logo' => 'liburania.png'],
-        ['name' => 'Freedoms of Travellers', 'logo' => 'foftravellers.png'],
+        ['name' => 'Technocare', 'logo' => 'technocare.png', 'url' => 'https://technocare.id'],
+        ['name' => 'Konvertin',  'logo' => 'konvertin.png', 'url' => 'https://konvertin.id'],
+        ['name' => 'Liburania',  'logo' => 'liburania.png', 'url' => 'https://liburania.com'],
+        ['name' => 'Freedoms of Travellers', 'logo' => 'foftravellers.png', 'url' => 'https://foftravellers.com'],
+        ['name' => 'PT Abata Citra Solusi', 'logo' => 'abata.png', 'url' => 'https://abata.id'],
     ],
 
 ];

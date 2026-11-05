@@ -308,13 +308,13 @@
             <div class="logo-marquee__track">
                 @foreach ([false, true] as $copy)
                 @foreach (config('company.' . $group) as $c)
-                <div class="logo-tile" title="{{ $c['name'] }}" @if ($copy) aria-hidden="true" @endif>
+                <a href="{{ $c['url'] }}" target="_blank" rel="noopener" class="logo-tile" title="{{ $c['name'] }}" @if ($copy) aria-hidden="true" tabindex="-1" @endif>
                     @if ($c['logo'])
                         <img src="{{ asset('images/clients/' . $c['logo']) }}" alt="{{ $copy ? '' : $c['name'] }}">
                     @else
                         <span>{{ $c['name'] }}</span>
                     @endif
-                </div>
+                </a>
                 @endforeach
                 @endforeach
             </div>
@@ -322,13 +322,13 @@
         @else
         <div class="flex flex-wrap justify-center gap-4">
             @foreach (config('company.' . $group) as $c)
-            <div class="logo-tile" title="{{ $c['name'] }}">
+            <a href="{{ $c['url'] }}" target="_blank" rel="noopener" class="logo-tile" title="{{ $c['name'] }}">
                 @if ($c['logo'])
                     <img src="{{ asset('images/clients/' . $c['logo']) }}" alt="{{ $c['name'] }}" loading="lazy">
                 @else
                     <span>{{ $c['name'] }}</span>
                 @endif
-            </div>
+            </a>
             @endforeach
         </div>
         @endif
