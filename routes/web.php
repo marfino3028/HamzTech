@@ -30,6 +30,7 @@ Route::get('/services', function () {
         ['title' => 'Digital Marketing', 'desc' => 'Iklan Google/FB, SEO lokal, IG ads.'],
         ['title' => 'Landing Page Cepat', 'desc' => '1 Hari jadi landing page profesional.'],
         ['title' => 'Pembuatan Aplikasi/Web/CMS', 'desc' => 'Custom sesuai kebutuhan UMKM/perusahaan.'],
+        ['title' => 'Desain UI/UX', 'desc' => 'Riset pengguna, wireframe, desain Figma, prototype & design system siap dikembangkan.'],
         ['title' => 'Copywriting', 'desc' => 'Tingkatkan penjualan dengan tulisan meyakinkan.'],
         ['title' => 'Konsultasi & Bantuan IT', 'desc' => 'Tanya apa pun, bisa dibantu.'],
     ];
