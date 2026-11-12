@@ -325,6 +325,30 @@ return [
         'type' => 'web',
     ],
 
+    'hamzumrah-portal-nuxt-nest' => [
+        'title' => 'HamzUmrah — Portal Jamaah Umroh & Haji',
+        'slug' => 'hamzumrah-portal-nuxt-nest',
+        'image' => 'hamzumrah1.png',
+        'images' => ['hamzumrah1.png', 'hamzumrah2.png', 'hamzumrah3.png', 'hamzumrah4.png'],
+        'desc' => 'Portal travel umroh dan haji plus: cari paket per bulan dan bandara, jadwal terdekat dengan sisa kursi real-time, detail paket dengan jarak hotel ke Masjidil Haram dan Nabawi dalam meter, itinerary harian, dan harga per tipe kamar (paket haji dalam dolar dengan kurs otomatis). Jamaah memesan online, mengunggah bukti transfer, melengkapi KTP, paspor, pas foto, dan vaksin dari HP, memantau cicilan, serta membuka tabungan umroh.',
+        'desc_en' => 'A Hajj and Umrah travel portal: search packages by month and departure airport, see upcoming departures with live seat counts, and compare packages by hotel distance to the Grand Mosque and the Prophet\'s Mosque in metres, daily itineraries, and room-type prices (Hajj packages priced in US dollars with automatic conversion). Pilgrims book online, upload transfer receipts, submit ID, passport, photo, and vaccine documents from their phone, track instalments, and open an Umrah savings plan.',
+        'tech' => 'Nuxt.js + NestJS',
+        'url' => 'https://portalhajiumroh.hamztech.my.id',
+        'type' => 'web',
+    ],
+
+    'hamzumrah-admin-nuxt-nest' => [
+        'title' => 'HamzUmrah — Admin Travel Umroh & Haji',
+        'slug' => 'hamzumrah-admin-nuxt-nest',
+        'image' => 'hamzumrahadmin1.png',
+        'images' => ['hamzumrahadmin1.png', 'hamzumrahadmin2.png', 'hamzumrahadmin3.png', 'hamzumrahadmin4.png'],
+        'desc' => 'Panel kantor travel umroh dan haji dengan peran superadmin, operasional, keuangan, dan marketing. Mengelola paket, jadwal keberangkatan dan kuota kursi, manifest jamaah (CSV) dengan pembagian kamar otomatis, verifikasi bukti transfer dan kwitansi, kelengkapan dokumen dan peringatan paspor, tabungan umroh, CRM calon jamaah, komisi marketing dengan tautan referal, serta arus kas, margin per keberangkatan, dan piutang.',
+        'desc_en' => 'An office panel for a Hajj and Umrah travel agency with superadmin, operations, finance, and marketing roles. It manages packages, departures and seat quotas, pilgrim manifests (CSV) with automatic room allocation, transfer-receipt verification and printable receipts, document completeness with passport-expiry warnings, Umrah savings, a prospect CRM, marketing commissions with referral links, plus cash flow, per-departure margins, and receivables.',
+        'tech' => 'Nuxt.js + NestJS',
+        'url' => 'https://adminhajiumroh.hamztech.my.id',
+        'type' => 'web',
+    ],
+
     'rakcloud-nuxt-nest' => [
         'title' => 'RakCloud',
         'slug' => 'rakcloud-nuxt-nest',
