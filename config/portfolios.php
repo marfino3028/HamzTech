@@ -289,6 +289,42 @@ return [
         'type' => 'web',
     ],
 
+    'dashai-jambiprov-nuxt-nest' => [
+        'title' => 'DashAI Pemda Provinsi Jambi',
+        'slug' => 'dashai-jambiprov-nuxt-nest',
+        'image' => 'jambiprov1.png',
+        'images' => ['jambiprov1.png'],
+        'desc' => 'Asisten AI eksekutif untuk Pemerintah Provinsi Jambi. Pimpinan dan OPD dapat bertanya, memahami, dan menganalisis data perencanaan, anggaran, dan kinerja daerah dalam bahasa sehari-hari, lalu menyusun bahan keputusan. Satu platform DashAI Pemda yang disesuaikan identitas tiap daerah.',
+        'desc_en' => 'An executive AI assistant for the Jambi Provincial Government. Leaders and agencies can ask about, understand, and analyse regional planning, budget, and performance data in everyday language, then prepare decision material. One DashAI Pemda platform, branded for each region.',
+        'tech' => 'Nuxt.js + NestJS',
+        'url' => 'https://jambiprov.dashai.id',
+        'type' => 'web',
+    ],
+
+    'dashai-nttprov-nuxt-nest' => [
+        'title' => 'DashAI Pemda Provinsi NTT',
+        'slug' => 'dashai-nttprov-nuxt-nest',
+        'image' => 'nttprov1.png',
+        'images' => ['nttprov1.png'],
+        'desc' => 'Asisten AI eksekutif untuk Pemerintah Provinsi Nusa Tenggara Timur. Pimpinan dan OPD dapat bertanya, memahami, dan menganalisis data perencanaan, anggaran, dan kinerja daerah dalam bahasa sehari-hari, lalu menyusun bahan keputusan.',
+        'desc_en' => 'An executive AI assistant for the East Nusa Tenggara (NTT) Provincial Government. Leaders and agencies can ask about, understand, and analyse regional planning, budget, and performance data in everyday language, then prepare decision material.',
+        'tech' => 'Nuxt.js + NestJS',
+        'url' => 'https://nttprov.dashai.id',
+        'type' => 'web',
+    ],
+
+    'hamzland-nuxt-nest' => [
+        'title' => 'HamzLand',
+        'slug' => 'hamzland-nuxt-nest',
+        'image' => 'hamzland1.png',
+        'images' => ['hamzland1.png', 'hamzland2.png', 'hamzland3.png', 'hamzland4.png'],
+        'desc' => 'Website properti untuk rumah, villa, apartemen, dan townhouse bergaya Eropa dan Jepang, dijual maupun disewakan di 9 kota. Pencarian berdasarkan lokasi, tipe, dan harga, koleksi gaya, profil agen, galeri foto, simulasi KPR, dan konsultasi. Dilengkapi panel admin untuk mengelola listing, leads, dan keuangan.',
+        'desc_en' => 'A property website for European- and Japanese-style houses, villas, apartments, and townhouses for sale or rent across 9 cities. It offers search by location, type, and price, style collections, agent profiles, photo galleries, a mortgage (KPR) simulator, and consultation, plus an admin panel for listings, leads, and finances.',
+        'tech' => 'Nuxt.js + NestJS',
+        'url' => 'https://hamzland.hamztech.my.id',
+        'type' => 'web',
+    ],
+
     'rakcloud-nuxt-nest' => [
         'title' => 'RakCloud',
         'slug' => 'rakcloud-nuxt-nest',
